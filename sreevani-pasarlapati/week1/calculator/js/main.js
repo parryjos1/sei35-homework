@@ -6,8 +6,7 @@ const squareNumber = function ( number ) {
   return result;
 }
 
-let input = 4;
-let output = squareNumber(input);
+let output = squareNumber(4);
 console.log(`The result of squaring the number ${input} is ${output}`);
 
 // Write a function called halfNumber that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of 5 is 2.5.".
@@ -17,8 +16,7 @@ const halfNumber = function ( number ) {
   return result;
 }
 
-input = 225;
-output = halfNumber(input);
+output = halfNumber(225);
 console.log(`Half of ${input} is ${output}`);
 
 // Write a function called percentOf that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."
@@ -39,8 +37,7 @@ const areaOfCircle = function ( radius ) {
   return area;
 }
 
-input = 12;
-output = areaOfCircle(input);
+output = areaOfCircle(12);
 console.log(`The area for a circle with radius ${input} is ${output}`);
 
 // Write a function that will take one argument (a number) and perform the following operations, using the functions you wrote earlier:
