@@ -1,60 +1,47 @@
-const secretWord = 'CANYOUGUESS'.split('');
-const guessedLetters = secretWord.map((char) => '_');
-
-console.log(secretWord);
-console.log(guessedLetters);
-
-const allFound = function() {
-  return !guessedLetters.includes('_');
-};
-
-let reward = 0;
-
-const randomReward = function() {
-  return Math.floor(Math.random() * 1000);
-};
-
-const guessLetter = function(letter) {
-  if (guessedLetters.includes(letter)) {
-    console.log('You\'ve guessed the same letter before.');
-    return;
-  }
-
-  if (allFound()) {
-    console.log('Congratulations! You found the whole word!');
-    return;
-  }
-
-  const indices = secretWord.reduce((accu, char, index) => {
-    if (char === letter) {
-      accu.push(index);
-    }
-    return accu;
-  }, []);
-  if (indices.length === 0) {
-    reward -= randomReward();
-    console.log('Sorry, try again.');
+const maxOfTwoNumbers = function(num1, num2) {
+  if (num1 > num2) {
+    return num1;
   } else {
-    indices.forEach((i) => {
-      guessedLetters[i] = letter;
-      reward += randomReward();
-    });
-    console.log(`User found a letter: ${guessedLetters.join(' ')}`);
-    if (allFound()) {
-      console.log(`Congratulations! You found the whole word, and earned $${reward}!`);
-      return;
-    }
+    return num2;
   }
 };
 
-guessLetter('U');
-guessLetter('C');
-guessLetter('X');
-guessLetter('U');
-guessLetter('A');
-guessLetter('N');
-guessLetter('Y');
-guessLetter('O');
-guessLetter('G');
-guessLetter('S');
-guessLetter('E');
+console.log(maxOfTwoNumbers(15, 20));
+
+const maxOfThree = function() {
+  let max = Number.NEGATIVE_INFINITY;
+  for (let i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+};
+
+console.log(maxOfThree(2, 4, 1));
+
+const isVowel = function(character) {
+  const vowels = 'aeiouAEIOU'.split('');
+  return vowels.includes(character);
+};
+
+console.log(isVowel('E'));
+console.log(isVowel('f'));
+
+const sumArray = function(arrayOfNumbers) {
+  return arrayOfNumbers.reduce((accu, item) => {
+    accu += item;
+    return accu;
+  }, 0);
+};
+
+console.log(sumArray([1, 2, 3, 4]));
+
+const multiplyArray = function(arrayOfNumbers) {
+  return arrayOfNumbers.reduce((accu, item) => {
+    accu *= item;
+    return accu;
+  }, 1);
+};
+
+console.log(multiplyArray([1, 2, 3, 4]));
