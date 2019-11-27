@@ -35,3 +35,29 @@ const multiplyArray = function(arr) {
 };
 
 console.log(`multiplication of [1,2,3,4] = ${multiplyArray([1,2,3,4])}`);
+
+const reverseString = function(str) {
+  let newStr = '';
+  for(i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  return newStr;
+  // return str.split('').reverse().join('');
+};
+
+console.log(`'jag testar' reversed: '${reverseString('jag testar')}'`);
+
+const findLongestWord = function(words) {
+  return words.sort((a, b) => b.length - a.length)[0];
+};
+
+console.log(`Longest word in ['behavior', 'index', 'value', 'inconsistent', 'arguments'] is ${findLongestWord(['behavior', 'index', 'value', 'inconsistent', 'arguments'])}`);
+
+const filterLongWords = function(words, i) {
+  return words.filter(word => word.length > i);
+};
+
+const wordsList = ['abc4', 'abcd5', 'qwer5', 'qwert6', 'ghj4', 'qw3', 'a2'];
+const length = 4;
+
+console.log(`[${wordsList}] more than ${length} letters: ${filterLongWords(wordsList, length)}`);
