@@ -33,6 +33,7 @@ const assignGrade = function (score) {
       return 'F';
     }
 };
+
 for(let x = 60; x <= 100; x++) {
     console.log(`For ${x}, you got a ${assignGrade(x)}`);
 }
