@@ -10,7 +10,7 @@ const guess = function(letter) {
   }
   for (x = 0; x < alreadyguess.length; x++) {
     if (letter === alreadyguess[x]) {
-      reward = reward - 50
+      reward = reward - Math.random()*50;
       console.log(`Your current reward is ${reward}`);
       wrongguesses = wrongguesses + 1;
       return "You already guessed this letter try again"
@@ -23,20 +23,19 @@ const guess = function(letter) {
       guessed.splice(i, 1, letter);
       console.log(`Congratulations you guessed the letter ${letter}`);
       correctguesses = correctguesses + 1;
-      reward = reward + 100;
+      reward = reward + Math.random()*100;
       wrongguesses = wrongguesses + 1;
     }
   }
   if (correctguesses === previouslength){
     console.log("Sorry that letter is not right");
-    reward = reward - 50;
+    reward = reward - Math.random()*50;
   } else if (correctguesses === word.length) {
     console.log(`Congratulations you guessed the word`)
   }
-  console.log(`Your current reward is ${reward}`)
+  console.log(`Your current reward is $${reward.toFixed(2)}`)
   return guessed.join("");
 }
-
 // BONUS MATERIAL
 //TWO NUMS
 const maxOfTwoNumbers = function(num1,num2) {
@@ -48,6 +47,7 @@ const maxOfTwoNumbers = function(num1,num2) {
     return "They are equal"
   }
 }
+console.log(maxOfTwoNumbers(5,8));
 //THREE NUMS
 const maxOfThreeNumbers = function(num1,num2,num3) {
   if (num1 > num2 && num1 > num3) {
@@ -60,35 +60,42 @@ const maxOfThreeNumbers = function(num1,num2,num3) {
     return "They are all equal"
   }
 }
+console.log(maxOfThreeNumbers(5,8,11))
 //IS IT A VOWEL
 const isItAVowel = function(letter) {
-  if (letter.length !== 1) {
+  if (letter.length > 1) {
     return "This is not a single letter"
   }
   if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
-    return "This is a vowel"
+    return `This is a vowel ${letter}`
   }
 }
+console.log(isItAVowel("a"));
 //SUM ARRAY AND MULTIPLES ARRAY
+let total = 0
 const sumArray = function(nums) {
   for (i=0; i < nums.length; i++) {
     total = total + nums[i]
   }
-  return total
+  return `The sum of ${nums} is ${total}`;
 };
+console.log(sumArray([0,5,2,4,5]));
 const multiplyArray = function(nums) {
   for (i=0; i < nums.length; i++) {
     total = total * nums[i]
   }
-  return total
+  return `The multiplication of ${nums} is ${total}`;
 };
+console.log(multiplyArray([2,5,2,4,5]));
 //REVERSEEEEE
 const reverseString = function(string) {
+  let origin = string
   string = string.split("");
   string = string.reverse();
   string = string.join("");
-  return string;
+  return `The reverse of ${origin} is ${string}`;
 }
+console.log(reverseString("asdf"))
 //Long words
 const longestWord = function(string) {
   let longest = 0;
@@ -99,8 +106,9 @@ const longestWord = function(string) {
       longestindex = i
     }
   }
-  return string[longestindex];
+  return `The largest word in this array is ${string[longestindex]}`;
 }
+console.log(longestWord(["asd","asdf","asdfgh"]));
 //FILTRATION DEVICE
 const wordsLonger = function(string,num) {
   let longerThan = [];
@@ -109,5 +117,6 @@ const wordsLonger = function(string,num) {
       longerThan.push(string[i])
     }
   }
-  return longerThan;
+  return `${longerThan.length} (${string}) words are larger than ${num} letters`;
 }
+console.log(wordsLonger(["asd","asdf", "asdafasd"], 2))
