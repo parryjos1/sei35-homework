@@ -19,7 +19,7 @@ const guess = function(letter) {
   alreadyguess.push(letter);
   let previouslength = correctguesses;
   for (i = 0; i < word.length; i++) {
-    if (letter === word[i]){
+    if (letter === word[i] || letter === word[i].toUpperCase()){
       guessed.splice(i, 1, letter);
       console.log(`Congratulations you guessed the letter ${letter}`);
       correctguesses = correctguesses + 1;
@@ -36,6 +36,9 @@ const guess = function(letter) {
   console.log(`Your current reward is $${reward.toFixed(2)}`)
   return guessed.join("");
 }
+console.log(guess("F"));
+console.log(guess("o"));
+console.log(guess("x"));
 // BONUS MATERIAL
 //TWO NUMS
 const maxOfTwoNumbers = function(num1,num2) {
