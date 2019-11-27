@@ -226,3 +226,5 @@ function pluralize(noun, number) {
 console.log('I have ' + pluralize('cat', 0));
 console.log('I have ' + pluralize('cat', 1));
 console.log('I have ' + pluralize('cat', 2));
+
+console.log('hi');
