@@ -10,7 +10,7 @@ Write a function called squareNumber that will take one argument (a number), squ
 
 */
 
-const squareNumber = function(number) {
+  const squareNumber = function(number) {
   const functionSquared = number * 2;
   return ("The result of squaring the number " + number + " is " + functionSquared)
 };
@@ -25,7 +25,7 @@ console.log (squareNumber1);
 /*Write a function called halfNumber that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of 5 is 2.5.".
 */
 
-const halfNumber = function(number2) {
+  const halfNumber = function(number2) {
   const functionDivided = number2 / 2;
   return ("Half of " + number2 + " is " + functionDivided)
 }
@@ -117,13 +117,16 @@ Look up the JavaScript string reference to find methods which may be useful!
 */
 
 const mixUp = function(string1, string2) {
-  Var mixOne = ((stringTwo.slice(0,2))
-  return (string2 + " " + string1)
+  const stringOneSlice = string1.slice(0,2);
+  const stringTwoSlice = string2.slice(0,2);
+  const stringOneSlice2 = string1.slice(2);
+  const stringTwoSlice2 = string2.slice(2);
+  console.log(`${stringTwoSlice}${stringOneSlice2}  ${stringOneSlice}${stringTwoSlice2}`);
 }
 
-const mixUp1 = mixUp("bosh","bash");
+console.log(mixUp("mix", "pod"));
 
-console.log ( mixUp1 );
+//look for string slice on google.
 
 //3. FixStart
 
@@ -133,6 +136,14 @@ fixStart('babble'): 'ba**le'
 
 */
 
+/*
+const fixStart = function(string) {
+const string1 = string;
+console.log(newString);
+};
+
+console.log(fixstart("babble"));
+*/
 
 //4. Verbing
 
@@ -144,6 +155,22 @@ verbing('go'): 'go'
 
 */
 
+const verbing = function(string) {
+  // if string is less than 3 letters return string.
+  if (string.length < 3) {
+  console.log (string);
+  //if string is more than 3 letters and doesn't contain 'ing', add 'ing' to the string.
+  } if (string.length >= 3 && string.includes("ing")) {
+  console.log (`${string}ly`);
+  //else add 'ly' to the end of the string.
+  } else {
+  console.log (`${string}ing`);
+  }
+};
+
+console.log (verbing("swimming"));
+
+
 //5. Not Bad
 
 /*Create a function called notBad that takes a single argument, a string.
@@ -151,9 +178,24 @@ verbing('go'): 'go'
 It should find the first appearance of the substring 'not' and 'bad'.
 If the 'bad' follows the 'not', then it should replace the whole 'not'...'bad' substring with 'good' and return the result.
 If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.
+
 For example:
 
 notBad('This dinner is not that bad!'): 'This dinner is good!'
 notBad('This movie is not so bad!'): 'This movie is good!'
 notBad('This dinner is bad!'): 'This dinner is bad!'
 */
+
+const notBad = function (sentence) {
+  const index1 = sentence.indexOf("not");
+  const index2 = sentence.indexOf("bad");
+  if (index1 < index2) {
+    const slicedString = sentence.slice(0,index1);
+    const good = "good!"
+    console.log (`${slicedString}${good}`)
+  } else {
+    return sentence;
+  }
+};
+
+console.log(notBad("This dinner is not that bad"))
