@@ -20,3 +20,19 @@ for(let x = 0; x <= 10; x++) {
 }
 
 //the grade assigner
+const assignGrade = function (score) {
+    if (score >= 90) {
+      return 'A';
+    } else if (score >= 80) {
+      return 'B';
+    } else if (score >= 70) {
+      return 'C';
+    } else if (score >= 60) {
+      return 'D';
+    } else {
+      return 'F';
+    }
+};
+for(let x = 60; x <= 100; x++) {
+    console.log(`For ${x}, you got a ${assignGrade(x)}`);
+}
