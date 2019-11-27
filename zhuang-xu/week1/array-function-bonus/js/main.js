@@ -41,8 +41,7 @@ const guessLetter = function(letter) {
     });
     console.log(`User found a letter: ${guessedLetters.join(' ')}`);
     if (allFound()) {
-      console.log(
-          `Congratulations! You found the whole word, and earned $${reward}!`);
+      console.log(`Congratulations! You found the whole word, and earned $${reward}!`);
       return;
     }
   }
