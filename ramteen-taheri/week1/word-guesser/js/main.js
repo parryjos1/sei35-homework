@@ -25,7 +25,7 @@ function guessLetter(letter) {
     }
 
     if(found == true) {
-        console.log(`Congratulations! your new word is now: ${guessedWord.toString()}`);
+        console.log(`Congratulations! your new word is now: ${guessedWord.join("")}`);
         reward += ((((Math.random() + 1) * 100) + 2) * count);
         console.log(`Your Reward: $${reward.toFixed(2)}`);
     } else {
@@ -36,9 +36,18 @@ function guessLetter(letter) {
         if(wrongGuesses.length == 6)
         {
             console.log('You have run out of guesses and lost the game.');
+            console.log(
+            `\t\t\t |---------
+             |   |
+             |   O
+             |  -|-
+             |  / \\
+             |             
+             |            `);
+
             return true;
         }
-    }
+}
 
     //check for underscores
     for(let x = 0; x < guessedWord.length; x++) {
@@ -48,12 +57,9 @@ function guessLetter(letter) {
     }
 
 
-    console.log(`Congratulations! You have won the game! (Guessed word: ${guessedWord.toString()})`);
+    console.log(`Congratulations! You have won the game! (Guessed word: ${guessedWord.join("")})`);
     console.log(`reward total: $${reward.toFixed(2)}`);
     return true;
-
-
-
 }
 
 let flag = false;
