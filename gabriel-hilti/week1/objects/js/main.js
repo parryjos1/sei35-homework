@@ -110,35 +110,51 @@ console.log(cashRegister(cartForParty)); // 60.55
 
 
 // JavaScript Bank
-const account1 = {
-  ownerName: 'Owner1',
-  balance: 0,
-  deposit: function(amount) {
+const CreateAccount = function(name) {
+  this.name = name;
+  this.balance = 0;
+  this.deposit = function(amount) {
     this.balance += amount;
-  },
-  withdraw: function(amount) {
+  };
+  this.withdraw = function(amount) {
     if (this.balance - amount >= 0) {
       this.balance -= amount;
     } else {
       console.log("You don't have sufficient funds to withdraw");
     }
-  }
+  };
 };
 
-const account2 = {
-  ownerName: 'Owner2',
-  balance: 0,
-  deposit: function(amount) {
-    this.balance += amount;
-  },
-  withdraw: function(amount) {
-    if (this.balance - amount >= 0) {
-      this.balance -= amount;
-    } else {
-      console.log("You don't have sufficient funds to withdraw");
-    }
-  }
-};
+
+// const account1 = {
+//   ownerName: 'Owner1',
+//   balance: 0,
+//   deposit: function(amount) {
+//     this.balance += amount;
+//   },
+//   withdraw: function(amount) {
+//     if (this.balance - amount >= 0) {
+//       this.balance -= amount;
+//     } else {
+//       console.log("You don't have sufficient funds to withdraw");
+//     }
+//   }
+// };
+//
+// const account2 = {
+//   ownerName: 'Owner2',
+//   balance: 0,
+//   deposit: function(amount) {
+//     this.balance += amount;
+//   },
+//   withdraw: function(amount) {
+//     if (this.balance - amount >= 0) {
+//       this.balance -= amount;
+//     } else {
+//       console.log("You don't have sufficient funds to withdraw");
+//     }
+//   }
+// };
 
 const bank = {
   accounts: [],
@@ -161,6 +177,9 @@ const bank = {
     }
   }
 };
+
+const account1 = new CreateAccount('Owner1');
+const account2 = new CreateAccount('Owner2');
 
 account1.deposit(100);
 account2.deposit(200);
