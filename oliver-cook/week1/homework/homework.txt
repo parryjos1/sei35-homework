@@ -1,0 +1,5 @@
+this is a test!
+
+I couldn't do the homework for day 2. Need more practice with functions and If Else.
+
+
