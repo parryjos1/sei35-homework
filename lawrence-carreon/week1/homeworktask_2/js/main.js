@@ -18,7 +18,7 @@ for (let i = 0; i < arrayToGuess.length ;i++)
 alert(`Welcome to the Hangman of Fortune!`);
 
 
-//setting up the rules to display
+//setting up the rules to displayton
 //each string ends with a "\n" so the rules display as a list
 const rules = 
 [
