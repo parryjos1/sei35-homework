@@ -168,4 +168,4 @@ let thirdPick = getRandom(0, nouns.length);
 
 let yourInsult = `${firstAdjectives[Math.floor(firstPick)]} ${secondAdjectives[Math.floor(secondPick)]} ${nouns[Math.floor(thirdPick)]}`;
 
-console.log(`thou art a ${yourInsult}`);
+console.log(`Thou ${yourInsult}`);
