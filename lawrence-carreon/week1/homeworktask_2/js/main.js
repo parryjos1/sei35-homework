@@ -7,18 +7,13 @@ let incorrectGuesses = 0; //"HANGMAN" trigger check
 let winCondition = false; //a boolean to handle whether or not the user has won
 //setting up a string to hold the word to guess so it can compare it what has been revealed
 //later, and then switch winCondition
-let guessWord = ``;
-for (let i = 0; i < arrayToGuess.length ;i++)
-{
-    guessWord = `${guessWord}${arrayToGuess[i]}`;
-};
-
+let guessWord = arrayToGuess.toString();
 
 //User greeting
 alert(`Welcome to the Hangman of Fortune!`);
 
 
-//setting up the rules to displayton
+//setting up the rules to display in the prompt
 //each string ends with a "\n" so the rules display as a list
 const rules = 
 [
@@ -58,7 +53,10 @@ const guessLetter = function (guessedLetter)
     const partOfWord = arrayToGuess.includes(letterToCheck);
     //adds the user's guess to their already guessed pool
     const alreadyUsedLetter = alreadyGuessed.includes(letterToCheck);
-    alreadyGuessed.push(letterToCheck);
+    if ( alreadyUsedLetter === false )
+    {
+        alreadyGuessed.push(letterToCheck);
+    };
     let userWord = ``;
     //the following statement avoids logging duplicate correct and incorrect inputs
     if(partOfWord === true && alreadyUsedLetter === false)
@@ -75,7 +73,7 @@ const guessLetter = function (guessedLetter)
                 wordRevealed.splice(i,1,letterToCheck);
             };
             //setting up the the user's currently correctly guessed letters
-            userWord = `${userWord}${wordRevealed[i]}`;
+            userWord = wordRevealed.toString();
         };
         alert(`You made a correct guess!`);
     }else
