@@ -77,18 +77,16 @@ const DepoWithBal = function(Name, amount) {
 }
 
 const validateCreditCard = function(creditCard) {
-  const valid = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "0","1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  let valid = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"];
   const splited = creditCard.split("");
   let digits = 0
   let sum = 0
   let used = []
   for (i = 0; i < splited.length; i++) {
-    if (valid.includes(splited[i] === true)) {
-      digit = digits + 1;
-    } else {
-      console.log(splited[i])
+    if (valid.includes(splited[i]) === true) {
+      digits = digits + 1;
     }
-    if (valid.includes(splited[i]) === true && used.includes(splited[i] === false)) { //WHYYYYYYYYYY
+    if (valid.includes(splited[i]) && used.includes(splited[i]) === false) {
       used.push(splited[i])
     }
     for (x = 0; x < valid.length; x++) {
@@ -99,15 +97,16 @@ const validateCreditCard = function(creditCard) {
   }
   console.log(digits)
   console.log(sum)
+  console.log(used)
   if (splited[splited.length - 1] % 2 !== 0) {
-    return `error 1` // works
+    return `The credit card ${creditCard} is invalid error end is odd` // works
   } else if(digits ==! 16) {
-    return `error 2` // doesn't work
+    return `The credit card ${creditCard} is invalid error not 16 digits` // works
   } else if (used.length < 1) {
-    return `error 3` // doesn't work
+    return `The credit card ${creditCard} is invalid error not enough different digits` // works
   } else if(sum <= 16) {
-    return `error 4` // works
+    return `The credit card ${creditCard} is invalid error total is not over 16` // works
   } else {
-    return true
+    return `This credit card is valid`
   }
 }
