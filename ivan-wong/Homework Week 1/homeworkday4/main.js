@@ -82,22 +82,19 @@ const validateCreditCard = function(creditCard) {
   let digits = 0
   let sum = 0
   let used = []
+
   for (i = 0; i < splited.length; i++) {
     if (valid.includes(splited[i]) === true) {
       digits = digits + 1;
+      sum = sum + splited[i]
     }
     if (valid.includes(splited[i]) && used.includes(splited[i]) === false) {
       used.push(splited[i])
     }
-    for (x = 0; x < valid.length; x++) {
-      if (splited[x] === splited[i]) {
-        sum = sum + x
-      }
-    }
   }
-  console.log(digits)
-  console.log(sum)
-  console.log(used)
+  console.log(digits);
+  console.log(sum);
+  console.log(used);
   if (splited[splited.length - 1] % 2 !== 0) {
     return `The credit card ${creditCard} is invalid error end is odd` // works
   } else if(digits ==! 16) {
