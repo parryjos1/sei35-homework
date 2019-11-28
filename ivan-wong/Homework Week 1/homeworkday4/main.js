@@ -77,12 +77,11 @@ const DepoWithBal = function(Name, amount) {
 }
 
 const validateCreditCard = function(creditCard) {
-  let valid = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  const splited = creditCard.split("");
+  let valid = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const splited = creditCard.split("").map(Number);
   let digits = 0
   let sum = 0
   let used = []
-
   for (i = 0; i < splited.length; i++) {
     if (valid.includes(splited[i]) === true) {
       digits = digits + 1;
@@ -92,12 +91,9 @@ const validateCreditCard = function(creditCard) {
       used.push(splited[i])
     }
   }
-  console.log(digits);
-  console.log(sum);
-  console.log(used);
   if (splited[splited.length - 1] % 2 !== 0) {
     return `The credit card ${creditCard} is invalid error end is odd` // works
-  } else if(digits ==! 16) {
+  } else if(digits !== 16) {
     return `The credit card ${creditCard} is invalid error not 16 digits` // works
   } else if (used.length < 1) {
     return `The credit card ${creditCard} is invalid error not enough different digits` // works
