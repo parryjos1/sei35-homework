@@ -12,29 +12,32 @@ let guessLetter = function (letter) {
 
 
   for (var i = 0; i < secretWord.length; i++) {
+
     if (letter === secretWord[i]) {
-      // the i is at the index in which the index is being looped at eg when the loop recognises R at index[1], i === 1 and is giving to the splice and correctLetters is append at the index[1] of the correctLetters array
       correctLetters.splice(i, 1, letter)
       added = true
-      //reward += 10
+      reward =+ 10
       // console.log(added);
-      break
-
+      continue
     } else {
       added = false
       // console.log(added);
-    }
-  }
+    };
+  };
+
   if (added === false) {
     incorectLetters.unshift(letter)
-    //wrongGuess ++
+    wrongGuess ++
     // alert('Trying again')
-    } else {
+  } else {
     console.log('Correct guess');
-    }
+  }
 
+  if (wrongGuess === 5){
 
-  };
+  }
+
+};
 
 
 guessLetter('L')
@@ -51,8 +54,7 @@ guessLetter('G')
 console.log(secretWord);
 console.log(correctLetters);
 console.log(incorectLetters);
-//console.log(wrongGuess);
-//console.log(reward);
+console.log(wrongGuess);
 
 let correctLettersLoop = function (array) {
     return array.join()

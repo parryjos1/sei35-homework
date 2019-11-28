@@ -91,21 +91,24 @@ console.log(mixUp('Hobart', 'Sydney'));
 
 // function to replace any letter of a string simialar to the first with a **
 const fixStart = function (word) {
-// for loop to loop through each letter of the string
-  for (let i = 0; i <= word.length; i++) {
-// condition is i is equal to the first letter of the word replace i with *
-    if (word[i] === word[0]) {
-      console.log(`${word.replace(word[i], "*")}`);
-    } else if (word[i] !== word[0]) {
-// if i is not equal to word[0], return i
-      console.log((`${word[i]}`));
-    } else {
-      return `${word}`;
+let starWord = '';
+// for loop to loop through each letter of the string note: use less then when asking for length becuase the indice will always be less the nthe length, indice(start at 0)
+  for (let i = 0; i < word.length; i++) {
+// condition is i is equal to the first letter of the word replace i with * and it is not the first letter of the string
+      if (word[i] === word[0] && i > 0) {
+      starWord += '*';
     };
+      if (word[i] !== word[0] || i === 0) {
+// if i is not equal to word[0], return i or it is the first letter of the string
+      starWord += word[i];
+    };
+
   };
+  return starWord
 };
 
-console.log(fixStart('babble'));
+let test = fixStart('babble');
+console.log(test);
 
 //function add verding to the end of strings
 const verbing = function (string) {
@@ -121,18 +124,3 @@ const verbing = function (string) {
   };
 };
 console.log(verbing('parking'));
-
-const verBing = function (verb) {
-
-}
-
-  // ask..
-  const notBad = function (string) {
-    if (string.includes('not') && string.includes('bad')) {
-      string.replace('good')
-    } else {
-      return string
-    };
-  };
-
-console.log(notBad('This dinner is not that bad!'));
