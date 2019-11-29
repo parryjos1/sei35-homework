@@ -4,56 +4,53 @@
 //     Write a function called guessLetter that will:
 //     Take one argument, the guessed letter.
 //     Iterate through the word letters and see if the guessed letter is in there.
-//     If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
-//     When it's done iterating, it should log the current guessed letters ('F__') and congratulate the user if they found a new letter.
+//     If the guessed letter matches a word letter, changed the guessedLetters array to reflect that.
+//     When it's done iterating, it should log the current guessedLetters ('F__') and congratulate the user if they found a new letter.
 //     It should also figure out if there are any more letters that need to be guessed, and if not, it should congratulate the user for winning the game.
 //     Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
 
-let wordLetters = ["F", "U", "L", "L", "S", "T", "A", "C", "K"];
-let guessedLetters = ["_", "_", "_", "_", "_", "_", "_", "_", "_"];
-let rewardAmount = 0; //moving it globally fixed it
+const secretWord = ['A', 'P', 'P', 'L', 'E'];
+const guessedLetters = ['_', '_', '_', '_', '_'];
 
-const guessLetter = function(letter) {
-  let correctGuess = false;
-  let guessMore = false;
-  // let rewardAmount = 0;
+const guessLetter = function ( userGuess ) {
+    userGuess = userGuess.toUpperCase();
+    // console.log(`The running function is guessLetter(${ userGuess })`);
+    let found = false;
 
-  for (var i = 0; i < wordLetters.length; i++) {
-    if (wordLetters[i] == letter) {
-      guessedLetters[i] = letter;
-      correctGuess = true;
-      // rewardAmount + 50;
+    // for loop to iterate through each character in secretWord
+    for (let i = 0; i < secretWord.length; i++) {
+
+        const currentChar = secretWord[i];
+
+        // Check if the guessed character is in there
+        if ( currentChar === userGuess ) {
+            console.log(`Correct guess for ${ userGuess } at position ${ i + 1 }`);
+
+            // Change the guessedLetters array to reflect the correct attempt
+            guessedLetters[i] = userGuess;
+
+            // Set flag to true so we can determine after the loop is finished,
+            // whether or not we found any matches
+            found = true;
+        }
     }
 
-    if (guessedLetters[i] == "_") {
-      guessMore = true;
-    }
-  }
+    console.log(guessedLetters.join(' '));
 
-  if (correctGuess) {
-    console.log(`Congrats, you found a letter!`);
-    console.log(guessedLetters.join(""));
-    rewardAmount = rewardAmount + 50;
-    console.log(`${rewardAmount} points`);
-
-    if (!guessMore) {
-      console.log(`YOU WIN! GOOD JOB!`);
-      rewardAmount = rewardAmount + 100;
-      console.log(`${rewardAmount} points`);
+    // Check whether we found any matches during any iteration of the for loop
+    if ( found ) {
+        console.log('Nice job!');
+    } else {
+        console.log('Oops! Wrong guess. Try again...');
     }
-  } else {
-    console.log(`Wrong letter, try again`);
-    rewardAmount = rewardAmount - 25;
-    console.log(`${rewardAmount} points`);
-  }
+
+    // Check whether the game is over
+    if ( guessedLetters.includes('_') === false ){
+        console.log('CONGRATULATIONS! YOU WON!');
+    }
 };
 
-guessLetter("S");
-guessLetter("F");
-guessLetter("E");
-guessLetter("U");
-guessLetter("W");
-guessLetter("T");
-guessLetter("L");
-guessLetter("A");
-guessLetter("K");
+
+guessLetter('f');
+guessLetter('a');
+guessLetter('L');
