@@ -211,11 +211,38 @@ const creditCardReturnObj = {
   print: function() {
     return this.error.length === 0 ? {valid: this.valid, number: this.number} : {valid: this.valid, number: this.number, error: this.error};
   }
-
 };
+
+const luhnAlgorithm = function(numbers) {
+  if (typeof numbers !== 'string') {
+    numbers = numbers.toString();
+  }
+  const numberArray = numbers.split('').map(a => parseInt(a));
+  //console.log(numberArray);
+  const evenOrOdd = (numberArray.length - 1) % 2;
+  //console.log(evenOrOdd);
+  for (let i = numberArray.length - 1; i >= 0; i--) {
+    if (i % 2 !== evenOrOdd) {
+      let doubleNumber = numberArray[i] * 2;
+      if (doubleNumber < 10) {
+        numberArray[i] = doubleNumber
+      } else {
+        numberArray[i] = (doubleNumber % 10) + Math.floor(doubleNumber/10);
+      }
+    }
+  }
+  //console.log(numberArray);
+  return numberArray.reduce((a,b) => a + b) % 10 === 0;
+};
+
 const validateCreditCard = function(creditCard) {
   let cardNumber = '';
   creditCardReturnObj.setNumber(creditCard);
+  if (!luhnAlgorithm(creditCard)) {
+     creditCardReturnObj.authenticate(false);
+     creditCardReturnObj.dedectError('Doesn\'t fulfill the luhn algorithm condition');
+     return creditCardReturnObj.print();
+  }
   const regex = /[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[02468]/;
   if (creditCard.match(regex) !== null) {
     //console.log(creditCard.match(regex));
