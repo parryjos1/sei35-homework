@@ -9,4 +9,5 @@
 const planTrip = ['N', 'Times Square', '34th', '28th', '33rd'];
 //loop to log all the stops
 
-const thisStop = function() planTrip.forEach(stops => console.log(stops));
+const theStops = function()
+planTrip.forEach(stops => console.log(stops));//logs all stops in the N line
