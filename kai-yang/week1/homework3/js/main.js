@@ -104,6 +104,7 @@ console.log(triangle.isObtuse());
 //
 // // Output
 // cashRegister(cartForParty)); // 60.55
+console.log('change for github can delete');
 const cartForParty = {
   banana: 1.25,
   handkerchief: 0.99,
@@ -134,6 +135,7 @@ cartForParty.cashRegister();
 //
 // The bank has many accounts. Accounts should be objects that all share a set of common functionality.
 //
+//account[accNumber]
 const bankAccounts = [
   {name: "A",
   amount: 200
