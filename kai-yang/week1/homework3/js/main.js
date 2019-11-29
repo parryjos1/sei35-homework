@@ -112,11 +112,13 @@ const cartForParty = {
   nalgene: 10.34,
   proteinShake: 22.36,
   cashRegister: function(){
-    console.log(`Total price is ${this.banana + this.handkerchief + this.Tshirt + this.apple + this.nalgene + this.proteinShake}`);
+    let total = 0;
+    for (var keys in cartForParty) {
+      return totalSum = total + cartForParty[keys];
+        console.log(`Total price is ${totalSum}`);
+      }
+    // console.log(`Total price is ${this.banana + this.handkerchief + this.Tshirt + this.apple + this.nalgene + this.proteinShake}`);
   }
-    // for (var keys in cartForParty) {
-    //   return prices = cartForParty[keys];
-    // }
     //   for (i = 0; i < prices.length; i ++){
     //     console.log(prices[i]);
     //   }
@@ -132,6 +134,28 @@ cartForParty.cashRegister();
 //
 // The bank has many accounts. Accounts should be objects that all share a set of common functionality.
 //
+const bankAccounts = [
+  {name: "A",
+  amount: 200
+  },
+  {name: "B",
+  amount: 300
+  },
+  {name: "C",
+  amount: 400
+  },
+  {name: "D",
+  amount: 500
+  }
+];
+const totalSum = function(){
+  let sum = 0;
+  for (i = 0; i < bankAccounts.length; i ++){
+    return sum = sum + bankAccounts[i].amount
+    console.log(`The total sum of money is ${sum}`);
+  }
+};
+totalSum();
 // Accounts
 // Accounts have a current balance and owner's name. You should be able to deposit or withdraw from an account to change the balance.
 //
