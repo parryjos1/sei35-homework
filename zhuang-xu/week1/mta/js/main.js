@@ -78,9 +78,9 @@ const planTrip = function(lineOn, on, lineOff, off) {
   ]);
 };
 
-console.log("Calling planTrip('N', 'Times Square', '6', '33rd')");
+console.log('Calling planTrip(\'N\', \'Times Square\', \'6\', \'33rd\')');
 planTrip('N', 'Times Square', '6', '33rd');
 console.log('\n');
 
-console.log("Calling planTrip('6', '33rd', 'N', 'Times Square')");
+console.log('Calling planTrip(\'6\', \'33rd\', \'N\', \'Times Square\')');
 planTrip('6', '33rd', 'N', 'Times Square');
