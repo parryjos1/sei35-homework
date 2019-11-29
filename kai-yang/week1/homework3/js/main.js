@@ -105,6 +105,8 @@ console.log(triangle.isObtuse());
 // // Output
 // cashRegister(cartForParty)); // 60.55
 console.log('change for github can delete');
+console.log('change for github can delete ###2 DELETEME');
+
 const cartForParty = {
   banana: 1.25,
   handkerchief: 0.99,
