@@ -1,13 +1,18 @@
 let accounts = [
     {owner: "Randy Marsh", balance: 4200},
-    {owner: "Tony Stark", balance: 420000},
+    {owner: "Tony Stark", balance: 200},
     {owner: "Ice Cube", balance: 90000000},
 ];
 
-function totalSumOfAccounts(accountList) {
+function totalSumOfAccounts(accList) {
     let total = 0;
-    for(account in accountList) {
-        total+=account.balance;
+    for(let x = 0; x < accList.length; x++) {
+        for(const property in accList[x]) {
+            if(property.toLowerCase() === "balance") {
+                console.log("success");
+                total += accList[x].balance;
+            }        
+        }
     }
     return total;
 }
@@ -41,7 +46,7 @@ function transferMoney(sender, recipient, amountToSend) {
 addAccount();
 
 //sum of accounts
-console.log("balance total: " + totalSumOfAccounts());
+console.log("balance total: " + totalSumOfAccounts(accounts));
 
 //transfer money
 transferMoney(accounts[1], accounts[2], 300);
