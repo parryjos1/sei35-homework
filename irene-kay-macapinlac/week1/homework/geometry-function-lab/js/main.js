@@ -71,7 +71,7 @@ function isObtuse(num) {
 console.log('Equileteral A:' + isEquilateral(triangle));
 console.log('Isosceles A:' + isIsosceles(triangle));
 console.log('AreaTri A:' + areaTri(triangle));
- console.log('Obtuse A:' + isObtuse(triangle));
+console.log('Obtuse A:' + isObtuse(triangle));
 
  // # The Cash Register
  //
@@ -114,55 +114,24 @@ console.log(cashRegister(shoppingCart));
 // The bank has many accounts. Accounts should be objects that all share a set of common functionality.
 const bank = {
   accounts: [
-    {
-      currentBal: 333,
-      owner: "Irene Doe"
-    },
-    {
-      currentBal: 1234,
-      owner: "Kay Law"
-    },
-    {
-      currentBal: 555,
-      owner: "Mini Mac"
-    }
+    { name: 'Kay Mac', balance: 333.00 },
+    { name: 'John Dill', balance: 222.00 },
+    { name: 'Meek More',balance: 111.00 }, //console access by bank.accounts[0].name
   ],
-  totalSum: () => {
-    const sumOfAccounts = bank.accounts.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue.currentBal
-    }, 0);
-    console.log(`The total sum of all the money in the accounts is $${sumOfAccounts}.`);
-  },
-  addAccount: ({ currentBal, owner }) => {
-    bank.accounts.push({ currentBal, owner });
-    console.log(`Your account has been added! Welcome ${owner}, your current balance is $${currentBal}.`);
-  },
-  deposit: ({ owner, amount }) => {
-    const ownerOfAccount = bank.accounts.find(account => account.owner === owner);
-    ownerOfAccount.currentBal += amount;
-    console.log(`You have deposited $${amount}. You now have $${ownerOfAccount.currentBal} in your account.`);
-  },
-  withdraw: ({ owner, amount }) => {
-    const ownerOfAccount = bank.accounts.find(account => account.owner === owner);
-    if(ownerOfAccount.currentBal >= amount) {
-      ownerOfAccount.currentBal -= amount;
-      console.log(`You withdrew $${amount}. You now have $${ownerOfAccount.currentBal} in your account.`)
-    } else {
-      console.log(`Sorry ${owner}, you don't have enough money in your account to withdraw $${amount}.`)
-    }
-  },
-  transfer: ({ fromOwner, toOwner, amount }) => {
-    const fromOwnerAccount = bank.accounts.find((account) => account.owner === fromOwner);
-    const toOwnerAccount = bank.accounts.find((account) => account.owner === toOwner);
 
-    if (amount > fromOwnerAccount.currentBal) {
-      return console.log('You do not have enough money for this transfer');
-    }
-    fromOwnerAccount.currentBal -= amount;
-    toOwnerAccount.currentBal += amount;
+  totalBalances: function () {
+    let total = 0;
+      for( let i=0; i < this.accounts.length; i++){
+        console.log(this.accounts[i]);
+    }//for
 
-    console.log(`${fromOwnerAccount.owner} has transferred $${amount} to ${toOwnerAccount.owner}`);
-    console.log(`${fromOwnerAccount.owner}'s balance is: $${fromOwnerAccount.currentBal}`);
-    console.log(`${toOwnerAccount.owner}'s balance is: $${toOwnerAccount.currentBal}`);
-  }
-};
+   },//total balances
+
+    addAccount: function (name, balance) {
+      const newAccount = { name: name, balance: balance };
+      bank.accounts.push(newAccount);
+      console.log(bank.accounts); //console access bank.addAccount
+
+    },//addAccount
+
+};//bank.accounts
