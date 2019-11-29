@@ -10,7 +10,7 @@ function isLeapYear(year) {
     }
 }
 
-let yearInput = prompt("Enter the year: ");
+let yearInput =  prompt("Enter the year: ");
 if (yearInput !== null) {
     while(yearInput.length > 4 || isNaN(yearInput)) {
         console.log("Invalid Year Entered...");
