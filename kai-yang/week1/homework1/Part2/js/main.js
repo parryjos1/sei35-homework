@@ -28,6 +28,12 @@ const mixUp = function (word1, word2) {
   return `${word1.replace(word1[0], word2[0]).replace(word1[1], word2[1])} ${word2.replace(word2[0], word1[0]).replace(word2[1], word1[1])}`
 };
 console.log(mixUp("Hello", "World"));
+console.log(mixUp("mix", "pod"));
+console.log(mixUp("dog", "dinner"));
+
+
+console.log('updating for github ###### DELETEME');
+
 
 
 
