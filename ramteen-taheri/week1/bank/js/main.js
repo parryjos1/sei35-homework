@@ -1,6 +1,6 @@
 let accounts = [
     {owner: "Randy Marsh", balance: 4200},
-    {owner: "Tony Stark", balance: 200},
+    {owner: "Tony Stark", balance: 1200},
     {owner: "Ice Cube", balance: 90000000},
 ];
 

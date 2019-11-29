@@ -11,8 +11,23 @@ const dict = {
 
     lookupWord: function(term) {
         const definition = this.definitions[term];
-        return definition;
+        
+        if(term in this.definitions) {
+            //is defined
+            console.log(`${term}: ${definition}`);
+        } else {
+            // not defined
+            console.log(`Sorry, '${term} is not defined in the dictionary'`);
+        }
+    },
+
+    printAllDefinitions: function() {
+        //look through all keys in the definitions object and print each
+        for(const key in this.definitions) {
+            this.lookupWord(key);
+        }
     }
 };
 
-console.log(dict.lookupWord('scope'));
+dict.lookupWord('scope');
+dict.printAllDefinitions();
