@@ -104,8 +104,9 @@ console.log(triangle.isObtuse());
 //
 // // Output
 // cashRegister(cartForParty)); // 60.55
-console.log('change for github can delete');
-console.log('change for github can delete ###2 DELETEME');
+
+//SUM array
+// ADVANCED METHOD https://www.w3schools.com/jsref/jsref_reduce.asp
 
 const cartForParty = {
   banana: 1.25,
@@ -115,16 +116,19 @@ const cartForParty = {
   nalgene: 10.34,
   proteinShake: 22.36,
   cashRegister: function(){
-    let total = 0;
-    for (var keys in cartForParty) {
-      return totalSum = total + cartForParty[keys];
-        console.log(`Total price is ${totalSum}`);
+    let value = [];
+    let sum = 0;
+    const array = Object.values(cartForParty)
+    for (i = 0; i < array.length; i ++) {
+      if (typeof(array[i]) === 'number') {
+        value.push(array[i]);
       }
-    // console.log(`Total price is ${this.banana + this.handkerchief + this.Tshirt + this.apple + this.nalgene + this.proteinShake}`);
+    }
+    for (i = 0; i < value.length; i ++){
+       sum += value[i];
+    }
+    console.log(`The total price is ${sum}`);
   }
-    //   for (i = 0; i < prices.length; i ++){
-    //     console.log(prices[i]);
-    //   }
 };
 cartForParty.cashRegister();
 
@@ -137,32 +141,76 @@ cartForParty.cashRegister();
 //
 // The bank has many accounts. Accounts should be objects that all share a set of common functionality.
 //
-//account[accNumber]
-const bankAccounts = [
-  {name: "A",
-  amount: 200
+const bank = {
+
+  bankAccounts: [
+    {name: "A",
+    amount: 200
+    },
+    {name: "B",
+    amount: 300
+    },
+    {name: "C",
+    amount: 400
+    },
+    {name: "D",
+    amount: 500
+    }
+  ],   //account[accNumber]
+
+  addAccount: function(newName, newAmount){           // addAccount();
+    let newEnroll = {};
+    newEnroll.name = newName;
+    newEnroll.amount = newAmount;
+    this.bankAccounts.push(newEnroll);
   },
-  {name: "B",
-  amount: 300
-  },
-  {name: "C",
-  amount: 400
-  },
-  {name: "D",
-  amount: 500
-  }
-];
-const totalSum = function(){
-  let sum = 0;
-  for (i = 0; i < bankAccounts.length; i ++){
-    return sum = sum + bankAccounts[i].amount
+
+  totalSum: function(){                               // totalSum()
+    let sum = 0;
+    for (i = 0; i < this.bankAccounts.length; i ++){
+      sum = sum + this.bankAccounts[i].amount
+    }
     console.log(`The total sum of money is ${sum}`);
+  },
+
+
+  changeBlance: function(name, balance){             //deposite and withdraw
+    for (i = 0; i < this.bankAccounts.length; i ++ ){
+      if (name === this.bankAccounts[i].name ){
+        this.bankAccounts[i].amount += balance;
+      }
+    }
+    console.log(`Changed Amount: ${this.totalSum()}`);
+  },
+
+  checkNegativeValues: function(){                      //check account balance
+    if (this.totalSum >= 0) {
+      console.log('You account is in secure!');
+    } else {
+      console.log('You account is in negative balance!');
+    }
+  },
+
+  transfer: function(transferMoney, fromAccount, toAccount) {
+    for (i = 0; i < this.bankAccounts.length; i ++) {
+      if (fromAccount === this.bankAccounts[i].name) {
+        this.bankAccounts[i].amount -= transferMoney;
+      } if (toAccount === this.bankAccounts[i].name) {
+        this.bankAccounts[i].amount += transferMoney;
+      }
+    }
+    console.log('Transaction complete!');
+    console.log(this.bankAccounts);
   }
 };
-totalSum();
+bank.addAccount("E", 600);
+bank.totalSum();
+bank.changeBlance('A', -100);
+bank.checkNegativeValues();
+bank.transfer(30, 'A', 'B');
 // Accounts
 // Accounts have a current balance and owner's name. You should be able to deposit or withdraw from an account to change the balance.
-//
+
 // There is no need to write a user interface. Make sure functions return values -- you may also have your functions console.log() values to help you see your code working.
 //
 // You should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected: add some accounts, show the total balance, make some deposits and withdrawals, show the new total balance.
