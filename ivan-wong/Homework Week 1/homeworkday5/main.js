@@ -60,12 +60,9 @@ let planTrip = function(StartLine, StartStation, EndLine, EndStation) {
     }
   }
   if (StartLine === EndLine) { //Takes 1 line
-    console.log(Line1Start)
-    console.log(Line2Start)
     if (Line1Start > Line2Start) {
       lengthOfLine1 = Line1Start - Line2Start  //CHANGE TO lengthOf1Line if necessary
       StartingLine = StartingLine.reverse();
-      console.log("7")
     } else if (Line1Start < Line2Start) {
       lengthOfLine1 = Line2Start - Line1Start
     } else if (Line1Start === Line2Start) {
@@ -81,12 +78,7 @@ let planTrip = function(StartLine, StartStation, EndLine, EndStation) {
     }
   }
 }
-
-
-
-
-
-
+//The fully works for 2 lines assured type unchanged
 // const LineN= ['Times Square', "34th", "28th", "23rd", "Union Square", "8th"]
 // const LineL= ["8th", "6th", "Union Square", "3rd", "1st"]
 // const Line6= ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"]
