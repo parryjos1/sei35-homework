@@ -57,30 +57,35 @@ const mta =
         //if statement accounts for the direction of the train
         if ( startStation < endStation)
         {
-            stationNextToStart = startStation + 1;
-            for ( i = stationNextToStart; i <= endStation ; i++ )
-            {
-                if (i === stationNextToStart)
-                    {
-                        currentmessage = `${currentmessage} ${this[line][i]}`;
-                    }else
-                    {
-                        currentmessage = `${currentmessage}, ${this[line][i]}`;
-                    };
-            };
+            let addToMsg = this[line].slice( startStation+1, endStation+1);
+            currentmessage = `${currentmessage} ${addToMsg.toString()}`;
+            //stationNextToStart = startStation + 1;
+            // for ( i = stationNextToStart; i <= endStation ; i++ )
+            // {
+            //     if (i === stationNextToStart)
+            //         {
+            //             currentmessage = `${currentmessage} ${this[line][i]}`;
+            //         }else
+            //         {
+            //             currentmessage = `${currentmessage}, ${this[line][i]}`;
+            //         };
+            // };
         }else
         {
-            stationNextToStart = startStation - 1;
-            for ( i = stationNextToStart; i >= endStation ; i-- )
-            {
-                if (i === stationNextToStart)
-                    {
-                        currentmessage = `${currentmessage} ${this[line][i]}`;
-                    }else
-                    {
-                        currentmessage = `${currentmessage}, ${this[line][i]}`;
-                    };
-            };
+            let addToMsg = this[line].slice( endStation, startStation);
+            addToMsg = addToMsg.reverse();
+            currentmessage = `${currentmessage} ${addToMsg.toString()}`;
+            // stationNextToStart = startStation - 1;
+            // for ( i = stationNextToStart; i >= endStation ; i-- )
+            // {
+            //     if (i === stationNextToStart)
+            //         {
+            //             currentmessage = `${currentmessage} ${this[line][i]}`;
+            //         }else
+            //         {
+            //             currentmessage = `${currentmessage}, ${this[line][i]}`;
+            //         };
+            // };
         };
         return currentmessage;
     },
