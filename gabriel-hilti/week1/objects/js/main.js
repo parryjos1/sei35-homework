@@ -115,12 +115,17 @@ const CreateAccount = function(name) {
   this.balance = 0;
   this.deposit = function(amount) {
     this.balance += amount;
+    console.log(`New balance: ${this.balance}`);
+    return this.balance;
   };
   this.withdraw = function(amount) {
     if (this.balance - amount >= 0) {
       this.balance -= amount;
+      console.log(`New balance: ${this.balance}`);
+      return this.balance;
     } else {
       console.log("You don't have sufficient funds to withdraw");
+      return false;
     }
   };
 };
@@ -167,6 +172,16 @@ const bank = {
   },
   addAccount: function(acc) {
     this.accounts.push(acc);
+  },
+  getAccountByName: function(name) {
+    for(let account of this.accounts) {
+      if (account.name === name) {
+        return account;
+      }
+    }
+    console.log('No matching account found.');
+
+    return null;
   },
   transfer: function(fromAccount, toAccount, amount) {
     if (fromAccount.balance >= amount) {
