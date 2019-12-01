@@ -114,8 +114,6 @@ const mta =
         let changedBtwnLines = false;
 
         //this plot some key indexes based on the trip requested
-        const firstOfLineStart = this.getIndex(startLine, this[startLine][0]);
-        const firstOfLineEnd = this.getIndex(endLine, this[endLine][0]);
         const posInLineStart = this.getIndex(startLine, startStation);
         const posInLineEnd = this.getIndex(endLine, endStation);
         const posOfUnionStart = this.getIndex(startLine, `Union Square`);
