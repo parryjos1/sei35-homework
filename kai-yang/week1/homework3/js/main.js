@@ -224,6 +224,8 @@ bank.transfer(30, 'A', 'B');
 // Additional
 // Begin exploring the JavaScript Koans. Fork, clone and start trying them.
 //
+
+
 // Credit Card Validation
 // You're starting your own credit card business. You've come up with a new way to validate credit cards with a simple function called validateCreditCard that returns true or false.
 //
@@ -247,6 +249,34 @@ bank.transfer(30, 'A', 'B');
 // validateCreditCard('9999-9999-8888-0000'); // Returns: true
 // Hint: Remove the dashed from the input string before checking if the input credit card number is valid.
 //
+
+const validateCreditCard = function(cardNumber){
+  //remove dash
+  numberOnly = cardNumber.replace(/-/g, '');
+  const condition1 = numberOnly.length; // if it is 16 digits
+  const condition2 = isNaN(numberOnly); // if there is all digits
+  const condition3 = function(input){    //sum of digits
+    let sum = 0;
+    for (i = 0; i < input.length; i ++){
+      var totalSum = sum + input[i];
+      finalDigit = input[input.length - 1];
+      // check if they all same digits
+      if (input[i] === input[i + 1]) {
+        results = false;
+      } else {
+        results = true;
+      }
+    }
+  }//end of sum function
+  condition3(numberOnly);
+  // check all conditions
+  if (condition1 === 16 && condition2 !== true && totalSum > 16 && finalDigit % 2 === 0 && results === true) {
+    return console.log('This card is valid!');
+  } else {
+    return console.log('This card is invalid!');
+  }
+};
+validateCreditCard('9999-9999-8888-0000');
 // Bonus: Return an object indicating whether the credit card is valid, and if not, what the error is
 //
 // { valid: true, number: 'a923-3211-9c01-1112' }
