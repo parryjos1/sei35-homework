@@ -1,5 +1,5 @@
 //MTA
-//Going hold the entire system in to a single object
+//Going to hold the entire system in a single object
 const mta = 
 {
     //Arrays containing station arrays referenced by their line names
@@ -106,6 +106,7 @@ const mta =
         return `${numberOfStops} stops in total.`
     },
 
+    //function that makes everything go
     'planTrip': function( startLine, startStation, endLine, endStation)
     {
         //determine whether or not the trip is on one line
