@@ -6,6 +6,12 @@ const subway = {
     line6: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'],
   },
 
+  addLine: function(name, stationArray) {
+    if ((typeof name === 'string' || typeof name === 'number') && Array.isArray(stationArray)) {
+      this.lines['line' + name] = stationArray;
+    }
+  },
+
   getLine: function(selectedLine) {
     let line = [];
     const l = this.lines;
@@ -33,20 +39,15 @@ const subway = {
           endIndex = line.indexOf(stationEnd);
     let stations = [],
         stops = 0;
+
     if (startIndex === endIndex) {
       return stations;
     } else if (startIndex > endIndex) {
-      let i;
-      for(i = startIndex - 1; i >= endIndex; i--) {
-        stations.push(line[i]);
-        stops++;
-      }
+      stations = line.slice(endIndex, startIndex).reverse();
+      stops = stations.length;
     } else {
-      let i;
-      for(i = startIndex + 1; i <= endIndex; i++) {
-        stations.push(line[i]);
-        stops++;
-      }
+      stations = line.slice(startIndex + 1, endIndex + 1);
+      stops = stations.length
     }
 
     return [stations, stops];
