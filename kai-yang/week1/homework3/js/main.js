@@ -116,8 +116,8 @@ const cartForParty = {
   nalgene: 10.34,
   proteinShake: 22.36,
   cashRegister: function(){
-    let value = [];
     let sum = 0;
+    let value = [];
     const array = Object.values(cartForParty)
     for (i = 0; i < array.length; i ++) {
       if (typeof(array[i]) === 'number') {
@@ -158,33 +158,36 @@ const bank = {
     }
   ],   //account[accNumber]
 
+
   addAccount: function(newName, newAmount){           // addAccount();
     let newEnroll = {};
     newEnroll.name = newName;
     newEnroll.amount = newAmount;
-    this.bankAccounts.push(newEnroll);
+    return this.bankAccounts.push(newEnroll);
   },
 
+  sum: 0,
   totalSum: function(){                               // totalSum()
-    let sum = 0;
     for (i = 0; i < this.bankAccounts.length; i ++){
-      sum = sum + this.bankAccounts[i].amount
+      this.sum = this.sum + this.bankAccounts[i].amount
     }
-    console.log(`The total sum of money is ${sum}`);
+    console.log(`The total sum of money is ${this.sum}`);
   },
 
 
+  changedAmount: 0,
   changeBlance: function(name, balance){             //deposite and withdraw
     for (i = 0; i < this.bankAccounts.length; i ++ ){
       if (name === this.bankAccounts[i].name ){
         this.bankAccounts[i].amount += balance;
       }
+      this.changedAmount += this.bankAccounts[i].amount;
     }
-    console.log(`Changed Amount: ${this.totalSum()}`);
+    console.log(`Changed Amount: ${this.changedAmount}`);
   },
 
   checkNegativeValues: function(){                      //check account balance
-    if (this.totalSum >= 0) {
+    if (this.changedAmount >= 0) {
       console.log('You account is in secure!');
     } else {
       console.log('You account is in negative balance!');
@@ -205,7 +208,7 @@ const bank = {
 };
 bank.addAccount("E", 600);
 bank.totalSum();
-bank.changeBlance('A', -100);
+bank.changeBlance('A', 400);
 bank.checkNegativeValues();
 bank.transfer(30, 'A', 'B');
 // Accounts
@@ -249,34 +252,47 @@ bank.transfer(30, 'A', 'B');
 // validateCreditCard('9999-9999-8888-0000'); // Returns: true
 // Hint: Remove the dashed from the input string before checking if the input credit card number is valid.
 //
+let results = true;
+let numberTotal = 0;
 
 const validateCreditCard = function(cardNumber){
   //remove dash
+  numberTotal = 0;
   numberOnly = cardNumber.replace(/-/g, '');
-  const condition1 = numberOnly.length; // if it is 16 digits
-  const condition2 = isNaN(numberOnly); // if there is all digits
-  const condition3 = function(input){    //sum of digits
-    let sum = 0;
-    for (i = 0; i < input.length; i ++){
-      var totalSum = sum + input[i];
-      finalDigit = input[input.length - 1];
-      // check if they all same digits
-      if (input[i] === input[i + 1]) {
-        results = false;
-      } else {
-        results = true;
-      }
+  for (i = 0; i < numberOnly.length; i ++){
+    numberTotal = numberTotal + parseInt(numberOnly[i]); //sum of digits
+
+  }
+
+  const numsInCard = [];
+  for (var i = 0; i < numberOnly.length; i++) {
+    if ( numsInCard.includes(numberOnly[i]) ) {
+    } else {
+      numsInCard.push(numberOnly[i])
     }
-  }//end of sum function
-  condition3(numberOnly);
-  // check all conditions
-  if (condition1 === 16 && condition2 !== true && totalSum > 16 && finalDigit % 2 === 0 && results === true) {
+  }
+
+  if(numsInCard.length > 1) {
+    results = true;
+  } else {
+    results = false;
+  }
+
+  finalDigit = parseInt(numberOnly[numberOnly.length - 1]); // get the final digit.
+  if (numberOnly.length === 16 && isNaN(numberOnly) !== true && numberTotal > 16 && finalDigit % 2 === 0 && results === true) {
+
     return console.log('This card is valid!');
   } else {
     return console.log('This card is invalid!');
   }
 };
 validateCreditCard('9999-9999-8888-0000');
+validateCreditCard('a923-3211-9c01-1112');
+validateCreditCard('4444-4444-4444-4444');
+validateCreditCard('1111-1111-1111-1110');
+validateCreditCard('6666-6666-6666-6661');
+
+
 // Bonus: Return an object indicating whether the credit card is valid, and if not, what the error is
 //
 // { valid: true, number: 'a923-3211-9c01-1112' }

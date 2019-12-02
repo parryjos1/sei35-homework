@@ -39,9 +39,9 @@ console.log(mixUp("dog", "dinner"));
 // use s=string.slice.replace
  const fixStart = function(word) {
    var firstCharacter = word[0];
-   for (i = 0; i < word.length; i ++ ) {
+   for (i = 1; i < word.length; i ++ ) {
      if (word[i] === firstCharacter) {
-        word[i] = '*';
+       return word = word.replace(word[i], '*');
      }
    }
  };
