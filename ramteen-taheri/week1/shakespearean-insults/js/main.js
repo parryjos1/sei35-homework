@@ -87,6 +87,7 @@ const secondAdjectives = [
   'milk-livered',
   'motley-minded',
   'onion-eyed',
+  'fart-sniffing',
   'plume-plucked',
   'pottle-deep',
   'pox-marked',
@@ -154,6 +155,7 @@ const nouns = [
   'strumpet',
   'varlot',
   'vassal',
+  'grog-bog',
   'whey-face',
   'wagtail'
 ];
