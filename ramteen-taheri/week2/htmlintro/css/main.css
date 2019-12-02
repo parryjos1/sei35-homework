@@ -1,0 +1,12 @@
+body {
+    background: blue;
+    color: white;
+    text-align: center;
+}
+
+@media(max-width: 320px) {
+    body {
+        background: red;
+        color: blue;
+    }
+}

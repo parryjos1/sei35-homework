@@ -23,9 +23,15 @@ const dict = {
 
     printAllDefinitions: function() {
         //look through all keys in the definitions object and print each
+
+        let totalEntries = 0;
+
         for(const key in this.definitions) {
             this.lookupWord(key);
+            totalEntries++;
         }
+
+        console.log(`Total entries: ${totalEntries}`);
     }
 };
 
