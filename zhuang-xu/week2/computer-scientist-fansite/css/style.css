@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Archivo', sans-serif;
+}
+nav {
+    display: flex;
+    background: darkslategrey;
+    height: 6em;
+    padding-left: 40px;
+}
+
+nav a {
+    font-size: 2em;
+    color: white;
+    display: inline-block;
+    padding-right: 60px;
+    align-self: center;
+    text-decoration: none;
+}
+
+nav a:hover, nav a.active {
+    font-weight: bold;
+    text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+}
+
+.container {
+    width: 50%;
+    margin: 20px auto;
+}
+
+.intro-portrait {
+    width: 30%;
+    float: left;
+    margin: 0 20px;
+}
+
+.intro-text {
+    font-size: 1.4em;
+    color: #464944;
+    margin-left: 20px;
+    line-height: 1.3em;
+}
+
+.achievements {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    font-size: 1.2em;
+    color: #464944;
+    line-height: 1.2em;
+}
+
+.linux-image {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.linux-image img {
+    width: 240px;
+}
+
+.git-image {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.git-image img {
+    width: 240px;
+}
+
+.linux-text {
+    grid-column: 2/7;
+    grid-row: 1/2;
+}
+
+.git-text {
+    grid-column: 2/7;
+    grid-row: 1/2;
+}
+
+.facts {
+    font-size: 1.2em;
+    color: #464944;
+    line-height: 1.2em;
+}
