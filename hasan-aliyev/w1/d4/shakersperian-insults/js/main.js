@@ -1,5 +1,7 @@
-//Our arrays of Insult adjectives and nouns
+console.log('hello');
 
+
+//insult arrays
 const firstAdjectives = [
   'artless',
   'bawdy',
@@ -87,7 +89,6 @@ const secondAdjectives = [
   'milk-livered',
   'motley-minded',
   'onion-eyed',
-  'fart-sniffing',
   'plume-plucked',
   'pottle-deep',
   'pox-marked',
@@ -105,7 +106,6 @@ const secondAdjectives = [
   'unchin-snouted',
   'weather-bitten'
 ];
-
 const nouns = [
   'apple-john',
   'baggage',
@@ -155,19 +155,27 @@ const nouns = [
   'strumpet',
   'varlot',
   'vassal',
-  'grog-bog',
   'whey-face',
   'wagtail'
 ];
-  
-function getRandom(min, max) {
-    return Math.random() * (max - min) + min;
-}
 
-let firstPick = getRandom(0, firstAdjectives.length);
-let secondPick = getRandom(0, secondAdjectives.length);
-let thirdPick = getRandom(0, nouns.length);
+const generateRandomInt = function( max ) {
+  const random = Math.random() * max;
+  return Math.floor( random );
+};
 
-let yourInsult = `${firstAdjectives[Math.floor(firstPick)]} ${secondAdjectives[Math.floor(secondPick)]} ${nouns[Math.floor(thirdPick)]}`;
+const getRandomElementFromArray = function (array) {
+ //console.log('Array length is:', array.length)
+ const randomIndex = generateRandomInt(array.length);
+ return array[randomIndex];
+};
 
-console.log(`Thou ${yourInsult}`);
+const generateInsult = function () {
+
+   const firstAdjective = getRandomElementFromArray(firstAdjectives);
+   const secondAdjective = getRandomElementFromArray(secondAdjectives);
+   const noun           = getRandomElementFromArray(nouns);
+
+   console.log(`Sikim blet ${firstAdjective} ${secondAdjective} ${noun}!`);
+};
+generateInsult();
