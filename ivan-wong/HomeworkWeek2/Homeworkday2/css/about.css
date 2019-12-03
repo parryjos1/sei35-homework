@@ -1,0 +1,32 @@
+* {
+  margin:auto;
+  padding: auto;
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body {
+  font-family: Roboto, sans-serif;
+  background: green;
+  color: white;
+}
+#Navigation {
+  background: lightblue;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 800;
+}
+a {
+  margin: 100px;
+  text-decoration: none;
+  padding-top: inherit;
+  padding-bottom: inherit;
+  padding-left: 40px;
+  padding-right: 40px
+}
+a:hover {
+  background-color: red;
+  color: orange;
+}
