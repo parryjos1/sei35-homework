@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+nav {
+  background-color: black;
+}
+
+ ul.navbar { /* adds the spacing for the heading around the list items  */
+  margin: 0;
+  padding: 30px 70px;
+
+}
+
+
+li.navbar {
+list-style: none;
+display: inline;
+color: white;
+padding: 0px 30px;
+
+}
+
+body {
+  background-color: lightgrey;
+}
+
+main {
+  width: 960px;
+
+  margin: 20px auto;
+
+}
+
+img#logo {
+  display: inline-block;
+  float: left;
+}
+
+img#socialNav {
+  display:inline-block;
+  float: right;
+}
+
+img#mainPhoto {
+
+}
+
+#about {
+  border: 2px solid black;
+  float: left;
+  width: inherit;
+
+}
+
+p#about-text{
+  padding: 20px;
+}
+
+#button {
+  float: right;
+  margin: 10px;
+}
+
+#shadow {
+  margin: -4px;
+}
+
+/* #columnHeadings {
+  display: inline-block;
+  float: left;
+  width: 960px;
+} */
+
+/* #column1 {
+  display: inline;
+  float: left;
+  width: 280px;
+}
+
+#column2 {
+  display: inline;
+  float: left;
+  width: 280px;
+}
+
+#column3 {
+  display: inline;
+  float: left;
+  width: 280px;
+} */
+
+.columns {
+
+  float: left;
+  width: 280px;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+/* h2.columnHeading {
+  display: inline-block;
+  float: left;
+  width: 280px;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+} */
+
+img.photo {
+  border: 4px solid darkgrey;
+  padding: 3px;
+}
+
+/* img.photo {
+  display: inline-block;
+  float: left;
+  padding: 10px;
+  margin: 10px;
+} */
+
+footer {
+  clear: both;
+  background-color: black;
+  padding: 20px;
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}
+
+#footerListsDiv {
+  width: 960px;
+  height: 20em;
+  margin: 0 auto;
+  padding: 20px;
+  color: dimgrey;
+}
+
+ul#footerLists {
+  display:inline-block;
+  float: left;
+  style: none;
+  list-style: none;
+  font-size: large;
+  padding: 0px;
+  margin: 10px;
+  line-height: 3em;
+
+
+}
+
+/* middle one width 500 */
