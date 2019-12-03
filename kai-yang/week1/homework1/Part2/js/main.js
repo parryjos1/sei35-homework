@@ -38,14 +38,44 @@ console.log(mixUp("dog", "dinner"));
 // fixStart('babble'): 'ba**le'
 // use s=string.slice.replace
  const fixStart = function(word) {
-   var firstCharacter = word[0];
-   for (i = 1; i < word.length; i ++ ) {
-     if (word[i] === firstCharacter) {
-       return word = word.replace(word[i], '*');
-     }
-   }
+   var firstCharacter = word[0]; //define the first lettter.
+   let newWord = []
+   newWord.push(firstCharacter)
+   // console.log(newWord);
+
+   // let sliceWord = word.slice()
+   // let re = new RegExp(sliceWord, 'g')
+   // str = str.replace(re, '')
+   // console.log(`str is ${str}`);
+   // let replacedWord = sliceWord.replace()
+   // console.log(sliceWord);
+
+   // Slice / Replace method
+
+   var replace = firstCharacter;
+   var regularExpression = new RegExp(replace, "g" );
+
+   let slicedWord = word.slice(1, word.length).replace(regularExpression, '*')
+
+   const replacedString = firstCharacter + slicedWord
+   console.log(`The replacedString is: ${replacedString}`);
+
+// Working Loop method
+   // for (i = 1; i < word.length; i ++ ) { //for loop to check every letter.
+   //   // debugger;
+   //   if (word[i] === firstCharacter) {
+   //     newWord.push('*')
+   //
+   //     // Kai's solution
+   //      // word[i] = word.replace(word[i], '*');
+   //      //change the letter to * if it matches the first letter.
+   //   } else {
+   //     newWord.push(word[i])
+   //   }
+   // }
+   // console.log(newWord.join(''));
  };
-console.log(fixStart('babble'));
+fixStart('babble'); // output
 
 // Verbing
 // Create a function called verbing. It should take a single argument, a string. If its length is at least 3, it should add 'ing' to its end, unless it already ends in 'ing', in which case it should add 'ly' instead. If the string length is less than 3, it should leave it unchanged. For example:
@@ -54,8 +84,23 @@ console.log(fixStart('babble'));
 //   verbing('swimming'): 'swimmingly'
 //   verbing('go'): 'go'
 // string.endwith
-
-
+const verbing = function(verbingWords) {
+  //check if the length is 3
+  if (verbingWords.length >= 3) {
+    //check if it contains ing
+    if (verbingWords.endsWith("ing")) {
+      //if endwith ing add ly at the end.
+      console.log(verbingWords + "ly");
+    } else { //it not endwith ing add ing at the end.
+      console.log(verbingWords + "ing");
+    }
+  }else { //do nothing
+    console.log(verbingWords);
+  }
+};
+verbing("swimming");
+verbing("swim");
+verbing("go");
 
 // Not Bad
 // Create a function called notBad that takes a single argument, a string.
@@ -70,3 +115,19 @@ console.log(fixStart('babble'));
 //   notBad('This dinner is bad!'): 'This dinner is bad!'
 
 // indexOf  s
+const notBad = function (sentence){
+  //check if it has not
+  if (sentence.includes("not") ) {
+    //check if not followed by Bad
+    if (sentence.includes("bad") && sentence.indexOf("bad") > sentence.indexOf("not")) {
+      //slice the words from not to bad.
+      //replace sliced words with empty string.
+       console.log(sentence.replace(sentence.slice(sentence.indexOf("not")-1, sentence.indexOf("bad")+3), " good"));
+    }
+  }else { //if there is no not return the sentence.
+    return console.log(sentence);
+  }
+};
+notBad("This dinner is not that bad!");
+notBad("This movie is not so bad!");
+notBad("This dinner is bad!");
