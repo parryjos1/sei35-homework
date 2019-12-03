@@ -1,30 +1,44 @@
 
 // array of stations//
 
-//const tripPlanner
-const stationsN = ['Times Sq' ,'34th', '23rd', 'Union Sq', '8th' ];
-//const stationsL = ['8th', '6th', 'Union Square', '3rd', '1st'];
-//const stationsSix ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
+const stations = {
+  N: ['Times Sq' ,'34th', '23rd', 'Union Sq', '8th' ],
+  L: ['8th', '6th', 'Union Square', '3rd', '1st'],
+  6: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'],
+}
 
-const singleJourney = function (startStation, endStation){
-
+const singleJourney = function (line, startStation, endStation){
 
   // returns the index of an entered station
-  const startIndex = stationsN.indexOf(startStation);
-  const endIndex = stationsN.indexOf(endStation);
+
+  // const lineStations = stations[line];  // get the array of stations for this line
+
+  const startIndex = stations[line].indexOf(startStation);
+  const endIndex = stations[line].indexOf(endStation);
   // console.log('Index of 34th:', startIndex);
 
+
+
+
+ run for loop reverse direction...''
+
+
+
+ if (startIndex > endIndex) //run For Loop//
   //for loop to list station names//
-  for (let i = startIndex; i <= endIndex; i++){
-    console.log ( stationsN[i] );
+  for (let i = startIndex+1; i <= endIndex; i++){
+    console.log ( stations[line][i] );
+    else
+
+
+
   }
 
 
 }; // singleJourney()
 
-
 // singleJourney('34th','Union Sq');
-singleJourney('Union Sq', 'Times Sq');
+singleJourney('N', 'Times Sq', 'Union Sq');
 
 //'enter your departure station'
 
