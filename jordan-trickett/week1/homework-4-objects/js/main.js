@@ -83,10 +83,13 @@ isEquilateral(triangle);
 
 
 const isIsosceles = function ( object ) {
-  const converted = Object.values( object ); //converts object to array ['3', '4', '4']
-  console.log(converted);
+  if (object.sideA === object.sideB || object.sideA === object.sideC || object.sideB === object.sideC) {
+    return ('is isosceles');
+  } else {
+    return ('not isosceles');
+  };
 
-}
+};
 
 isIsosceles(triangle);
 
@@ -136,103 +139,3 @@ areaTriangle(triangle);
  }
 
 isObtuse(triangle);
-
-
-// Write a function called cashRegister that takes a shopping cart object. The object contains item names and prices (itemName: itemPrice). The function should return the total price of the shopping cart. Example
-
-const cartForParty = {
-  banana: "1.25",
-  handkerchief: ".99",
-  Tshirt: "25.01",
-  apple: "0.60",
-  nalgene: "10.34",
-  proteinShake: "22.36"
-};
-
-const converted = Object.values( cartForParty ); // converst object to array of strings
-let total = 0;
-
-const cashRegister = function (object) {
-
-  for (let i = 0; i < object.length; i++) {
-    const integer = parseFloat(object[i]);
-    total += integer ;
-  }
-
-  console.log(`$${total}`);
-}
-
-cashRegister(converted);
-
-
-
-
-// In this homework, you'll create a basic bank in Javascript. The bank has many accounts and the following capabilities that you need to write.
-//
-// Bank
-// There is only one bank. This bank has an array of accounts. The bank needs a method that will return the total sum of money in the accounts. It also needs an addAccount method that will enroll a new account at the bank and add it to the array of accounts. There is no need to create additional functions of the bank to delete accounts, etc.
-//
-// The bank has many accounts. Accounts should be objects that all share a set of common functionality.
-//
-// Accounts
-// Accounts have a current balance and owner's name. You should be able to deposit or withdraw from an account to change the balance.
-//
-// There is no need to write a user interface. Make sure functions return values -- you may also have your functions console.log() values to help you see your code working.
-//
-// You should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected: add some accounts, show the total balance, make some deposits and withdrawals, show the new total balance.
-//
-// Tips
-// Don't overthink this. Shorter code is probably the answer.
-
-const bank = [
-  {
-    name: 'Jordan',
-    balance: 1
-  },
-  {
-    name: 'Jamal',
-    balance: 1000
-  },
-  {
-    name: 'Issac',
-    balance: 20
-  }
-];
-
-
-
-
-
-// const balanceArray = Object.values( bank );
-// let sum = 0;
-
-const sumOfBalances = function ( object ) {
-
-    let sum = 0;
-
-    for (var i = 0; i < object.length; i++) {
-        console.log(object[i]);  // returning full objects
-        console.log(Object.values( object[i] ));  //returning array
-      }
-
-
-}
-
-sumOfBalances(bank);
-
-// for (let value of Object.values(bank)) { // just returng objects
-//   alert(value);
-// }
-
-
-// const sumOfBalances = function (object) {  // just returning objects
-//   let sum = [];
-//   for (let key of (object)){
-//     sum  += key;
-//   }
-
-
-
-
-//   console.log(sum);
-// }
