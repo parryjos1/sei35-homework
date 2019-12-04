@@ -1,0 +1,73 @@
+/* Box Model Hack */
+* {
+    -moz-box-sizing: border-box; /* Firexfox */
+    -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+body {
+    margin: 0;
+    background: #d7d7d7;
+}
+
+.banner {
+    background: url("../images/background.jpg") repeat-x;
+    height: 162px;
+}
+
+.banner .logo {
+    width: 216px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+.main-content {
+    background: white;
+    width: 900px;
+    margin: 120px auto;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content .ecard-title {
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.main-content .ecard-image {
+    grid-column: 1/3;
+    grid-row: 2/9;
+    padding: 10px;
+}
+
+.main-content .ecard-text {
+    display: flex;
+    grid-column: 3;
+    grid-row: 2/9;
+    align-self: flex-start;
+}
+
+.ecard-text p {
+    margin: 0;
+    padding: 20px;
+}
+
