@@ -102,7 +102,7 @@ li {
   text-decoration: none;
 }
 
-.text {
+.about {
     box-sizing: border-box;
     position: absolute;
     display: inline-block;
@@ -114,4 +114,32 @@ li {
     padding-bottom: 20px;
     top: 100%;
     margin: .5% 10% 0 2%;
+}
+
+.legacyInfo {
+  box-sizing: border-box;
+  position: absolute;
+  display: inline-block;
+  width: 90%;
+  height: auto;
+  background-color: #efcb56;
+  margin-bottom: .15vw;
+  text-align: left;
+  padding-bottom: 20px;
+  top: 100%;
+  margin: .5% 10% 0 2%;
+}
+
+.extra {
+  box-sizing: border-box;
+  position: absolute;
+  display: inline-block;
+  width: 90%;
+  height: auto;
+  background-color: #efcb56;
+  margin-bottom: .15vw;
+  text-align: left;
+  padding-bottom: 20px;
+  top: 100%;
+  margin: .5% 10% 0 2%;
 }
