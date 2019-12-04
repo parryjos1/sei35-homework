@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: .5% 2% 0 2%;
+}
+
+#headerWrapBar {
+background-color: rgba(255, 255, 255, 0.5);
+padding: 0;
+}
+
+.navBar {
+  /* background-color: white; */
+  text-shadow: 1px 1px 1px rgba(0,0,0,.004);
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  color: #222226;
+}
+
+h1 {
+  position: relative;
+  display: block;
+  text-align: right;
+  margin-right: 5%;
+  /* padding-right: 5%; */
+}
+
+div {
+  margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: 0 0;
+    display: block;
+}
+
+.backgroundImg {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Margaret_Hamilton_1995.jpg/440px-Margaret_Hamilton_1995.jpg)
+  height: 688px;
+  display: block;
+}
+
+img {
+  position: relative;
+    display: block;
+    /* width: 100%; */
+    height: auto;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+    top: 60px;
+
+}
+
+.textWrap {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 0 6.17499675vw;
+  top: 301px;
+}
+
+h2 {
+  position: relative;
+  margin-bottom: .7em;
+  font-style: normal;
+  font-weight: 700;
+  right: -15%;
+  top: 22%;
+  width: 50%; /*This will work*/
+  box-sizing: border-box;
+  right: -40%;
+}
+
+#headerWrapBar {
+  position: fixed;
+      width: 100%;
+      height: auto;
+      top: 0;
+      left: 0;
+      padding: 11px 0;
+      z-index: 9999;
+}
+
+li {
+  width: 10%;
+  display: inline-block;
+  text-align: center;
+  font-family: serif;
+  color: #222226;
+  font-size: 17px;
+  padding-right: 10%;
+  list-style: none;
+  border: 0;
+  text-decoration: none;
+}
+
+.text {
+    box-sizing: border-box;
+    position: absolute;
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    background-color: #efcb56;
+    margin-bottom: .15vw;
+    text-align: left;
+    padding-bottom: 20px;
+    top: 100%;
+    margin: .5% 10% 0 2%;
+}
