@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lavender;
+    margin: 0;
+}
+
+.inlineExample {
+    border: 1px solid red;
+    display: inline;
+    width: 300px; /* no effect */
+    padding: 10px;
+    margin: 10px;
+}
+
+.blockExample {
+    border: 1px solid green;
+    width: 200px;
+}
+
+.inlineBlockExample {
+    border: 1px solid yellow;
+    display: inline-block;
+    width: 50%;
+}
+
+.box {
+    border: 1px solid black;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.staticExample {
+    /* offsets top, left, bottom, right */
+    left: 200px;
+}
+
+
+.relativeExample {
+    position: relative;
+    left: 0%;
+    top: 46px;
+}
+
+.absoluteExample {
+    position: absolute;
+    top: 100px;
+    width: 200px;
+}
+.parentOfAbsolute {
+    position: relative; /* default = static */
+    border: 1px solid red;
+    top: 100px;
+    left: 100px;
+    width: 200px;
+}
+
+.fixedExample {
+    position: fixed;
+    top: 100px;
+    right: 0;
+}
+
+#topNav {
+    background-color: brown;
+    padding: 10px;
+    color: white;
+    font-size: 1.2em;
+}
+
+#topNav > div {
+    display: inline-block;
+}
+
+#leftNav {
+    width: 70%;
+}
+
+#leftNav ul {
+    
+}
+
+#leftNav li {
+    display: inline-block;
+    padding: 0 10px 0 0;
+}
+
+#rightNav {
+    width: 30%;
+    text-align: right;  
+}

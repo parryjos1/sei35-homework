@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My special site with all my thoughts and feelings on it</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>Welcome to my special website</h1>
+    <h3>Sorry if this is not as thrilling as javascript...</h3>
+    <p class="special">Jump straight to <a href="#op2">my best opinion.</a></p>
+    <p>Here are all my <em>interesting</em> thoughts and opinions</p>
+    <img id="firstBill" src="http://www.fillmurray.com/500/300" alt="The actor Bill Murray">
+    <img src="http://www.fillmurray.com/300/200" alt="Bill again">
+    <p class="special"><strong>My Favourite Dogs:</strong></p>
+    <ul> <!-- unordered list; this is the container tag -->
+        <li>Ruby</li> <!-- list item; a  single member of the list -->
+        <li>Jess</li>
+        <li id="bestDog" class="special">Nookie</li>
+    </ul>
+    <p>Learning to code? Why not <a href="http://ga.co/">study at GA?</a></p>
+    <span>Hello</span>
+    <span>Hello Again.</span>
+    <div>This will get its own line. <span>(This will not.)</span></div>
+    <div>So will this.</div>
+    <h4>Forbidden!</h4>
+    <b>Bold tag - use "strong" instead</b>
+    <i>Italicised text - use "em" or CSS</i>
+    <blink>SO ANNOYING! and now it's gone, but it could be resurrected with JS, or CSS animations</blink>
+    <font size="10">Not allowed anymore - use CSS with a span or div</font>
+    <span style="color: red;">Some text I want to style - I know, I'll use inline styles.... <strong>WRONG</strong></span>
+    <span>Here comes a form!</span>
+    <form> <!-- the container element for grouping the different pieces -->
+      <input type="text" name="textExample" value="" placeholder="Enter Name Here...">
+      <br>
+      <input type="password" name="seekrit">
+      <textarea name="content" id="" cols="30" rows="10">
+        Default text goes here.
+        (There is no value="..." attribute.)
+        Another line.
+      </textarea>
+      <br>
+      <select name="dog">
+        <option value="" disabled selected>Please select one of the following:</option>
+        <option value="45">Toller</option>
+        <option value="300">Husky</option>
+        <option value="12">Golden Retriever</option>
+      </select>
+      <fieldset>
+        <legend>Dog traits: select one or more</legend>
+        <label><input type="checkbox" value="boundy">Lots of bounding around</label><br>
+        <label><input type="checkbox" value="friendly">Very nice</label><br>
+        <label><input type="checkbox" value="vicious">Will probably bite you</label><br>
+        <label><input type="checkbox" value="hungry">Will eat all your food</label><br>
+      </fieldset>
+      <br>
+      <input type="radio" id="grouch" name="bro">
+      <label for="groucho">Groucho</label>
+      <br>
+      <input type="radio" id="harpo" name="bro">
+      <label for="harpo">Harpo</label>
+      <br>
+      <input type="radio" id="chico" name="bro">
+      <label for="chico">Chico</label>
+      <br>
+      <br>
+      <input type="submit" value="Submit this form!">
+    </form>
+    <br>
+    <button>This is just a button that does nothing</button>
+    <blockquote>
+      <a href="nothing.com">Your one-stop nihilsm shop.</a>
+      Brandname &copy; <!-- HTML entity for copyright symbol -->
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    </blockquote>
+    <pre>
+      This line
+      will be seperate
+      from this line
+      and spaces...         are also honoured.
+    </pre>
+    This is for code: <code>const x = 5;</code> for example
+    <table><!-- this is for tabular data. i.e. rows and columns and numbers-->
+      <tr>
+        <td>Brother</td>
+        <td>Instrument</td>
+      </tr>
+      <tr>
+        <td>Groucho</td>
+        <td>Guitar</td>
+      </tr>
+      <tr>
+        <td>Harpo</td>
+        <td>Harp</td>
+      </tr>
+      <tr>
+        <td>Chico</td>
+        <td>Flute</td>
+      </tr>
+    </table>
+    <div id="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    Opinon Number 1. </br>
+    <br>
+    <!-- Dont do this -->
+    <br>
+    <br>
+    <a name="op2"></a><!-- create an anchor which can be jumped to -->
+    Opinion Number 2.
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+</html>
