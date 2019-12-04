@@ -45,3 +45,12 @@ input[type="submit"] {
   background: rgb(114, 114, 114);
   color: white;
 }
+
+body {
+  min-heigth: 100vh;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+}

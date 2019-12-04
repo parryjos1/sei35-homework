@@ -105,3 +105,12 @@ section {
   margin: 0 auto;
   display: block;
 }
+
+body {
+  min-heigth: 100vh;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+}
