@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: black;
+  height: 80px;
+  margin: 1.5px auto;
+}
+ul {
+  position: absolute;
+  left: 10%;
+  margin: 30px 0;
+}
+li {
+
+  display: inline;
+  color: #E0E0E0;
+  margin: 0 20px;
+}
+
+li:hover{
+  color: blue;
+}
+
+.blockAandB > img {
+  position: relative;
+  top: 50%;
+}
+.blockA {
+  background-color: #C0C0C0;
+  height: 500px;
+  margin: 1.5 auto;
+}
+
+.blockA > img{
+
+}
+.blockB {
+  background-color: #E0E0E0;
+  margin: 1.5px auto;
+  height: 500px;
+}
+.textBlock {
+  position: relative;
+  left: 15%;
+  top: 25%;
+}
+.textBlock > div {
+  float: left;
+  width: 50%;
+}
+.homeBox {
+  position: relative;
+  top: 30%;
+}
+.homeBox > div {
+  position: relative;
+  left: 15%;
+  top: 55%;
+  float: left;
+  width:30%;
+}
+.homeBox1 > img, .homeBox2 > img, .homeBox3 > img {
+  border: 5px solid #808080;
+}
+
+.blockC {
+  background-color: black;
+  margin: 1px auto;
+  height: 300px;
+}
+
+.blockC > div{
+  float: left;
+  width: 30%;
+  position: relative;
+  left: 15%;
+}
+.column > p {
+  color: white;
+}
