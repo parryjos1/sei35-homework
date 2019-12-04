@@ -101,11 +101,7 @@ section {
   100%{opacity: 1;}
 }
 
-.matrix {
-  margin: 2rem auto;
-  position: relative;
-  left: -25%;
-  width: 50%;
-  height: 0;
-  padding-bottom: 74%;
+#liveCode {
+  margin: 0 auto;
+  display: block;
 }

@@ -41,6 +41,11 @@ a, h1, h2, h3 {
   font-family: 'Roboto Mono', sans-serif;
 }
 
+.active {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 p {
   font-family: 'Roboto', sans-serif;
 }
@@ -119,6 +124,7 @@ article {
 
 .careerContent img {
   width: 200px;
+  border-radius: 10px;
 }
 
 .additionalStory {
