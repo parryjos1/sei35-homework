@@ -27,7 +27,7 @@ const crazy = function() {
 
   document.body.addEventListener('mousemove', function(e) {
     rot += 15;
-    document.body.style.background = `radial-gradient(closest-side at ${(e.clientX/w)*100}% ${(e.clientY/h)*100}%, #${col1}, #${col2}, #${col3}`;
+    document.body.style.background = `radial-gradient(closest-side at ${(e.clientX/w)*100}% ${(e.clientY/h)*100}%, #${col1}, #${col2}, #${col3})`;
     img.style.top = `${e.clientY}px`;
     img.style.left = `${e.clientX}px`;
     img.style.transform = `rotate(${rot}deg)`;
