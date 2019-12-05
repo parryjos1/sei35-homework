@@ -6,6 +6,20 @@ img{
   width:200px;
   height:200px;
 }
+marquee {
+  width: 100%;
+  size:50px;
+  color:red;
+}
+#green {
+  color:green;
+}
 body {
-  background
+  background-image: url("https://media.giphy.com/media/XrnJ3ofl5DCtG/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#rareparrot {
+  top: 45px;
 }
