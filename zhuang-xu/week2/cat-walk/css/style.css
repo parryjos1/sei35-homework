@@ -1,0 +1,12 @@
+.dancing {
+    background-image: url("https://media.giphy.com/media/Ta1MVGKCG2GFq/giphy.gif");
+    background-size: cover;
+}
+
+img {
+    transition: transform 0.1s;
+}
+
+img.reverse {
+    transform: rotateY(180deg);
+}
