@@ -11,6 +11,7 @@ const randomColourHex = function (){
     return result;
 }
 
+// PROBLEMATIC - would not work when setInterval was given an existing function as a parameter
 // const changeBgColour = function() {
 //     let newBG = document.getElementById('background');
 //     newColor = `#${randomColourHex()}`;
