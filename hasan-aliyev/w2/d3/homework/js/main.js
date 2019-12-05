@@ -2,19 +2,31 @@
 const img = document.getElementsByTagName('img')[0];
 img.style.left = '0px';
 
+let direction = true; // true means walk to the right
 
 const w = Math.max(document.documentElement.clientWidth, window.innerWidth ||0);
 
-function catWalk() {
-if (parseInt(img.style.left)<(w-400)) {
-  img.style.left = (parseInt(img.style.left) + 10) + 'px';
-}
-}
-//
-// function catWalkBack (){
-//   if
-// }
-window.setInterval(catWalk, 50);
+const catWalk = function() {
+  const leftPos = parseInt(img.style.left);
+
+  if( direction ){
+    img.style.left = (leftPos + 8) + 'px';
+    img.style.transform = 'scaleX(1)';
+  } else {
+    img.style.left = (leftPos - 8) + 'px';
+  }
+
+  if( leftPos > (w - img.width) ){
+    direction = false; // start walking left
+    img.style.transform = 'scaleX(-1)';
+  }else if (leftPos < 0) {
+    direction = true;
+  }
+
+};
+
+
+window.setInterval(catWalk, 10);
 
 
 
