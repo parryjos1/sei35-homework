@@ -36,18 +36,17 @@ const catWalk = function(){ //catwalk function
     cat.style.transform = 'scaleX(-1)';//flip the image.
   }
   if (!walkForward && (currentLeft <= 0)) {
-    walkForward = true; //check if the cat is moving out of the left edge.
+    walkForward = true; //check if the cat is moving out of the left border.
     cat.style.transform = 'scaleX(1)';// flip the image again.
-
   }
-  if (walkForward){ //if the cat is moving forward add the left position.
+  if (walkForward){
     cat.style.left = (currentLeft + 10) + 'px';
   }
-    else { // if the cat is not moving forward decrease the left position. move back
+    else {         // if the cat is not moving forward decrease the left position. move back
     cat.style.left = (currentLeft - 10) + 'px';
   }
-
 };
+
 window.setInterval(catWalk, 50); //run the function
 //for fly cat
 const flyCat = document.querySelector('#flyCat');
