@@ -62,14 +62,14 @@ const catWalk = function(option) {
   } else if (option === 3) {
     if (direction === 'right' && Math.abs((viewport/2) - pos)  < 10) {
       pos += 20;
-      img.src = 'https://media.giphy.com/media/4BJCvMoLPePq8/giphy.gif';
+      img.src = 'giphy.gif'; //'https://media.giphy.com/media/4BJCvMoLPePq8/giphy.gif';
       clearInterval(intervalId);
       setTimeout(function() {
         intervalId = setInterval(function() {
           img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
           catWalk(3);
         }, 50);
-      }, 5000);
+      }, 2000);
     } else if (direction === 'right' && pos < viewport) {
       pos += 10;
     } else if (direction === 'right' && pos >= viewport) {
@@ -77,14 +77,14 @@ const catWalk = function(option) {
       img.style.transform = 'scaleX(-1)';
     } else if (direction === 'left' && Math.abs(pos - (viewport/2)) < 10 ) {
       clearInterval(intervalId);
-      img.src = 'https://media.giphy.com/media/4BJCvMoLPePq8/giphy.gif';
+      img.src = 'giphy.gif'; //'https://media.giphy.com/media/4BJCvMoLPePq8/giphy.gif';
       pos -= 20;
       setTimeout(function() {
         intervalId = setInterval(function() {
           img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
           catWalk(3);
         }, 50);
-      }, 5000);
+      }, 2000);
     } else if (direction === 'left' && pos > viewport + 10) {
       pos -= 10;
     } else if (direction === 'left' && pos >= 10) {
@@ -103,5 +103,5 @@ const catWalk = function(option) {
 
 
 intervalId = setInterval(function() {
-  catWalk();
+  catWalk(3);
 }, 50);
