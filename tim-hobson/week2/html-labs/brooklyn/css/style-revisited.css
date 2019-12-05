@@ -1,0 +1,84 @@
+/*
+## Style Hints:
+Body Font Size = 12px
+Line Height = 17px
+Font Family = "Times New Roman", serif
+Font Color = #656565
+Link Hover Color = #20222a
+*/
+* {
+  box-sizing: border-box;
+/* border: 1px solid red; */
+}
+
+body {
+  font-size: 12px;
+  line-height: 17px;
+  font-family: "Times New Roman", serif;
+}
+
+body, h3, p {
+  color: #656565
+}
+
+h1 {
+  margin: 0;
+  color: #999999;
+}
+
+h3 {
+  font-size: 150%
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #20222A;
+}
+
+#date {
+  color: #2a82c0
+}
+/* above here is fine! */
+
+.sizeWithDiv {
+  width: 100%;
+  padding: 5px 0 0 0;
+  /* border: 1px solid red; */
+}
+
+#container {
+  /* width: 960px; /* these 2 center fine */ */
+  /* margin: 0 auto; */
+  width: 70%; /* This doesn't allow test to wrap with it. */
+  margin: 0 20% 0 10%;
+  padding: 0 0 0 0;
+  border: 1px solid green;
+}
+
+.socialLogos {
+  padding:1px;
+  border:5px solid #CCCCCC;
+  width:24.5%;
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+
+#logo {
+  padding: 40px 0 20px 0;
+  font-size: 325%;
+  width: 25%;
+}
+
+#socials {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logodiv {
+  width: 100%;
+  border: 1px solid blue;
+}
