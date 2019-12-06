@@ -1,0 +1,87 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+body {
+  background-color: #d6d6d6;
+  font-color: #000000;
+  width: 940px;
+  /* font-family: 'Bebas Neue', sans-serif; */
+}
+
+a {
+  color: #cc6633;
+}
+
+main {
+  width: 640px;
+}
+
+right-column {
+  width: 280px;
+  text-align: center;
+}
+
+h1.ecardlyImage  {
+  width: 350px;
+  height: 75px;
+  background: url("images/logo.png");
+  margin-left: 20px;
+}
+/* h1 {} */
+h2  {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+p {
+  font-size: 12px;
+  margin-left: 20px;
+  text-align: justify;
+  width: 50%;
+}
+
+archive-links {
+  font-size: 12px;
+  display: inline-block;
+  margin: 10px;
+}
+
+blogroll-links {
+  font-size: 12px;
+  display: inline-block;
+  margin: 10px;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.ecardlyImage {
+  content: "ecardly/images/logo.png";
+  display: block;
+  width: auto;
+  height: auto;
+}
