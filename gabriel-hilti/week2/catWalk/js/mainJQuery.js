@@ -2,7 +2,7 @@ $(document).ready(function() {
   const $img = $('img');
 
   const w = $(window).width(),
-        h = $(window).width(),
+        h = $(window).height(),
         viewport = w - 300;
   let pos = 0,
       direction = true,
@@ -29,12 +29,13 @@ $(document).ready(function() {
     $('body').on('mousemove', function(e) {
         rot += 5;
         counter++;
-        if (counter % 4 === 0) {
+        if (counter % 3 === 0) {
           col1 = randomCol();
           col2 = randomCol();
           col3 = randomCol();
         }
         $('body').css('background', `radial-gradient(closest-side at ${(e.pageX/w)*100}% ${(e.pageY/h)*100}%, #${col1}, #${col2}, #${col3})`);
+
         $('img').css({'left': `${e.pageX-340/2}px`, 'top': `${e.pageY - 340/2}px`}).css({'transform': `rotate(${rot}deg)`});
     });
     setTimeout(function() {
@@ -62,8 +63,9 @@ $(document).ready(function() {
   }).delay(5000).animate({left: '0px'}, {duration: time1, easing: 'linear'});
     $img.attr('transform', 'scaleX(1)');
   }
-catWalk();
-setInterval(function() {
+
   catWalk();
-}, time2);
+  setInterval(function() {
+    catWalk();
+  }, time2);
 });
