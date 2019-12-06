@@ -8,7 +8,7 @@ font-family: 'Solway', serif; */
 }
 body {
   background-color: #00000077;
-  /* background: url(../images/background.jpg); */
+  background: url(../images/background.jpg) !important;
   background-size: cover;
   background-blend-mode: color;
 }

@@ -1,0 +1,48 @@
+* {
+  /* box-sizing: border-box;   */
+}
+
+#mainCat {
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+}
+
+body {
+  /* background-image: url(../images/vapo.gif) !important; */
+  background-size: cover;
+}
+
+.discoClass {
+  position: absolute;
+  visibility: hidden;
+}
+
+#image1 {
+  top: 10%;
+  left: 20%;
+}
+
+#image2 {
+  top: -40%;
+  left: 40%;
+  transform: scaleY(-1);
+}
+
+#image3 {
+  top: 50%;
+  left: 70%;
+}
+
+#image4 {
+  height: 300px;
+  width: 300px;
+  top: 60%;
+  left: 10%;
+  transform: scalex(-1)
+}
+
+#image5 {
+  top: 15%;
+  left: 70%;
+}
