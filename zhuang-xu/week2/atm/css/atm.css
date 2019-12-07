@@ -2,72 +2,72 @@
 @import url(http://fonts.googleapis.com/css?family=Ruluko);
 
 #content {
-  margin: 0 auto;
-  text-align: center;
-  width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    width: 700px;
 }
 
 #nav {
-  margin: 50px 0;
+    margin: 50px 0;
 }
 
 #title {
-  color: #F52F4F;
-  font-family: 'Oleo Script', cursive;
-  font-size: 50px;
+    color: #F52F4F;
+    font-family: 'Oleo Script', cursive;
+    font-size: 50px;
 }
 
 #checkingAccount {
-  float: left;
+    float: left;
 }
 
 #savingsAccount {
-  float: right;
+    float: right;
 }
 
 .account {
-  background-color: #6C9A74;
-  border: 1px solid #295A33;
-  padding: 10px;
+    background-color: #6C9A74;
+    border: 1px solid #295A33;
+    padding: 10px;
 }
 
 .balance {
-  background-color: #E3E3E3;
-  border: 1px solid #676767;
-  font-family: 'Ruluko', sans-serif;
-  font-size: 50px;
-  padding: 25px 0;
+    background-color: #E3E3E3;
+    border: 1px solid #676767;
+    font-family: 'Ruluko', sans-serif;
+    font-size: 50px;
+    padding: 25px 0;
 }
 
 .clear {
-  clear: both;
+    clear: both;
 }
 
 .zero {
-  background-color: #F52F4F;
-  color: #FFFFFF;
+    background-color: #F52F4F;
+    color: #FFFFFF;
 }
 
 .zero-background {
-  background-color: red;
+    background-color: red;
 }
 
 .money-background {
-  background-color: grey;
+    background-color: grey;
 }
 
 .toast {
-  left: 50%;
-  display: none;
-  position: fixed;
-  transform: translate(-50%, 0px);
-  z-index: 9999;
-  width: 400px;
-  height: 40px;
-  line-height: 40px;
-  top: 0;
-  background-color: #f2dede;
-  color: #b25755;
-  border: 1px solid #ebccd1;
-  border-radius: 4px;
+    left: 50%;
+    display: none;
+    position: fixed;
+    transform: translate(-50%, 0px);
+    z-index: 9999;
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    top: 0;
+    background-color: #f2dede;
+    color: #b25755;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
 }
