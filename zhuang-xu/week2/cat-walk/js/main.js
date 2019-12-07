@@ -21,8 +21,7 @@ const walk = function() {
 
   // Cat steps into the middle of the stage
   if (Math.abs(
-      newLeftPos + 0.5 * cat.width - window.innerWidth /
-      2) < 10) {
+      newLeftPos + 0.5 * cat.width - window.innerWidth / 2) < 10) {
     newLeftPos += direction * 10;
 
     // Stops walking by clearing the interval callback
@@ -36,7 +35,7 @@ const walk = function() {
       cat.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
       document.body.removeAttribute('class');
       handle = setInterval(walk, 50);
-    }, 1000 * 10);
+    }, 1000 * 2);
   }
   cat.style.left = newLeftPos + 'px';
 };
