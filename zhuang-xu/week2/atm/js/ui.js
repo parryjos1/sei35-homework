@@ -1,16 +1,14 @@
 $(function() {
-  console.log('Connected');
-
   const ACCOUNT_CHANGED = 'accountChanged';
   const CHECKING = 'checking';
   const SAVINGS = 'savings';
 
-  // Initialising the UI with account details
+  // Initialise the UI with account details
   $('#balance1').html(`$${bank.account(CHECKING).balance}`);
   $('#balance2').html(`$${bank.account(SAVINGS).balance}`);
 
+  // Listen for any response from the "backend" and update the UI accordingly.
   $(document).on(ACCOUNT_CHANGED, function(event, payload) {
-    console.log(event, payload);
     if (CHECKING in payload) {
       $('#balance1').html(`$${payload[CHECKING]}`);
       $('#checkingAmount').val('');
@@ -21,56 +19,13 @@ $(function() {
     }
   });
 
-  const depositCallback = function(accountType) {
-    let inputId;
-
-    if (accountType === CHECKING) {
-      inputId = '#checkingAmount';
-    } else if (accountType === SAVINGS) {
-      inputId = '#savingsAmount';
-    } else {
-      return null;
-    }
-
-    return function(event) {
-      const amount = parseFloat($(inputId).val());
-
-      if (isNaN(amount)) {
-        return false;
-      }
-
-      bank.deposit(accountType, amount, (newBalance) => {
-        console.log('called');
-        $(document).trigger(ACCOUNT_CHANGED, [{[accountType]: newBalance}]);
-      });
-    };
-  };
-
-  const withdrawCallback = function(accountType) {
-    let inputId;
-
-    if (accountType === CHECKING) {
-      inputId = '#checkingAmount';
-    } else if (accountType === SAVINGS) {
-      inputId = '#savingsAmount';
-    } else {
-      return null;
-    }
-
-    return function(event) {
-      const amount = parseFloat($(inputId).val());
-
-      if (isNaN(amount)) {
-        return false;
-      }
-
-      bank.withdraw(accountType, amount, (newBalance) => {
-        console.log('called');
-        $(document).trigger(ACCOUNT_CHANGED, [{[accountType]: newBalance}]);
-      });
-    };
-  };
-
+  /**
+   * This is our "callback generator" - to assemble the correct "backend" function to use.
+   *
+   * @param accountType
+   * @param func
+   * @returns {null|Function}
+   */
   const transactionCallback = function(accountType, func) {
     let inputId;
 
@@ -89,15 +44,17 @@ $(function() {
         return false;
       }
 
+      // We need to "bind", otherwise the function will lose track of its "this"
+      // when its being called by the browser.
       func.bind(bank)(accountType, amount, (result) => {
         $(document).trigger(ACCOUNT_CHANGED, result);
       });
     };
   };
 
-  // $('#checkingDeposit').on('click', depositCallback(CHECKING));
-  // $('#savingsDeposit').on('click', depositCallback(SAVINGS));
+  // Wire up the "backend" functions to the UI.
   $('#checkingDeposit').on('click', transactionCallback(CHECKING, bank.deposit));
   $('#savingsDeposit').on('click', transactionCallback(SAVINGS, bank.deposit));
-  // $('#checkingWithdraw').on('click', depositCallback(SAVINGS));
+  $('#checkingWithdraw').on('click', transactionCallback(CHECKING, bank.withdraw));
+  $('#savingsWithdraw').on('click', transactionCallback(SAVINGS, bank.withdraw));
 });
