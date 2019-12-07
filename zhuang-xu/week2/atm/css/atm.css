@@ -55,3 +55,19 @@
 .money-background {
   background-color: grey;
 }
+
+.toast {
+  left: 50%;
+  display: none;
+  position: fixed;
+  transform: translate(-50%, 0px);
+  z-index: 9999;
+  width: 400px;
+  height: 40px;
+  line-height: 40px;
+  top: 0;
+  background-color: #f2dede;
+  color: #b25755;
+  border: 1px solid #ebccd1;
+  border-radius: 4px;
+}

@@ -17,6 +17,14 @@ $(function() {
       $('#balance2').html(`$${payload[SAVINGS]}`);
       $('#savingsAmount').val('');
     }
+
+    if ('error' in payload) {
+      const $toast = $('.toast');
+      $toast.slideDown();
+      $toast.html(payload.error);
+
+      $toast.delay(3000).fadeOut('slow');
+    }
   });
 
   /**
