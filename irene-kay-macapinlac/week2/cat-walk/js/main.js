@@ -27,7 +27,7 @@ const theCat = document.querySelector('.cat1');
 
   if (theCatPosition <= 0) {
     // start moving right
-     theCatSpeed *= +1;
+     theCatSpeed *= -1;
      // theCat.style.transform = rotateY(180deg);
   } else if(theCatPosition >= pageWidth) {
     // start moving left
