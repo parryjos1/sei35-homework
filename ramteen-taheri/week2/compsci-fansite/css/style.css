@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    overflow: auto;
+    font-family: 'Tomorrow', sans-serif;
+    background: #eeeeee;
+}
+
+.navbar {
+    padding: 20px;
+    background-color: #1a0f0f;
+}
+
+.navbar ul {
+    list-style: none;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    font-size: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar ul li a:hover,
+.navbar ul li .active {
+    color: lime;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+main {
+    text-align: center;
+    padding: 0 0 0 0;
+    margin: 0 0 100px 0;
+}
+
+.alan-photo-1 {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.alan-photo-2 {
+    width: 100%;
+    height: 500px;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%; 
+    }
+
+    75% {
+        font-size: 300%;
+        margin-left: 25%;
+        width: 150%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+.row {
+    margin: 20px auto;
+    width: 90%;
+
+}
+
+.row h1,
+.row h2 {
+    margin: 20px 0 20px 0;
+}
+
+.column {
+    width: 40%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.column h2 {
+    margin-bottom: 50px;
+}
+
+.column:first-of-type {
+    margin-right: 40px;
+}
+
+.footer {
+    width: 100%;
+    background: black;
+    padding: 10px;
+    color: white;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.shift-left {
+    text-align: left;
+}
+
+.alan-turing-code {
+    width: 100%;
+    height: 500px;
+}
