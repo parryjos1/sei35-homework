@@ -1,84 +1,69 @@
-let checkings = 0;
-let savings = 0;
-let overdraft = 0;
-let updateValue = function() {
-  $("#balance1").text("$" + checkings);
-  $("#balance2").text("$" + savings);
-}
+let money = [0,0,0]; // money[0] is checking amount, money[1] is savings amount, money[2] is the overdraft
 $("#checkingDeposit").on("click", function() {
   if (isNaN(parseInt($("#checkingAmount").val())) === false) {
-    checkings = checkings + parseInt($("#checkingAmount").val());
-    $("#balance1").text("$" + checkings);
+    money[0] = money[0] + parseInt($("#checkingAmount").val());
   } else {
     console.log( "Not a number");
   }
-  backgroundUpdateCheckings();
 })
 $("#checkingWithdraw").on("click", function() {
   if (isNaN(parseInt($("#checkingAmount").val())) === false) {
-    if (checkings - parseInt($("#checkingAmount").val()) < 0) {
-      overdraft  = parseInt($("#checkingAmount").val()) - checkings;
-      if (overdraft < savings === true) {
-        checkings = 0;
-        savings = savings - overdraft;
-        overdraft = 0;
-        updateValue();
-      } else if (overdraft > savings === true){
+    if (money[0] - parseInt($("#checkingAmount").val()) < 0) {
+      money[2]  = parseInt($("#checkingAmount").val()) - money[0];
+      if (money[2] < money[1] === true) {
+        money[0] = 0;
+        money[1] = money[1] - money[2];
+        money[2] = 0;
+      } else if (money[2] > money[1] === true){
         console.log("Not enough money");
       }
     } else {
-      checkings = checkings - parseInt($("#checkingAmount").val());
-      $("#balance1").text("$" + checkings);
+      money[0] = money[0] - parseInt($("#checkingAmount").val());
     }
   } else {
     console.log( "Not a number");
   }
-  backgroundUpdateCheckings();
 })
 $("#savingsDeposit").on("click", function() {
   if (isNaN(parseInt($("#savingsAmount").val())) === false) {
-    savings = savings + parseInt($("#savingsAmount").val());
-    $("#balance2").text("$" + savings)
+    money[1] = money[1] + parseInt($("#savingsAmount").val());
   } else {
     console.log( "Not a number");
   }
-  backgroundUpdateSavings();
 })
 $("#savingsWithdraw").on("click", function() {
   if (isNaN(parseInt($("#savingsAmount").val())) === false) {
-    if (savings - parseInt($("#savingsAmount").val()) < 0) {
-      overdraft  = parseInt($("#savingsAmount").val()) - savings;
-      if (overdraft < checkings) {
-        savings = 0;
-        checkings = checkings - overdraft;
-        overdraft = 0;
-        updateValue();
-      } else if (overdraft > checkings === true){
+    if (money[1] - parseInt($("#savingsAmount").val()) < 0) {
+      money[2]  = parseInt($("#savingsAmount").val()) - money[1];
+      if (money[2] < money[0]) {
+        money[1] = 0;
+        money[0] = money[0] - money[2];
+        money[2] = 0;
+      } else if (money[2] > money[0] === true){
         console.log("Not enough money");
       }
     } else {
-      savings = savings - parseInt($("#savingsAmount").val());
-      $("#balance2").text("$" + savings);
+      money[1] = money[1] - parseInt($("#savingsAmount").val());
     }
   } else {
     console.log( "Not a number");
   }
-  backgroundUpdateSavings();
 })
-let backgroundUpdateCheckings = function () {
-    if($("#balance1").text() === "$0") {
+let update = function () {
+  if($("#balance1").text() === "$0") {
     $("#checkingAccount").css("background-color", "red");
   } else {
     $("#checkingAccount").css("background-color", "grey");
   };
-};
-
-let backgroundUpdateSavings = function () {
   if($("#balance2").text() === "$0") {
     $("#savingsAccount").css("background-color", "red");
   } else {
     $("#savingsAccount").css("background-color", "grey");
   };
+  $("#balance1").text("$" + money[0]);
+  $("#balance2").text("$" + money[1]);
 };
-backgroundUpdateSavings();
-backgroundUpdateCheckings();
+update();
+$("body").on("click", function() {
+  update();
+})
