@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: aliceblue;
+    margin: 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0;
+    height: 0;
+  }
+
+header {
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.image {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    text-transform: uppercase;
+    font-size: 120%;
+    letter-spacing: 2px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* nav li {
+    display: inline;
+    padding-right: 30px;
+} */
+
+
+a {
+    /* background-color: lightgrey; */
+    text-decoration: none;
+    color: black;
+    padding: 0 15px;
+}
+
+a:hover {
+    transition: 1s;
+    /* background-color: darkgrey; */
+    color: royalblue;
+}
+
+h1, h2 {
+    text-align: center;
+    /* background-color: lightgrey; */
+    padding: 12px 0;
+}
+
+main {
+    display: inline-block;
+}
+
+p {
+    padding: 10px;
+    line-height: 1.5em;
+    max-width: 60%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* .para {
+    color:white;
+}
+
+.para:hover {
+    animation-timing-function: ease-in;
+    transition: 2s;
+    animation-timing-function: linear;
+    color: black;
+    visibility: visible;
+} */
+
+iframe {
+    max-width: 100%;
+    padding: 15px 0;
+}
