@@ -34,6 +34,8 @@ $(document).ready(function() {
           col2 = randomCol();
           col3 = randomCol();
         }
+
+        
         $('body').css('background', `radial-gradient(closest-side at ${(e.pageX/w)*100}% ${(e.pageY/h)*100}%, #${col1}, #${col2}, #${col3})`);
 
         $('img').css({'left': `${e.pageX-340/2}px`, 'top': `${e.pageY - 340/2}px`}).css({'transform': `rotate(${rot}deg)`});
