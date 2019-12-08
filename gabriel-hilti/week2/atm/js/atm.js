@@ -15,6 +15,9 @@ const bank = {
   deposit: function(amount, account) {
     if (amount > 0) {
       this.balance[account] += amount;
+      return `Deposit successfull: $${amount}`;
+    } else {
+      return 'Deposit declined';
     }
   },
 
@@ -32,13 +35,18 @@ const bank = {
     }
 
     if (amount <= 0) {
-      return;
+      return 'Withdraw declined';
     } else if (amount <= selectedAccountBalance) {
       this.balance[account] -= amount;
+      return `Withdraw successfull: - $${amount}`
     } else if (amount <= selectedAccountBalance + otherAccountBalance) {
       this.balance[keyName] -= amount - selectedAccountBalance;
       this.balance[account] = 0;
+      return `Withdraw successfull: - $${amount}`
+    } else {
+      return 'Withdraw declined';
     }
+
   }
 
 };

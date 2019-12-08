@@ -15,9 +15,18 @@ $(document).ready(function() {
             savingsWithdraw: $('#savingsWithdraw')
     },
 
+    messages: {
+            checkingMessage: null,
+            savingsMessage: null
+    },
+
     init: function() {
       this.checking.checkingBalance.html(`$${bank.balance.checking}`);
       this.savings.savingsBalance.html(`$${bank.balance.savings}`);
+
+      this.messages.checkingMessage = $('<p id="msg1"></p>').insertBefore(this.checking.checkingBalance);
+      this.messages.savingsMessage = $('<p id="msg1"></p>').insertBefore(this.savings.savingsBalance);
+
 
       $('#checkingAccount').css('backgroundColor', bank.balance.checking > 0 ? '#6C9A74' : '#e04a47');
       $('#savingsAccount').css('backgroundColor', bank.balance.savings > 0 ? '#6C9A74' : '#e04a47');
@@ -64,7 +73,7 @@ $(document).ready(function() {
     eventHandler: function(account, amountRef, accountOption, accountType, balance) {
       account.on('click', () => { // arrow function to bind this to bankGui and not to the account DOM object
         const amount = this.returnBalance(amountRef);
-        bank[accountOption](amount, accountType);
+        this.printMessage(accountType, bank[accountOption](amount, accountType));
         for (const item of balance) {
           item[0].html(`$${bank[item[1]]}`);
           let color = '#e04a47';
@@ -75,7 +84,17 @@ $(document).ready(function() {
           }
           $(`#${item[1].replace('Balance', 'Account')}`).css('backgroundColor', color);
         }
+
       });
+    },
+
+    printMessage: function(sort, message) {
+      if (sort === 'checking') {
+        this.messages.checkingMessage.html(message);
+      }
+      else if (sort === 'savings') {
+        this.messages.savingsMessage.html(message);
+      }
     }
 
   };
