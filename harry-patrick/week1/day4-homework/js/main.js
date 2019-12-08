@@ -190,10 +190,10 @@ let userAdd = prompt('How much would you like to add')
 let changeBankBalance = function (findBalance) {
   let newBalance = 0
   if (userAdd > 0) {
-    newBalance = findBalance += userAdd
+    newBalance = findBalance -- userAdd
     return newBalance
   } else {
-    newBalance = findBalance +- userAdd
+    newBalance = findBalance - userAdd
     return newBalance
   }
 
