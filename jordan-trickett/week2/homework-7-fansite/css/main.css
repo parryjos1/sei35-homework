@@ -67,7 +67,7 @@ li#trivia {
 
 
 .content {
-  /* border: 3px solid white; */
+  border: 3px solid white;
   max-width: 300px;
   display: inline-block;
   margin: 13px;
@@ -121,19 +121,24 @@ p.contentText {
   color: white;
 }
 
+.press1 {
+  position: relative;
+}
+
 .quote {
   position: absolute;
-  /* top: 0;
+  top: 0;
   bottom: 0;
   left: 0;
-  right: 0; */
+  right: 0;
   background: rgba(29, 106, 154, 0.72);
   color: #fff;
-  height: 150px;
+  height: 132px;
   width: 68px;
   visibility: hidden;
   opacity: 0;
   transition: opacity .2s, visibility .2s;
+  margin: 9px 34px;
 }
 
 
