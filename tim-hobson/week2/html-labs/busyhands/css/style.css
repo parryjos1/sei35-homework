@@ -1,0 +1,187 @@
+body {
+  position: relative;
+  margin: 0 0 100px 0;
+}
+
+body {
+  background-image: url("images/photo_column1.jpg");
+  /* background-color: pink; */
+}
+
+p {
+  font-size: 10pt;
+}
+
+nav {
+  /* background-color: blue;   */
+}
+
+.logo {
+  margin: 2% 100% 2% 0;
+}
+
+.content {
+  margin:0 auto;
+}
+
+div, img, p {
+/* border: 1px solid red; */
+}
+
+img.heroimage {
+  margin: 0 auto;
+  width: 100%;
+  /* this centers the images to the div */
+  display: block; /* this removes the gap between the main img and the shadowdrop */
+}
+
+#logoimage {
+  width: 30%;
+}
+#socialNav {
+  width: 30%;
+  margin: 0, 0, 0, auto;
+}
+
+div.logo {
+  border: 1px solid red;
+  width: 100%
+}
+
+
+
+.main {
+  display: block;
+}
+
+li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 2%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav a {
+  color: #FFFFFF;
+}
+
+nav a:hover {
+  color: #DDDDDD;
+}
+
+header {
+  width; 100%;
+  height: 50px;/* this needs to change to match */
+  background-color: #000000;
+}
+
+.homebox {
+  /* align-self: center; */
+  /* display: inline-flex; */
+  /* height: 100px; */
+  /* margin: auto; */
+}
+
+.homebox > div {
+  width: 30%;
+  margin: auto;
+}
+
+.homebox {
+  width: 100%;
+  display: inline-flex;
+  float: left;
+
+}
+
+.homebox:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#boximg1, #boximg2, #boximg3 {
+  padding: 2px;
+  border: 5px solid #DDDDDD;
+  width: 95%;
+
+
+}
+
+.container {
+  height: 100vh;
+}
+
+.content {
+  /* border: 1px solid hotpink; */
+  width: 70%;
+  padding-bottom: 20rem;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  height: 20rem;
+  width: 100%;
+  background: #000000;
+}
+
+.blurb {
+  display: inline-flex;
+  /* float: left; */
+  /* margin: 0, auto; */
+  width: 100%;
+}
+
+#blurbbutton {
+  /* border: 1px solid pink; */
+  margin: 0 0 0 auto;
+  width: 20%;
+  height: 20%;
+  padding: 10px;
+}
+
+#blurbtext > p {
+  font-size: 18px;
+  /* border: 1px solid lime; */
+  margin: 0 auto 0 0;
+  padding: 10px;
+  width: 66%;
+
+}
+
+.blurb {
+  border-style: inset;
+  align-content: center;
+}
+
+.homebox {
+}
+
+
+
+.blurb {
+  /* border: 1px solid red */
+}
+.homebox {
+  border: 1px solid green;
+}
+.homeboxes {
+  border: 1px solid red;
+}
+.container {
+  /* border: 1px solid lime; */
+}
+.content {
+  /* border: 1px solid pink; */
+}
