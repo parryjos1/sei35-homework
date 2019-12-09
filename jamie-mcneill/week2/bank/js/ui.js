@@ -12,13 +12,11 @@
 // if balance is 0, turn red.
 // if balance is >0, turn grey.
 
-//inner HTML of checking amount entered by user.
+//input field checking
 var $checkingAmount = $('#checkingAmount');
-var $checkingAmountHTML = $checkingAmount.html();
 
-//inner HTML of amount entered by user
+//input field savings
 var $savingsAmount = $('#savingsAmount');
-var $savingsAmountHTML = $savingsAmount.html();
 
 //checking deposit button.
 var $checkingDepositButton = $('#checkingDeposit');
@@ -46,11 +44,15 @@ $balanceChecking.html(atm.Checking);
 //checking deposit event listener:
 
 var checkingDeposit = function() {
-atm.deposit("Checking",$checkingAmountHTML);
+  var checkingAmountText = parseInt( $checkingAmount.val() );
+  atm.deposit("Checking", checkingAmountText);
 
-if ($balanceChecking.html() === 0) {
- $balanceChecking.css ("background", "red");
-}
+  $balanceChecking.html(atm.Checking);
+  $balanceSavings.html(atm.Savings);
+
+  if ( parseInt($balanceChecking.html() )  === 0) {
+    $balanceChecking.css ("background-color", "red");
+  }
 };
 
 $checkingDepositButton.on("click", checkingDeposit);
@@ -58,11 +60,16 @@ $checkingDepositButton.on("click", checkingDeposit);
 //checking withdraw event listener
 
 var checkingWithdraw = function() {
-atm.withdraw("Checking",$checkingAmountHTML);
 
-if ($balanceSavings.html() === 0) {
-  $balanceSavings.css ("background", "red");
-}
+  var $checkingAmountText = parseInt( $checkingAmount.val() );
+  atm.withdraw("Checking",$checkingAmountText);
+
+  $balanceChecking.html(atm.Checking);
+  $balanceSavings.html(atm.Savings);
+
+  if ( parseInt( $balanceChecking.html() ) === 0) {
+  $balanceSavings.css ("background-color", "red");
+  }
 };
 
 $checkingWithdrawButton.on("click",checkingWithdraw);
@@ -72,11 +79,15 @@ $checkingWithdrawButton.on("click",checkingWithdraw);
 
 
 var savingsDeposit = function() {
-atm.deposit("Savings",$savingsAmountHTML);
+  var $savingsAmountText = parseInt( $savingsAmount.val() );
+  atm.deposit("Savings",$savingsAmountText);
 
-if ($balanceSavings.html() === 0) {
-  $balanceSavings.css ("background", "red");
-}
+  $balanceChecking.html(atm.Checking);
+  $balanceSavings.html(atm.Savings);
+
+  if ( parseInt( $balanceSavings.html() ) === 0 ) {
+  $balanceSavings.css ("background-color", "red");
+  }
 };
 
 $savingsDepositButton.on("click",savingsDeposit);
@@ -85,10 +96,16 @@ $savingsDepositButton.on("click",savingsDeposit);
 
 
 var savingsWithdraw = function() {
-atm.withdraw("Savings",$savingsAmountHTML);
-if ($balanceSavings.html() === 0) {
 
-}
+  var $savingsAmountText = parseInt( $savingsAmount.val() );
+  atm.withdraw("Savings",$savingsAmountText);
+
+  $balanceChecking.html(atm.Checking);
+  $balanceSavings.html(atm.Savings);
+
+  if ( parseInt( $balanceSavings.html() ) === 0 ) {
+    $balanceSavings.css ("background-color", "red");
+  }
 };
 
 $savingsWithdrawButton.on("click",savingsWithdraw);
