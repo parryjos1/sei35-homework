@@ -1,5 +1,8 @@
 let cat1 = document.querySelector('#cat1')
 
+let rightID = null;
+let leftID = null;
+
 console.log(cat1);
 
 cat1.style.position = 'absolute';
@@ -12,7 +15,6 @@ const minWidth = 0;
 //
 const catWalkRight = function () {
 
-    // cat1.style.right = '';  // emptying right value so starts moving
 
     let startLeft = parseInt(cat1.style.left);
 
@@ -20,15 +22,21 @@ const catWalkRight = function () {
 
     cat1.style.left = moveLeft + 'px';
 
-    if (moveLeft === maxWidth) {
+// console.log('catWalkRight()')
 
-      cat1.style.webkitTransform ="scaleX(-1)";
+    if (moveLeft === maxWidth) {
 
       cat1.src = "https://media1.tenor.com/images/15e8a1a220eeb46dd6b902f8de1e21e0/tenor.gif?itemid=5475792";
 
-      return animateLeft();
+      cat1.style.transform ="scaleX(-1)";
 
-      clearInterval(animateRight)
+
+      animateLeft();
+
+      clearInterval( rightID );
+      // cat1.style.right = ''
+
+
 
 
     }
@@ -37,7 +45,7 @@ const catWalkRight = function () {
 }; //catWalkRight
 
 let animateRight = function () {
-  window.setInterval(catWalkRight, 100);
+  rightID = window.setInterval(catWalkRight, 100);
 }
 
 
@@ -47,25 +55,29 @@ let animateRight = function () {
 
 const catWalkLeft = function () {
 
-    let startRight = parseInt(cat1.style.right);
 
-    cat1.style.left = '' ;
+    let startRight = parseInt(cat1.style.left);
 
-    let moveRight = startRight + 10;
+    // cat1.style.left = '' ;
 
-    cat1.style.right = moveRight + 'px';
+    let moveRight = startRight - 10;
 
-    if (parseInt(cat1.style.right) >= maxWidth) {
+    cat1.style.left = moveRight + 'px';
+
+    console.log(catWalkLeft());
+
+    if (parseInt(cat1.style.left) <= minWidth) {
     //
       cat1.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif"; //change cat image from car back
 
-      // cat1.style.webkitTransform ="scaleX(1)";
+      cat1.style.transform ="scaleX(1)";
 
-      cat1.style.left = '0px';  // to reset left position so cat can start walking walkBack
+      // cat1.style.left = '0px';  // to reset left position so cat can start walking walkBack
     //   //
-      return animateRight;
+      animateRight();
+
+      clearInterval( leftID );
     //
-      // clearInterval(animateLeft)
     //
 
     }
@@ -75,7 +87,9 @@ const catWalkLeft = function () {
 
 //
 const animateLeft = function () {
-  window.setInterval(catWalkLeft, 100);
+  leftID = window.setInterval(catWalkLeft, 100);
 }
+
+// rightID();
 
 animateRight();
