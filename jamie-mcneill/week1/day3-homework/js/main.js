@@ -1,3 +1,24 @@
+
+// Homework: The Word Guesser
+//
+// You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
+//
+// Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '_', '_', '_' and end with 'F', 'O', 'X').
+//
+// Write a function called guessLetter that will:
+//
+// Take one argument, the guessed letter.
+//
+// Iterate through the word letters and see if the guessed letter is in there.
+//
+// If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
+// When it's done iterating, it should log the current guessed letters ('F__') and congratulate the user if they found a new letter.
+//
+// It should also figure out if there are any more letters that need to be guessed, and if not, it should congratulate the user for winning the game.
+//
+// Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
+
+
 //create a global array to hold letters which add up to a secret word.
 const secretWord = ["G", "E" ,"N", "E", "R", "A" ,"L"];
 
@@ -6,14 +27,17 @@ const guessedLetters = ["_", "_", "_", "_", "_", "_", "_"];
 
 
 let correctGuesses = 0;
+
 //write a function called guess letter that takes an argument of a guessed letter.
 
 let guess = function (letter) {
   // set a variable to false
   let letterChecker = false;
   letter = letter.toUpperCase();
+
   // STEP 1
   // look through every letter of secretWord and see if the `letter (we passed in ) === `guessedLetters[i]
+
   for (var i = 0; i < secretWord.length; i++) {
 
       // for each iteration of the loop
@@ -23,6 +47,8 @@ let guess = function (letter) {
           console.log(`You chose ${letter}`);
           console.log(`Congratulations, you found a match at position ${i+1}`);
           guessedLetters[i] = letter;
+
+          //join guessedLetters array in to a string and print out.
           console.log(guessedLetters.join(' '));
           // final step, change the value of the letterChecker variable to 'true'
           letterChecker = true;
@@ -42,44 +68,10 @@ let guess = function (letter) {
       }
     };
 
-
-// this then loops through each item in the secret word array to check if it is present.
-
-//   for (i = 0; i > secretWord.length; i ++) {
-//
-//     console.log(i)
-//     // console.log(secretWord[i])
-//
-//     // if (letter === secretWord[i]) {
-//     //   console.log('it matches!!!')
-//     // }
-//
-//
-//   //     if (letter === secretWord[i]) {
-//   //     guessedLetters[i] = letter;
-//   //     console.log('Congratulations you found a match');
-//   //     console.log (letter);
-//   //     // guessedLetters.show("");
-//   //     console.log(guessedLetters);
-//   //   } else {
-//   //     console.log('The letter is not present, try again');
-//   //   }
-//
-
-// for (var i = 0; i < secretWord.length; i++) {
-//   console.log(secretWord[i]);
-// }
-
-console.log(guess("S"));
-console.log(guess("g"));
-console.log(guess("E"));
-
-// console.log(secretWord);
-// console.log(guessedLetters);
-
-
-// for (var key in movie) {
-// 	console.log(‘key:’, key );
-//         console.log( ‘value:’, movie [ key ] );
-//         console.log(‘——————‘);
-// }
+    console.log(guess("S"));
+    console.log(guess("G"));
+    console.log(guess("E"));
+    console.log(guess("N"));
+    console.log(guess("R"));
+    console.log(guess("A"));
+    console.log(guess("L"));
