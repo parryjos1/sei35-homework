@@ -173,9 +173,32 @@ addToTotal(groceryFloat);
 
 let bank = {
 
-    1: {name: 'Savings', accNum: 1, amount: 5000},
-    2: {name: 'Credit', accNum: 2,  amount: 2000},
-    3: {name: 'Spending', accNum: 3, amount: 1000}
+    1: {name: 'Savings', amount: 5000},
+    2: {name: 'Credit',  amount: 2000},
+    3: {name: 'Spending', amount: 1000}
 
 }
-//help function if its gets an id go get a the infomation
+
+//help function access ammount of cash in bank
+let helperFunction = function ( obj ) {
+  return obj[userAccountNumber].amount
+}
+
+let userAccountNumber = prompt('What is your account number')
+let userAdd = prompt('How much would you like to add')
+
+let changeBankBalance = function (findBalance) {
+  let newBalance = 0
+  if (userAdd > 0) {
+    newBalance = findBalance += userAdd
+    return newBalance
+  } else {
+    newBalance = findBalance +- userAdd
+    return newBalance
+  }
+
+}
+
+let foundBalance = helperFunction(bank);
+
+console.log(changeBankBalance(foundBalance));

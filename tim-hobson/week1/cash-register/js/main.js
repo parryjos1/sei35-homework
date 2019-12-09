@@ -16,31 +16,12 @@ let total = 0
 
 let cashRegister = function ( input ) {
     for ( var key in input ) {
-      // console.log(parseFloat(cartForParty[key]))
-      // total = (total + parseFloat(cartForParty[key]))
       total += parseFloat(cartForParty[key])
     }
     return total
 };
 
 console.log(cashRegister(cartForParty));
-
-
-
-// const cashRegister = function ( input ) {
-//   for ( var key in input )
-//   {
-//       prices.push( parseFloat(input[key]) );
-//   }
-//   for ( i = 0; i < prices.length; i++) {
-//     total = (total + prices[i]);
-//     // console.log(total);
-//   }
-//   return total
-// };
-//
-// console.log(cashRegister(cartForParty));
-
 
 // Output
 // cashRegister(cartForParty); // 60.55
