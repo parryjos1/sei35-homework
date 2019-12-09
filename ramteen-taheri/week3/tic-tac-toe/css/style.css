@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     width: 300px;
-    margin: 100px auto;
+    margin: 60px auto;
 }
 
 .container h1 {
@@ -28,6 +28,8 @@
     border: 1px solid black;
     width: 100px;
     height: 100px;
+    padding: 40px 20px 20px 20px;
+    font-size: 20px;
 }
 
 .box:hover {
@@ -38,8 +40,41 @@
 .currentTurn {
     margin: 20px auto;
     width: 300px;
+    text-align: center;
+}
+
+.currentTurn label {
+    font-size: 30px;
 }
 
 #turn {
     display: inline-block;
+    font-size: 40px;
+    margin-left: 30px;
+    position: relative;
+    top: 4px;
+}
+
+#winner {
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: center;
+    border: 2px solid green;
+    padding: 30px;
+    display: none;
+}
+
+.reset {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid red;
+    color: white;
+    background: red;
+    font-size: 18px;
+    display: none;
+}
+
+.reset:hover {
+    background: green;
+    cursor: pointer;
 }
