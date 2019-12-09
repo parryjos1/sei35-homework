@@ -59,7 +59,7 @@ const bank = {
 
   errorInsufficientFunds : function () {
 
-    $('#errorBox').html(`ERROR - INSUFFICIENT FUNDS - WITHDRAW LESS THAN $${accountTotal}`);
+    $('#errorBox').html(`ERROR - INSUFFICIENT FUNDS - WITHDRAW LESS THAN $${this.findAccountTotal()}`);
     $('#errorBox').fadeIn(250).delay(2000).fadeOut(500);
 
   }, // end of errorInsufficientFunds
