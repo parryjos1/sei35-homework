@@ -1,0 +1,45 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 100px auto;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+.box:hover {
+    background-color: #22c2c2;
+    cursor: pointer;
+}
+
+.currentTurn {
+    margin: 20px auto;
+    width: 300px;
+}
+
+#turn {
+    display: inline-block;
+}
