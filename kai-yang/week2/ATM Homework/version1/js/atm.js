@@ -30,20 +30,32 @@ window.onload = function(){
     //reveive value from input
     var receivedCheckingInput = parseInt(checkingEnterAmount.value);
     //add value into currentCheckingBalance
-    currentCheckingBalance += receivedCheckingInput;
-    //return totalbalance to #balance1
-    balance1.innerText = '$' + currentCheckingBalance;
+
+
+    // if (! receivedCheckingInput === NaN) {
+    if (!isNaN(receivedCheckingInput)) {
+
+      currentCheckingBalance += receivedCheckingInput;
+      //return totalbalance to #balance1
+      balance1.innerText = '$' + currentCheckingBalance;
+    };
     //clear input box.
     checkingEnterAmount.value = '';
+    // checkingEnterAmount.value;
+
     checkingBox.style.backgroundColor = '#6C9A74';
+
   };//checkingBalanceDeposit end
 
   //calculation function for savings Deposit
   const savingsBalanceDeposit = function(){
     //reveive value from input
     var receivedSavingsInput = parseInt(savingsEnterAmount.value);
-    //add value into currentCheckingBalance
-    currentSavingsBalance += receivedSavingsInput;
+    if (!isNaN(receivedSavingsInput)) {
+
+      //add value into currentCheckingBalance
+      currentSavingsBalance += receivedSavingsInput;
+    };
     //return totalbalance to #balance1
     balance2.innerText = '$' + currentSavingsBalance;
     //clear input box.
@@ -52,7 +64,7 @@ window.onload = function(){
   };//savingsBalanceDeposit end
 
   // // total balance variables
-  // var totalBalance = currentCheckingBalance + currentSavingsBalance;
+  var totalBalance = currentCheckingBalance + currentSavingsBalance;
   // if (totalBalance < parseInt(checkingEnterAmount.value) && totalBalance < parseInt(savingsEnterAmount.value)) {
   //   checkingBox.style.backgroundColor = 'rgb(244, 26, 26)';
   //     savingsBox.style.backgroundColor = 'rgb(244, 26, 26)';
@@ -60,10 +72,8 @@ window.onload = function(){
   //     savingsEnterAmount.value = '';
   // };
 
-  //if statement for total balance to check if the total balance is overdue
-
   //calculation function for checking Withdraw
-    const checkingBalanceWithdraw = function(){
+  const checkingBalanceWithdraw = function(){
     //reveive value from input
     var receivedCheckingInput = parseInt(checkingEnterAmount.value);
 
