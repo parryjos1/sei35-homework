@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+        <div class="container container__tp">
+            <h1>Tic Tac Toe</h1>
+            <button class="back"> &lt;-- Go Back</button>
+            
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+            <div class="playerWins playerWins__tp">
+                <div class="currentTurn">
+                    <label for="turn">Current Turn: <span id="turn"></span></label>
+                </div>
+                <h2>Games Won</h2>
+                <div class="playerOneWins">Player 1: 0</div>
+                <div class="playerTwoWins">Player 2: 0</div>
+            </div>
+
+            <div class="overlay">
+                <div id="endgame"><span></span></div>
+                <button class="reset">Reset</button>
+                <button class="close">Close</button>
+            </div>
+
+        </div>
+        
+
+       
+        
+        
+        <script src="js/twoplayer.js"></script>
+    </body>
+</html>
