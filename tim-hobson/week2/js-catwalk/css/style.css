@@ -1,0 +1,20 @@
+/* #halfway {
+  width: 50%;
+  height: 100vh;
+  border: 1px solid red;
+} */
+
+.disco {
+  visibility: hidden;
+  position: absolute;
+}
+
+#angrydog {
+  right: 20%;
+  top: 20%;
+}
+
+#ape {
+  left: 20%;
+  bottom: 20%;  
+}

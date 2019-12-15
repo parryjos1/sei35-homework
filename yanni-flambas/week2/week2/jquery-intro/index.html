@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CSS Layout</title>
+</head>
+
+<body>
+  <nav id="topNav">
+    <div id="leftNav">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Menu</li>
+
+      </ul>
+    </div><div id="rightNav">
+      LOGIN
+    </div>
+  </nav>
+  <h1>CSS Layout</h1>
+
+  <p>Let's do this!</p>
+
+  <img id="firstBill" src="http://fillmurray.com/300/300">
+
+  <div class="inlineExample">
+    This element is <code>display: inline;</code>
+  </div>
+
+  <div class="inlineExample">
+    This element is <em>also</em> <code>displayed: inline;</code>
+  </div>
+
+  <div class="blockExample">
+    This element is <code>display: block;</code>
+  </div>
+
+  <div class="blockExample">
+    This element is <em>also</em> <code>displayed: block;</code>
+  </div>
+
+  <div class="inlineBlockExample">
+    This is a <code>display: inline-block;</code>. It will sit on the same row as other inline or inline-block elements, but you can also change its width and height.
+  </div>
+
+  <div class="inlineBlockExample">
+    This is <em>another</em> <code>display: inline-block;</code>
+  </div>
+
+  <br>  <!-- nasty hack -->
+  <br>
+
+  <div class="box staticExample">
+    <strong>Static (default)</strong><br>
+    The position is whatever the browser gives it, when it calculates the page flow; you can't change it later with top/left offsets.
+  </div><div class="box relativeExample">
+    <strong>Relative</strong>
+    Offsets <em>do</em> work, and are calculated relative to the default (static) position.
+  </div>
+
+  <div class="box parentOfAbsolute">
+
+    <div class="box absoluteExample">
+      <strong>Absolute</strong><br>
+      Offsets work, and are calculated <em> relative to the nearest containing element which has a specific position value</em>... otherwise relative to the <code><body></code> tag.
+    </div>
+
+  </div>
+
+  <div class="box fixedExample">
+    <strong>Fixed</strong><br>
+    Offsets calculated relative to the <em>window (viewport)</em>, not the document - i.e. does not scroll with the document.
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/jquery.js"></script>
+</body>
+
+</html>

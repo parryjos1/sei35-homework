@@ -1,0 +1,40 @@
+
+/* P1 */
+body {
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Times New Roman", serif;
+    color: #656565;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: "Times New Roman", serif;
+  color: #656565;
+  font-weight: bold;
+}
+
+a {
+  color: blue;
+  text-decoration:none;
+}
+
+.site {
+  width: 960px;
+  text-align: left;
+}
+
+.textbox {
+ padding-top: 10px;
+ padding-bottom: 20px;
+ line-height: 28px;
+}
+
+.imgBox {
+ border: 4px solid #999;
+}
+
+/* P2 */

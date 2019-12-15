@@ -1,0 +1,44 @@
+
+
+
+body {
+  font-size: 15px;
+  font-Family: "Times New Roman", serif;
+  color: #656565;
+}
+
+#wrapper {
+  width: 960px;
+  margin: 20px auto;
+
+}
+
+#main-logo {
+  padding: 10px 0;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1px;
+  padding: 3px 0;
+}
+
+
+#date {
+  font-size: 10px;
+  color: blue;
+  margin: 0;
+}
+
+.blog-post {
+  margin-top: 0;
+  color: #bfbdbd;
+  line-height: 17px;
+}
+
+
+.random-logos {
+  border:4px solid  #bfbdbd;
+  padding: 2px;
+
+}

@@ -1,0 +1,28 @@
+
+img {
+  padding: 0px 150px;
+}
+.logo {
+  padding: 0px 0px;
+  border: 5px solid lightgrey;
+}
+#logo {
+  padding: 0px 150px;
+}
+#Date {
+  color: skyblue;
+}
+h2 {
+  line-height: 17px;
+  font-family: "Times New Roman", serif;
+  Color: #656565;
+  padding: 0px 150px;
+}
+
+p {
+  font-size: 12px;
+  line-height: 17px;
+  font-family: "Times New Roman", serif;
+  Color: #656565;
+  padding: 0px 150px;
+};

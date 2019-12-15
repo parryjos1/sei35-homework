@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+body {
+  background-color: lavender;
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.inlineExample {
+  border: 1px solid red;
+  display: inline;
+  width: 300px; /* default */
+  padding: 0px;
+  margin: 0px;
+}
+
+.blockExample {
+  border: 1px solid green;
+  display: block;
+
+  width: 200px;
+  /* This will actually work */
+}
+
+.inlineBlockExample {
+  border: 1px solid yellow;
+  display: inline-block;
+  width: 50%;
+  /*This will work */
+}
+
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align  : center;
+  vertical-align: top;
+  border: 1px solid black;
+}
+
+.staticExample {
+  position: static;
+  /* offsets: top, left, bottom, right */
+  left: 200px;
+  * 'The left edge of this element should start 200px to the right of where it would be by default' */
+
+  /* But it has no effect for a statically-positioned element */
+}
+
+.relativeExample {
+  position: relative;
+  /* NOW we can use offsets: */
+  top:50px;
+  left: 100px;
+}
+
+.absoluteExample {
+  position: absolute;
+  top:150px;
+}
+
+.parentOfAbsolute {
+  /* position: static; */
+  position: relative;
+  border: 1px solid red;
+}
+
+.fixedExample {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+}
+
+#topNav {
+  background-color: brown;
+  padding: 10px;
+  color: white;
+  font-size: 1.2em;
+}
+
+#topNav > div {
+  /* border: 1px solid pink; */
+  display: inline-block;
+}
+
+#leftNav {
+  width: 70%;
+}
+
+#rightNav li {
+  width: 30%;
+  text-align:right;
+  margin-right: 10px;
+}
+
+#leftNav li {
+  display: inline-block;
+  padding-right: 24px;
+}
