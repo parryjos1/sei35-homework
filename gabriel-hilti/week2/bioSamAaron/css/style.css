@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+}
+
+nav {
+  height: 3rem;
+  box-shadow: 2px 2px 25px 5px #191919;
+}
+
+nav ul {
+  height: 3rem;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+a, h1, h2, h3 {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.active {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+nav li {
+  margin: 0 20px;
+}
+
+.logo-left {
+  margin-right: auto;
+}
+nav li:first-child {
+  margin-left: 0;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: red;
+  text-shadow: 1px 1px 15px red;
+}
+
+section {
+  margin-bottom: 1px;
+}
+
+article {
+  width: 70%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.bio {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: #fafafa;
+}
+
+
+#profileImage {
+  margin-top: 2rem;
+  border-radius: 50%;
+  width: 40%;
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.career {
+  background: black;
+  color: white;
+  padding: 4rem 0;
+}
+
+.careerContent h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.careerFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.careerContent div {
+  padding: 0 2rem;
+  flex-basis: 30%;
+}
+
+.careerContent img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.additionalStory {
+  padding: 2rem 0 3rem 0;
+}
+
+footer {
+  height: 10rem;
+  background: black;
+}
+
+.footer {
+  width: 70%;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+.socialNav {
+  padding: 2rem 0;
+}
+
+#fb {
+  margin-right: 1rem;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: url('../images/facebook.png');
+}
+
+#fb:hover {
+  background: url('../images/facebookCol.png');
+  cursor: pointer;
+}
+
+#inst {
+  display: inline-block;
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background: url('../images/instagram.png');
+}
+
+#inst:hover {
+  background: url('../images/instagramCol.png');
+  cursor: pointer;
+}
+
+#twitter {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: url('../images/twitter.png');
+}
+
+#twitter:hover {
+  background: url('../images/twitterCol.png');
+  cursor: pointer;
+}
+
+footer {
+  color: white;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}

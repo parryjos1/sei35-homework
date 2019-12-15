@@ -1,0 +1,3 @@
+echo Welcome Hacker to the shell!!
+
+export PS1="\w$ "

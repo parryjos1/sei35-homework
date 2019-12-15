@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+}
+
+#book{
+    display: none
+}
+
+.word {
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    display: none;
+}

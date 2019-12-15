@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700&display=swap');
+
+.coding {
+  width: 70%;
+  max-width: 860px;
+  margin: 6rem auto;
+}
+
+li a:hover {
+  cursor: pointer;
+}
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: #fafafa;
+  text-align: center;
+}
+
+.coding p {
+  font-family: 'Roboto Mono', sans-serif;
+  display: inline-block;
+  font-size: 8rem;
+}
+
+#c {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#o {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+#d {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+#i {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+#n {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+#g {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+
+#firstDot {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+}
+
+#secondDot {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 7s;
+  animation-fill-mode: forwards;
+}
+
+#thirdDot {
+  opacity: 0;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes example {
+  0% {opacity: 0;}
+  33%{opacity: 1;}
+  66% {opacity: 0;}
+  100%{opacity: 1;}
+}
+
+#liveCode {
+  margin: 0 auto;
+  display: block;
+}
+
+body {
+  min-heigth: 100vh;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+}
