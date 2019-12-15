@@ -1,0 +1,170 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: white;
+}
+
+header {
+  background: black;
+  height: 50px;
+  min-width: 630px;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  margin-left: 80px;
+}
+nav a {
+  color: white;
+  float: left;
+  padding: 0 2px;
+  margin-right: 35px;
+  line-height: 50px;
+}
+
+nav a:hover {
+  cursor: pointer;
+  background-image: url('../images/bg_nav_rollover.png');
+  background-repeat: repeat-x;
+}
+
+div.intro-background {
+  height: 400px;
+  background-image: linear-gradient(to bottom, #e1e1e1, #ebebeb);
+}
+
+div.intro-images {
+  position: relative;
+  top: 20px;
+  margin-left: 80px;
+  max-width: 960px;
+  min-width: 630px;
+}
+
+
+div.photobanner > img {
+  padding-top: 10px;
+  z-index: 2;
+}
+
+#shadow {
+  position: absolute;
+  bottom: -45px;
+  left: 0;
+  z-index: 1;
+}
+
+img#logo {
+  float: left;
+}
+
+div#social-media {
+  height: 54px;
+  float: right;
+  width: 249px;
+  background-image: url('../images/socialNav.png');
+  background-position: 0 64px;
+  /*transition: 1s;*/
+}
+
+div#social-media:hover {
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+div.main-boxes {
+  margin-top: 2px;
+  padding-top: 95px;
+  background-image: url('../images/bg_body.jpg');
+  background-repeat: repeat;
+}
+
+article.request {
+  margin-left: 80px;
+  margin-right: 10px;
+  border-top: 2px solid #c2c2c2;
+  border-left: 2px solid #c2c2c2;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 15px;
+  max-width: 960px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.requestButton {
+  width: 30%;
+  align-self: center;
+}
+
+.request p {
+  width: 70%;
+  flex-grow: 10;
+  flex-shrink: 10;
+}
+
+@media only screen and (max-width: 780px) {
+  .requestButton {
+    width: 50%;
+    justify-self: right;
+  }
+  .request p {
+    width: 50%;
+  }
+}
+
+div#home-boxes {
+  margin-left: 80px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  max-width: 960px;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 920px) {
+  div#home-boxes {
+    flex-direction: column;
+  }
+}
+
+article.home-box {
+  width: 280px;
+}
+
+article.home-box img {
+  border: 2px solid grey;
+}
+
+article.home-box a {
+  color: blue;
+}
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}

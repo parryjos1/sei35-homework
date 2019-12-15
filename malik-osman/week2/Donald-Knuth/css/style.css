@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Baskervville&display=swap');
+
+body{
+  margin: 0;
+}
+
+#menu {
+  background:black;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Baskervville', serif;
+}
+
+
+#menu li{
+  display: inline-block;
+  padding-right: 40px;
+}
+
+#Donald {
+  /* width: 70%; */
+  max-width: 800px;
+}
+
+.aboutDonald {
+  display: inline-block;
+  background-color: grey;
+  position:relative;
+  width: 30%
+}
+
+.imgContainer {
+  /* height: 700px; */
+}
+
+.imgContainer > div {
+  display: inline-block;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  vertical-align: top;
+  height: 50vh;
+}
+
+.left {
+  width: 70%;
+  background: url(../images/Donald1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.right {
+  width: 30%;
+  /* border: 1px solid red; */
+  height: 100%;
+  /* width: calc(100% - 800px); */
+  padding: 4px;
+
+}
+
+.imgContainer .button {
+  width: 100%;
+  background-color: #203A43;
+  height: 32.7%;
+  margin-bottom: 4px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  /* box-sizing: border-box; */
+}
+
+.box {
+  display: inline-block;
+  background-color: #203A43;
+  width: 49%;
+  height: 150px;
+  vertical-align: top;
+}
+
+.relativeExample {
+  display: inline-block;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+#topNav {
+  background-image: linear-gradient(to right, #0F2027 , #2C5364);
+  padding: 10px;
+  color: white;
+  font-size: 140%;
+}
+
+#topNav > div {
+  display: inline-block;
+}
+
+#rightNav {
+  width: 50%;
+  margin-left: 0px
+}
+
+#leftNav {
+  width: 40%;
+  padding-left: 40px;
+}
+
+#rightNav{
+  width: 50%;
+  text-align: right;
+  padding-right: 0px;
+  /* box-sizing: border-box; */
+}
+
+#rightNav li {
+  display: inline-block;
+  padding-right: 20px;
+  px;
+}
+
+#logo{
+  width: 120px;
+  height: 120px
+}
+
+#bottomFooter {
+  border-color: black;
+}
+
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 20px;
+
+}
+
+.column2 {
+  flex: 50%;
+  padding-right: 40px
+
+}
+
+.column3 {
+  flex: 33%;
+  padding: 10px;
+}
+
+footer {
+  display: block;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background-image: linear-gradient(to right, #0F2027 , #2C5364);
+}
+
+p{
+  font-family: 'Baskervville', serif;
+}
+
+h2 {
+  font-family: 'Baskervville', serif;
+  color: #0F2027;
+}
+
+#h2{
+  padding-left: 40px;
+}
+
+#p {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+#grad {
+  background-image: linear-gradient(to right, red , yellow);
+}
+
+
+.Quote{
+  width: 100%;
+  height: 200px;
+  background: url(../images/quote.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

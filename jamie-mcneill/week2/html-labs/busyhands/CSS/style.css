@@ -1,0 +1,28 @@
+nav{
+  background-color: black;
+  text-decoration: none;
+}
+
+body {
+ background-image: url("/")
+
+}
+
+footer {
+background-color: black;
+}
+
+.homebox {
+display: inline;
+
+}
+
+.footerNav1 {
+  display: block;
+  float: left;
+}
+
+.footerNav2 {
+  display: block;
+  float: right;
+}

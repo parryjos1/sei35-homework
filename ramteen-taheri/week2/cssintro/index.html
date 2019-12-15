@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Layout</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <nav id="topNav">
+            <div id="leftNav">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Shop</li>
+                </ul>
+            </div><div id="rightNav">
+                Login
+            </div>
+        </nav>
+
+        <h1>CSS Layout</h1>
+        <p>Let's do this!</p>
+        <div class="inlineExample">
+            This element is <code>display: inline;</code>
+        </div>
+
+        <div class="inlineExample">
+                This element is <em>also</ <code>display: inline;</code>
+            </div>
+
+        <div class="blockExample">
+            This element is <code>display: block;</code>
+        </div>
+
+        <div class="blockExample">
+            This element is <code>display: block;</code>
+        </div>
+        <div class="inlineBlockExample">
+            This element is <code>display: inline-block;</code>
+        </div><div class="inlineBlockExample">
+            This element is <em>also</em> <code>display: inline-block;</code>
+        </div>
+        <div class="box staticExample">
+          <strong> static (default)</strong><br>
+          The position is whatever the browser gives it,
+          when it calculates the page flow; you can't change it later with top/left offsets.
+        </div>
+
+        <div class="box relativeExample">
+            <strong>Relative</strong><br>
+            Offsets <em>do</em> work, and are calculated
+            relativce to the default (static) position
+        </div>
+        <div class="box parentOfAbsolute">
+            <div class="box absoluteExample">
+                <strong>Absolute</strong><br>
+                Offsets work, and are calculated
+                <em>relative to the nearest containing element which has a specific <code>position</code> value</em>
+                otherwise relative to the <code>body</code> tag.
+            </div>
+        </div>  
+
+        <div class="box fixedExample">
+            <strong>Fixed</strong><br>
+            Offsets calculated relative to the <em>Window (viewport)</em>, not the document - i.e. does
+            not scroll with the document
+        </div>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque accusamus earum, delectus quis nam, laboriosam dicta, saepe officia iure fugiat ratione temporibus eligendi quos quo velit exercitationem natus tenetur repellendus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit laudantium maxime velit, ipsa accusantium, ipsum eaque ad rem error quaerat temporibus quae quod commodi quas totam similique debitis unde recusandae.lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias error quis, reprehenderit, corrupti fugiat nobis porro consectetur, dolorem libero exercitationem voluptate beatae ratione. Porro ex perspiciatis corporis quaerat possimus. Vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit hic quam aliquid fuga illo praesentium totam animi. Facilis laudantium ad expedita, repellendus repudiandae, hic rem nulla modi, reprehenderit iure deleniti! lorewm Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos alias, culpa accusantium error earum nobis quibusdam, maiores ipsum, quasi consequatur numquam! Rem illo provident laborum earum. Modi cum magni rem?</p>   
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque accusamus earum, delectus quis nam, laboriosam dicta, saepe officia iure fugiat ratione temporibus eligendi quos quo velit exercitationem natus tenetur repellendus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit laudantium maxime velit, ipsa accusantium, ipsum eaque ad rem error quaerat temporibus quae quod commodi quas totam similique debitis unde recusandae.lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias error quis, reprehenderit, corrupti fugiat nobis porro consectetur, dolorem libero exercitationem voluptate beatae ratione. Porro ex perspiciatis corporis quaerat possimus. Vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit hic quam aliquid fuga illo praesentium totam animi. Facilis laudantium ad expedita, repellendus repudiandae, hic rem nulla modi, reprehenderit iure deleniti! lorewm Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos alias, culpa accusantium error earum nobis quibusdam, maiores ipsum, quasi consequatur numquam! Rem illo provident laborum earum. Modi cum magni rem?</p>    
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque accusamus earum, delectus quis nam, laboriosam dicta, saepe officia iure fugiat ratione temporibus eligendi quos quo velit exercitationem natus tenetur repellendus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit laudantium maxime velit, ipsa accusantium, ipsum eaque ad rem error quaerat temporibus quae quod commodi quas totam similique debitis unde recusandae.lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias error quis, reprehenderit, corrupti fugiat nobis porro consectetur, dolorem libero exercitationem voluptate beatae ratione. Porro ex perspiciatis corporis quaerat possimus. Vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit hic quam aliquid fuga illo praesentium totam animi. Facilis laudantium ad expedita, repellendus repudiandae, hic rem nulla modi, reprehenderit iure deleniti! lorewm Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos alias, culpa accusantium error earum nobis quibusdam, maiores ipsum, quasi consequatur numquam! Rem illo provident laborum earum. Modi cum magni rem?</p>    
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque accusamus earum, delectus quis nam, laboriosam dicta, saepe officia iure fugiat ratione temporibus eligendi quos quo velit exercitationem natus tenetur repellendus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit laudantium maxime velit, ipsa accusantium, ipsum eaque ad rem error quaerat temporibus quae quod commodi quas totam similique debitis unde recusandae.lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias error quis, reprehenderit, corrupti fugiat nobis porro consectetur, dolorem libero exercitationem voluptate beatae ratione. Porro ex perspiciatis corporis quaerat possimus. Vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit hic quam aliquid fuga illo praesentium totam animi. Facilis laudantium ad expedita, repellendus repudiandae, hic rem nulla modi, reprehenderit iure deleniti! lorewm Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos alias, culpa accusantium error earum nobis quibusdam, maiores ipsum, quasi consequatur numquam! Rem illo provident laborum earum. Modi cum magni rem?</p>     
+    </body>
+</html>

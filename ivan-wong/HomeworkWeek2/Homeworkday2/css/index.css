@@ -1,0 +1,38 @@
+* {
+  margin: auto;
+  padding: auto;
+}
+body {
+  background-color: lightblue;
+}
+#Navigation {
+  background: orange;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  padding: 10px;
+  color: lightblue;
+  font-size: 20px;
+  font-weight: 800;
+}
+a {
+  margin: 100px;
+  text-decoration: none;
+  padding-top: inherit;
+  padding-bottom: inherit;
+  padding-left: 40px;
+  padding-right: 40px
+}
+a:hover {
+  background-color: lightblue;
+  color: orange;
+}
+img {
+  width: 500px;
+  height: 500px;
+  margin:auto;
+  text-align: center;
+  position: absolute;
+  left: 30%;
+}
