@@ -5,9 +5,33 @@ console.log("hello");
 
 $(document).ready(function(){
 
+  //Capture the ID of the setInterval timer we create, so we can cancel and re-create it
+  let timerID = null;
+
+  // create a new GUI object which we call  methods on to add graphical controls
+  const controls = {
+    fadeIn: 2000,
+    fadeOut: 2000,
+    fontSize: 30,
+    wordTimerInterval: 100,
+  };
+
+  const gui = new dat.GUI();  
+
+  gui.add(controls, 'fadeIn', 0, 5000);
+  gui.add(controls, 'fadeOut', 0, 5000);
+  gui.add(controls, 'fontSize', 10, 200);
+
+  gui.add(controls, 'wordTimerInterval', 1, 1000)
+  .onFinishChange(function(newValue){
+     // This code will run when the slider has stopped being dragged by the user
+    console.log(newValue);
+    window.clearInterval(timerID );
+    timerID = window.setInterval( displayWord, newValue);
+  })
+
+
   const divContents = $("#book").text().split(/\W+/);
-  //can also
-//   console.log( divContents );
 
   const randomValue = function(max){
     return Math.floor( Math.random()*max );
@@ -32,20 +56,20 @@ $(document).ready(function(){
       top: yRand,
       left: xRand,
       color: colorRand,
-      // some extra randomness
-      fontSize: `${15 + randomValue(30)}pt`,
+      fontSize: `${controls.fontSize}pt`,
       transform: `rotate(${randomValue(360)}deg`,
-    })
+    });
 
     $('body').append($wordDiv);
 
-    $wordDiv.fadeIn(2000).fadeOut(2000, function(){
+    $wordDiv.fadeIn(controls.fadeIn).fadeOut(controls.fadeOut, function(){
       // remove div from DOM when the fadeout is finished
       $(this).remove();
     })
 
   }
 
-  setInterval( displayWord, 100 );
+// add timer ID
+timerID = setInterval( displayWord, 100 );
 
 })
