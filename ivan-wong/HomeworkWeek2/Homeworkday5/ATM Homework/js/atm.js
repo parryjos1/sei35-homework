@@ -49,8 +49,8 @@ $("#savingsWithdraw").on("click", function() {
     console.log( "Not a number");
   }
 })
-let update = function () {
-  if($("#balance1").text() === "$0") {
+let Update = function () {
+    if($("#balance1").text() === "$0") {
     $("#checkingAccount").css("background-color", "red");
   } else {
     $("#checkingAccount").css("background-color", "grey");
@@ -63,7 +63,7 @@ let update = function () {
   $("#balance1").text("$" + money[0]);
   $("#balance2").text("$" + money[1]);
 };
-update();
+Update();
 $("body").on("click", function() {
-  update();
+  Update();
 })
