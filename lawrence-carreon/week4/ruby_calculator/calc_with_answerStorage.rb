@@ -21,7 +21,12 @@ def request_input(request_order)
             puts "Please enter a valid number."
         else
             if user_input == "ans"
-                return user_input
+                if $previous_answer == nil
+                    user_input = nil
+                    puts "There is no previous answer!"
+                else
+                    user_input = $previous_answer
+                end #catches whether or not there was a previous answer
             else
                 user_input = user_input.to_f
             end
@@ -93,18 +98,12 @@ def start_menu
         when 1 
             operator = arithmetic_switch
             user_num1 = request_input("a number (or ans to use a previous result)")
-            if user_num1 == "ans"
-                user_num1 = $previous_answer
-            end
             #this "if/else" makes sure that the calculation and appropriate message is sent to the user for the square root of a number
             if operator == "sqrt"
                 result = calc(user_num1, user_num1, operator)
                 puts "\nThe square root of #{user_num1} is equal to #{result}\n\n"
             else
                 user_num2 = request_input("another number (or ans to use a previous result)") #second number is requested if sqrt is not the operator
-                if user_num2 == "ans"
-                    user_num2 = previous_answer
-                end
                 result = calc(user_num1, user_num2, operator)
                 puts "\n#{user_num1} #{operator} #{user_num2} is equal to #{result}\n\n"
             end
@@ -127,4 +126,5 @@ def start_menu
     end
 end
 
+$previous_answer = nil
 start_menu
