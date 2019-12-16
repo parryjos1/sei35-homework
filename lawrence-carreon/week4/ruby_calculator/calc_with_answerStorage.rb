@@ -62,13 +62,13 @@ def mortgage_calc
     monthly_interest = ((1 + user_interest_rate / 12) - 1).round(3) #formula for converting per annum interest to monthly
     user_annuity = ((1-(1/(1+monthly_interest))**user_loan_length) / monthly_interest).round(2) #formula to help calculate regular monthly repayments
     monthly_payments = (user_loan / user_annuity).round(2)
-    ("\nYou will owe #{monthly_payments} monthly for a loan of $#{user_loan} over #{user_loan_length} months, with an interest rate of #{user_interest_rate * 100}%\n\n").green
+    ("\nYou will owe #{monthly_payments} monthly for a loan of $#{user_loan} over #{user_loan_length} months, with an interest rate of #{user_interest_rate * 100}%\n").green
 end
 
 def bmi_calc
     user_weight = request_input("your weight (in kg)")
     user_height = request_input("your height (in cm)")
-    "\nYour BMI is: #{(user_weight / user_height / user_height * 10000).round(2)}\n\n"
+    ("\nYour BMI is: #{(user_weight / user_height / user_height * 10000).round(2)}\n").green
     # BMI formula is weigh(kg)/height(cm)/height(cm)*10000
 end
 
@@ -79,7 +79,7 @@ def trip_calc
     trip_speed = request_input("your average speed (miles per hour)")
     trip_time = (trip_length / trip_speed).round(2)
     trip_cost = (trip_length / fuel_efficiency * fuel_cost).round(2)
-    "\nYour #{trip_length} mile trip would take #{trip_time} hours and cost $#{trip_cost}\n\n"
+    ("\nYour #{trip_length} mile trip would take #{trip_time} hours and cost $#{trip_cost}\n").green
 end
 
 def start_menu
@@ -101,11 +101,11 @@ def start_menu
             #this "if/else" makes sure that the calculation and appropriate message is sent to the user for the square root of a number
             if operator == "sqrt"
                 result = calc(user_num1, user_num1, operator)
-                puts ("\nThe square root of #{user_num1} is equal to #{result}\n\n").green
+                puts ("\nThe square root of #{user_num1} is equal to #{result}\n").green
             else
                 user_num2 = request_input("another number (or ans to use a previous result)") #second number is requested if sqrt is not the operator
                 result = calc(user_num1, user_num2, operator)
-                puts ("\n#{user_num1} #{operator} #{user_num2} is equal to #{result}\n\n").green
+                puts ("\n#{user_num1} #{operator} #{user_num2} is equal to #{result}\n").green
             end
             $previous_answer = result
             start_menu
@@ -119,7 +119,7 @@ def start_menu
             puts trip_calc
             start_menu
         when 5 
-            puts ("\nSee you next time!\n\n").pink
+            puts ("\nSee you next time!\n").light_blue
             exit # no argument needed since the program isn't catching error codes on exit
         else puts ("Invalid input!").red
         end
