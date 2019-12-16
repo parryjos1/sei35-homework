@@ -1,7 +1,9 @@
+require 'colorize'
+
 def arithmetic_switch
     operation = nil
     while operation == nil # did not want to check against a regular expression
-    print "Please choose an operator (+, -, *, /, ^, sqrt): "
+    print ("Please choose an operator (+, -, *, /, ^, sqrt): ").yellow
     user_operator = gets.chomp
     operation = case user_operator
                 when "+" then "+"
@@ -11,26 +13,26 @@ def arithmetic_switch
                 when "^" then "^"
                 when "sqrt" then "sqrt"
                 else
-                    puts "Please make a valid input!"
+                    puts ("Please make a valid input!").red
                     nil # makes sure that the program keeps requesting an input from the user until a valid one is recognised
                 end
     end
     operation
 end
 
-def request_input(request_order)
+def request_input(user_prompt)
     user_input = nil
     while user_input == nil
-        print "Please enter #{request_order}: "
+        print ("Please enter #{user_prompt}: ").yellow
         user_input = gets.chomp.downcase
         if user_input.match(/[a-zA-Z]/) && user_input != "ans" #checks whether or not the input has any letters or is "ans"
             user_input = nil # makes sure that the program keeps requesting an input from the user until a valid one is recognised
-            puts "Please enter a valid number."
+            puts ("Please enter a valid number.").red
         else
             if user_input == "ans" #catches whether or not there was a previous answer
                 if $previous_answer == nil
                     user_input = nil #similar to above
-                    puts "There is no previous answer!"
+                    puts ("There is no previous answer!").red
                 else
                     user_input = $previous_answer
                 end 
@@ -60,7 +62,7 @@ def mortgage_calc
     monthly_interest = ((1 + user_interest_rate / 12) - 1).round(3) #formula for converting per annum interest to monthly
     user_annuity = ((1-(1/(1+monthly_interest))**user_loan_length) / monthly_interest).round(2) #formula to help calculate regular monthly repayments
     monthly_payments = (user_loan / user_annuity).round(2)
-    "\nYou will owe #{monthly_payments} monthly for a loan of $#{user_loan} over #{user_loan_length}, with an interest rate of #{user_interest_rate}\n\n"
+    ("\nYou will owe #{monthly_payments} monthly for a loan of $#{user_loan} over #{user_loan_length} months, with an interest rate of #{user_interest_rate}\n\n").green
 end
 
 def bmi_calc
@@ -90,7 +92,7 @@ def start_menu
         5. Quit
         "
     loop do #loop uses a switch to determine what the user wants to do
-        print "Make your choice (type 1, 2, 3, 4 or 5): "
+        print ("Make your choice (type 1, 2, 3, 4 or 5): ").yellow
         user_choice = gets.to_i
         case user_choice
         when 1 
@@ -99,11 +101,11 @@ def start_menu
             #this "if/else" makes sure that the calculation and appropriate message is sent to the user for the square root of a number
             if operator == "sqrt"
                 result = calc(user_num1, user_num1, operator)
-                puts "\nThe square root of #{user_num1} is equal to #{result}\n\n"
+                puts ("\nThe square root of #{user_num1} is equal to #{result}\n\n").green
             else
                 user_num2 = request_input("another number (or ans to use a previous result)") #second number is requested if sqrt is not the operator
                 result = calc(user_num1, user_num2, operator)
-                puts "\n#{user_num1} #{operator} #{user_num2} is equal to #{result}\n\n"
+                puts ("\n#{user_num1} #{operator} #{user_num2} is equal to #{result}\n\n").green
             end
             $previous_answer = result
             start_menu
@@ -117,12 +119,12 @@ def start_menu
             puts trip_calc
             start_menu
         when 5 
-            puts "\nSee you next time!\n\n"
-            exit(true)
-        else puts "Invalid input!"
+            puts ("\nSee you next time!\n\n").pink
+            exit # no argument needed since the program isn't catching error codes on exit
+        else puts ("Invalid input!").red
         end
     end
 end
 
-$previous_answer = nil # create a class + a new object to get around this?
+$previous_answer = nil # create a class + a new object to get around creating a global variable?
 start_menu
