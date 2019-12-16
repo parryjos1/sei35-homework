@@ -60,7 +60,7 @@ def mortgage_calc
     monthly_interest = ((1 + user_interest_rate / 12) - 1).round(3) #formula for converting per annum interest to monthly
     user_annuity = ((1-(1/(1+monthly_interest))**user_loan_length) / monthly_interest).round(2) #formula to help calculate regular monthly repayments
     monthly_payments = (user_loan / user_annuity).round(2)
-    "\nYou will owe #{monthly_payments} monthly for a loan of #{user_loan} over #{user_loan_length}, with an interest rate of #{user_interest_rate}\n\n"
+    "\nYou will owe #{monthly_payments} monthly for a loan of $#{user_loan} over #{user_loan_length}, with an interest rate of #{user_interest_rate}\n\n"
 end
 
 def bmi_calc
@@ -85,7 +85,7 @@ def start_menu
 
         1. Arithmetic Calculator
         2. Mortgage Calculator
-        3. BMI Calculator
+        3. Body Mass Index (BMI) Calculator
         4. Trip Calculator
         5. Quit
         "
