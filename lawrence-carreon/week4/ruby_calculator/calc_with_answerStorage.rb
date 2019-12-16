@@ -1,4 +1,46 @@
-require 'pry'
+def arithmetic_switch
+    operation = nil
+    while operation == nil # did not want to check against a regular expression
+    print "Please choose an operator (+, -, *, /, ^, sqrt): "
+    user_operator = gets.chomp
+    operation = case user_operator
+                when "+" then "+"
+                when "-" then "-"
+                when "*" then "*"
+                when "/" then "/"
+                when "^" then "^"
+                when "sqrt" then "sqrt"
+                else
+                    puts "Please make a valid input!"
+                    nil # makes sure that the program keeps requesting an input from the user until a valid one is recognised
+                end
+    end
+    operation
+end
+
+def request_input(request_order)
+    user_input = nil
+    while user_input == nil
+        print "Please enter #{request_order}: "
+        user_input = gets.chomp.downcase
+        if user_input.match(/[a-zA-Z]/) && user_input != "ans" #checks whether or not the input has any letters or is "ans"
+            user_input = nil # makes sure that the program keeps requesting an input from the user until a valid one is recognised
+            puts "Please enter a valid number."
+        else
+            if user_input == "ans" #catches whether or not there was a previous answer
+                if $previous_answer == nil
+                    user_input = nil #similar to above
+                    puts "There is no previous answer!"
+                else
+                    user_input = $previous_answer
+                end 
+            else
+                user_input = user_input.to_f
+            end
+        end
+    end
+    user_input
+end
 
 def calc(num1,num2,operator)
     case operator
@@ -9,30 +51,6 @@ def calc(num1,num2,operator)
     when "^"    then num1 ** num2
     when "sqrt" then Math.sqrt(num1)
     end
-end
-
-def request_input(request_order)
-    user_input = nil
-    while user_input == nil
-        print "Please enter #{request_order}: "
-        user_input = gets.chomp.downcase
-        if user_input.match(/[a-zA-Z]/) && user_input != "ans" #checks whether or not the input has any letters or is "ans"
-            user_input = nil
-            puts "Please enter a valid number."
-        else
-            if user_input == "ans"
-                if $previous_answer == nil
-                    user_input = nil
-                    puts "There is no previous answer!"
-                else
-                    user_input = $previous_answer
-                end #catches whether or not there was a previous answer
-            else
-                user_input = user_input.to_f
-            end
-        end
-    end
-    user_input
 end
 
 def mortgage_calc
@@ -60,26 +78,6 @@ def trip_calc
     trip_time = (trip_length / trip_speed).round(2)
     trip_cost = (trip_length / fuel_efficiency * fuel_cost).round(2)
     "\nYour #{trip_length} mile trip would take #{trip_time} hours and cost $#{trip_cost}\n\n"
-end
-
-def arithmetic_switch
-    operation = nil
-    while operation == nil # did not want to check against a regular expression
-    print "Please choose an operator (+, -, *, /, ^, sqrt): "
-    user_operator = gets.chomp
-    operation = case user_operator
-                when "+" then "+"
-                when "-" then "-"
-                when "*" then "*"
-                when "/" then "/"
-                when "^" then "^"
-                when "sqrt" then "sqrt"
-                else
-                    puts "Please make a valid input!"
-                    nil
-                end
-    end
-    operation
 end
 
 def start_menu
@@ -126,5 +124,5 @@ def start_menu
     end
 end
 
-$previous_answer = nil
+$previous_answer = nil # create a class + a new object to get around this?
 start_menu
