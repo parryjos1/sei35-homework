@@ -39,7 +39,6 @@
 # y =10
 
 
-
 print "enter your first number:"
 num1 = gets.to_f
 
