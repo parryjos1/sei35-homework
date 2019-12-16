@@ -75,7 +75,7 @@ $checkingWithdraw.on('click', function () {
     $('div #checkingAccount').removeClass('money-background').addClass('zero-background')
     $('div #savingsAccount').removeClass('money-background').addClass('zero-background')
   }
-  $('#balance1').replaceWith(`<div>$${checkingBalance}</div>`)–
+  $('#balance1').replaceWith(`<div>$${checkingBalance}</div>`)
   // add class and id back to div
   $('#checkingAccount div').addClass('balance').attr('id', 'balance1');
   //clears the enter amount input
@@ -116,3 +116,58 @@ $savingsWithdraw.on('click', function (){
     // clear the $savingsAmountEntered input
     $savingsAmountEntered.val('');
   });
+
+
+  // $checkingWithdraw.on('click', function () {
+  //   // decreases checking balance by $checkingAmountEntered
+  //   // if currentBalance is greater the ammount to be decreased
+  //   if (checkingBalance >= $checkingAmountEntered.val()) {
+  //     checkingBalance = checkingBalance - $checkingAmountEntered.val()
+  //   // take amount from checking balance then rest from savingsBalance
+  // } else if ((checkingBalance + savingsBalance) >= $checkingAmountEntered.val()){
+  //     let remainder = function (){
+  //       return Math.abs(checkingBalance - $checkingAmountEntered.val())
+  //     }
+  //     let extra = remainder();
+  //     checkingBalance -= checkingBalance;
+  //     savingsBalance = savingsBalance - extra;
+  //     // add new value to the html
+  //     $('#balance2').replaceWith(`<div>$${savingsBalance}`);
+  //     // add class and id back to the div
+  //     $('#savingsAccount div').addClass('balance').attr('id', 'balance2');
+  //   } else {
+  //     console.log("Not enough money");
+  //   };
+  //
+  //   // places currentBalance into html
+  //   $('#balance1').replaceWith(`<div>$${checkingBalance}</div>`)
+  //   // add class and id back to div
+  //   $('#checkingAccount div').addClass('balance').attr('id', 'balance1');
+  //   //clears the enter amount input
+  //   $checkingAmountEntered.val('');});
+  // $savingsWithdraw.on('click', function (){
+  //   // decrease value of savingsBalance when withdraw is clicked
+  //   if (savingsBalance >= $savingsAmountEntered.val()) {
+  //     savingsBalance = savingsBalance - $savingsAmountEntered.val()
+  //   // take amount from checking balance then rest from savingsBalance
+  // } else if ((checkingBalance + savingsBalance) >= $savingsAmountEntered.val()){
+  //     let remainder = function (){
+  //       return Math.abs(savingsBalance - $savingsAmountEntered.val())
+  //     }
+  //     let extra = remainder();
+  //     savingsBalance -= savingsBalance;
+  //     checkingBalance = checkingBalance - extra;
+  //     // add new value to the html
+  //     $('#balance1').replaceWith(`<div>$${checkingBalance}`);
+  //     // add class and id back to the div
+  //     $('#checkingAccount div').addClass('balance').attr('id', 'balance1');
+  //   } else {
+  //     console.log("Not enough money");
+  //   };
+  //   // add new value to the html
+  //   $('#balance2').replaceWith(`<div>$${savingsBalance}`);
+  //   // add class and id back to the div
+  //   $('#savingsAccount div').addClass('balance').attr('id', 'balance2');
+  //   // clear the $savingsAmountEntered input
+  //   $savingsAmountEntered.val('');
+  // });
