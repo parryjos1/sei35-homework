@@ -24,25 +24,24 @@ def single_line_trip( line, start_station, end_station )
 
 end
 
-single_line_trip :n, '34th', '8th'
+# single_line_trip :n, '34th', '8th'
 
 def multi_line_trip( line, start_station, line2, end_station )
   # p line, start_station, line2, end_station
-  p train_lines[ line ]
-  p train_lines[ line2 ]
+  train_lines[ line ]
+  train_lines[ line2 ]
   change_usq_line = train_lines[ line ].index("Union Square")
   change_usq_line2 = train_lines[ line2 ].index("Union Square")
-  p start_station = train_lines[line].index(start_station)
-  p end_station = train_lines[line2].index(end_station)
+  start_station = train_lines[line].index(start_station)
+  end_station = train_lines[line2].index(end_station)
 
-  if line == line2
-    #{single_line_trip}
-  else
+  unless line == line2
     # puts "work"
     p interchange = train_lines[line].slice(start_station + 1..change_usq_line)
+    p "#{interchange.count()} stops till next station"
     puts "Change at Union Square to get to train line: #{line2}"
-    p last_trip = train_lines[line2].slice(change_usq_line2..end_station)
-    p "#{last_trip.count()} stops"
+    p last_trip = train_lines[line2].slice(change_usq_line2 - 1..end_station)
+    p "#{last_trip.count()} stops till your destination"
    end
 
  end
@@ -50,4 +49,4 @@ def multi_line_trip( line, start_station, line2, end_station )
 
 
 
-  # multi_line_trip :n, '34th', :l, '1st'
+  multi_line_trip :n, '34th', :l, '1st'
