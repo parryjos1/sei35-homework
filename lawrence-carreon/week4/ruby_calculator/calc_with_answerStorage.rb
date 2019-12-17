@@ -25,7 +25,7 @@ def request_input(user_prompt)
     while user_input == nil
         print ("Please enter #{user_prompt}: ").yellow
         user_input = gets.chomp.downcase
-        if user_input.match(/[a-zA-Z]/) && user_input != "ans" #checks whether or not the input has any letters or is "ans"
+        if user_input.match(/[a-z]/) && user_input != "ans" #checks whether or not the input has any letters or is "ans"
             user_input = nil # makes sure that the program keeps requesting an input from the user until a valid one is recognised
             puts ("Please enter a valid number.").red
         else
@@ -82,7 +82,8 @@ def trip_calc
     ("\nYour #{trip_length} mile trip would take #{trip_time} hours and cost $#{trip_cost}\n").green
 end
 
-def start_menu
+$previous_answer = nil # create a class + a new object to get around creating a global variable?
+loop do #loop uses a switch to determine what the user wants to do
     puts "What do you wish to use?
 
         1. Arithmetic Calculator
@@ -91,40 +92,31 @@ def start_menu
         4. Trip Calculator
         5. Quit
         "
-    loop do #loop uses a switch to determine what the user wants to do
-        print ("Make your choice (type 1, 2, 3, 4 or 5): ").yellow
-        user_choice = gets.to_i
-        case user_choice
-        when 1 
-            operator = arithmetic_switch
-            user_num1 = request_input("a number (or ans to use a previous result)")
-            #this "if/else" makes sure that the calculation and appropriate message is sent to the user for the square root of a number
-            if operator == "sqrt"
-                result = calc(user_num1, user_num1, operator)
-                puts ("\nThe square root of #{user_num1} is equal to #{result}\n").green
-            else
-                user_num2 = request_input("another number (or ans to use a previous result)") #second number is requested if sqrt is not the operator
-                result = calc(user_num1, user_num2, operator)
-                puts ("\n#{user_num1} #{operator} #{user_num2} is equal to #{result}\n").green
-            end
-            $previous_answer = result
-            start_menu
-        when 2
-            puts mortgage_calc
-            start_menu
-        when 3
-            puts bmi_calc
-            start_menu
-        when 4
-            puts trip_calc
-            start_menu
-        when 5 
-            puts ("\nSee you next time!\n").light_blue
-            exit # no argument needed since the program isn't catching error codes on exit
-        else puts ("Invalid input!").red
+    print ("Make your choice (type 1, 2, 3, 4 or 5): ").yellow
+    user_choice = gets.to_i
+    case user_choice
+    when 1 
+        operator = arithmetic_switch
+        user_num1 = request_input("a number (or ans to use a previous result)")
+        #this "if/else" makes sure that the calculation and appropriate message is sent to the user for the square root of a number
+        if operator == "sqrt"
+            result = calc(user_num1, user_num1, operator)
+            puts ("\nThe square root of #{user_num1} is equal to #{result}\n").green
+        else
+            user_num2 = request_input("another number (or ans to use a previous result)") #second number is requested if sqrt is not the operator
+            result = calc(user_num1, user_num2, operator)
+            puts ("\n#{user_num1} #{operator} #{user_num2} is equal to #{result}\n").green
         end
+        $previous_answer = result
+    when 2
+        puts mortgage_calc
+    when 3
+        puts bmi_calc
+    when 4
+        puts trip_calc
+    when 5 
+        puts ("\nSee you next time!\n").light_blue
+        exit # no argument needed since the program isn't catching error codes on exit
+    else puts ("Invalid input!").red
     end
 end
-
-$previous_answer = nil # create a class + a new object to get around creating a global variable?
-start_menu
