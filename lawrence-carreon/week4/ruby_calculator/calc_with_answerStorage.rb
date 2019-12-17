@@ -13,8 +13,7 @@ def arithmetic_switch
                 when "^" then "^"
                 when "sqrt" then "sqrt"
                 else
-                    puts ("Please make a valid input!").red
-                    nil # makes sure that the program keeps requesting an input from the user until a valid one is recognised
+                    puts ("Please make a valid input!").red # puts return is nil, setting operation to nil
                 end
     end
     operation
@@ -26,13 +25,11 @@ def request_input(user_prompt)
         print ("Please enter #{user_prompt}: ").yellow
         user_input = gets.chomp.downcase
         if user_input.match(/[a-z]/) && user_input != "ans" #checks whether or not the input has any letters or is "ans"
-            user_input = nil # makes sure that the program keeps requesting an input from the user until a valid one is recognised
-            puts ("Please enter a valid number.").red
+            user_input = puts ("Please enter a valid number.").red # set user_input to nil
         else
             if user_input == "ans" #catches whether or not there was a previous answer
                 if $previous_answer == nil
-                    user_input = nil #similar to above
-                    puts ("There is no previous answer!").red
+                    user_input = puts ("There is no previous answer!").red # same as above
                 else
                     user_input = $previous_answer
                 end 
@@ -69,7 +66,6 @@ def bmi_calc
     user_weight = request_input("your weight (in kg)")
     user_height = request_input("your height (in cm)")
     ("\nYour BMI is: #{(user_weight / user_height / user_height * 10000).round(2)}\n").green
-    # BMI formula is weigh(kg)/height(cm)/height(cm)*10000
 end
 
 def trip_calc

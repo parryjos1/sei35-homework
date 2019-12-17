@@ -17,8 +17,7 @@ def request_input(request_order)
         print "Please enter #{request_order}: "
         user_num_input = gets.chomp
         if user_num_input.match(/[a-zA-Z]/) #checks whether or not the input has any letters and requests another input if it does
-            user_num_input = nil
-            puts "Please enter a valid number."
+            user_num_input = puts "Please enter a valid number."
         else
             user_num_input = user_num_input.to_f
         end
@@ -40,7 +39,6 @@ def bmi_calc
     user_weight = request_input("your weight (in kg)")
     user_height = request_input("your height (in cm)")
     "\nYour BMI is: #{(user_weight / user_height / user_height * 10000).round(2)}\n\n"
-    # BMI formula is weigh(kg)/height(cm)/height(cm)*10000
 end
 
 def trip_calc
@@ -67,7 +65,6 @@ def calculator
                 when "sqrt" then "sqrt"
                 else
                     puts "Please make a valid input!"
-                    nil
                 end
     end
     user_num1 = request_input("your first number")
@@ -81,8 +78,8 @@ def calculator
         return "\n#{user_num1} #{operation} #{user_num2} is equal to #{result}\n\n"
     end
 end
-
-def start_menu
+ 
+loop do #loop uses a switch to determine what the user wants to do
     puts "What do you wish to use?
 
         1. Arithmetic Calculator
@@ -91,28 +88,20 @@ def start_menu
         4. Trip Calculator
         5. Quit
         "
-    loop do #loop uses a switch to determine what the user wants to do
-        print "Make your choice (type 1, 2, 3, 4 or 5): "
-        user_choice = gets.to_i
-        case user_choice
-        when 1 
-            puts calculator
-            start_menu
-        when 2
-            puts mortgage_calc
-            start_menu
-        when 3
-            puts bmi_calc
-            start_menu
-        when 4
-            puts trip_calc
-            start_menu
-        when 5 
-            puts "\nSee you next time!\n\n"
-            exit(true)
-        else puts "Invalid input!"
-        end
+    print "Make your choice (type 1, 2, 3, 4 or 5): "
+    user_choice = gets.to_i
+    case user_choice
+    when 1 
+        puts calculator
+    when 2
+        puts mortgage_calc
+    when 3
+        puts bmi_calc
+    when 4
+        puts trip_calc
+    when 5 
+        puts "\nSee you next time!\n\n"
+        exit(true)
+    else puts "Invalid input!"
     end
 end
-
-start_menu
