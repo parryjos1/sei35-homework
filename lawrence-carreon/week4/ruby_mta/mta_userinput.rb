@@ -50,4 +50,37 @@ def get_trip(start_point, end_point, line)
     puts "Number of stops: #{total_stops}"
 end
 
-new_trip("Times Square", "N", "Astor Place", "6")
+# method gets the starting point and destination from user
+def get_station(start)
+    if start == true
+        puts ""
+        puts Rainbow(" ~ Welcome to the New York City MTA Service ~ ").royalblue
+        puts ""
+        puts Rainbow("Where are you starting your journey? ").darksalmon
+    else
+        puts Rainbow("Where would you like to go? ").darksalmon
+    end
+    print Rainbow("Station: ").blanchedalmond
+    dept_dest_station = gets.chomp
+end
+
+def get_line
+  print Rainbow("Line: ").blanchedalmond
+  line = gets.chomp
+end
+
+def another_trip
+    print "Would you to plan another trip (y/n)? "
+    input = gets.chomp
+    if input == 'y'
+        new_trip(get_station(true), get_line, get_station(false), get_line)
+    elsif input == 'n'
+        puts Rainbow("See you next time!").blanchedalmond
+        exit(true)
+    else
+        puts Rainbow("Invalid input!").red
+    end
+end
+
+new_trip(get_station(true), get_line, get_station(false), get_line)
+loop { another_trip }
