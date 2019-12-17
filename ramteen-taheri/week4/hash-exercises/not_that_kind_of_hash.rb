@@ -101,12 +101,13 @@ puts " "
 
 # How would you return an array of Anil's favorite numbers that are also even?
 anil_numbers = users["Anil"][:favorite_numbers]
+anil_even = []
 anil_numbers.map do |a|
     if a % 2 == 0
-        print "#{a} "
+        anil_even.push(a)
     end
 end
-puts " "
+puts anil_even
 puts " "
 
 # How would you return an array with the favorite numbers common to all users?
