@@ -11,7 +11,7 @@ period = years * 12
 print "Interest rate in decimals? "
 rate = gets.chomp.to_f
 
-# def repay (borrow, period, rate)
+# def repay (borrow, period, rate) 
   rate_plus_one = 1 + rate
   to_the_pow_of_top = rate_plus_one ** period
   top_half = to_the_pow_of_top - 1
@@ -19,6 +19,6 @@ rate = gets.chomp.to_f
   to_the_pow_times_rate = rate_plus_one_to_the_pow * rate
   d = top_half/to_the_pow_times_rate
   total = ammount_borrow/d
-  
+
 monthly_payment = total.round(2)
 puts "Your monthly payments will be #{monthly_payment}"
