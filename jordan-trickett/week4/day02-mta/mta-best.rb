@@ -45,7 +45,6 @@ def trip_array( line, start_index, end_index )
 end
 
 
-
 def trip_planner( start_line, start_station, end_line, end_station)
 # require 'pry' ; binding.pry
 
@@ -66,12 +65,15 @@ if start_line != end_line
       if start_station_index > change_index_start
 
         reverse_trip = reverse_line(current_line, start_station, "US")
-        return reverse_trip
+        puts "You need to travel from #{start_station} through #{reverse_trip.join(', ')} changing at US"
+        puts  "This will be a total of #{reverse_trip.length} stops"
 
       end
 
   first_leg = trip_array(current_line, start_station_index, change_index_start)
-  p first_leg  #works
+  # p first_leg  #works
+  puts "You need to travel from #{start_station} through #{first_leg.join(', ')} exiting at US"
+  puts  "This will be a total of #{reverse_trip.length} stops"
 #
 
 # second_leg
@@ -82,12 +84,16 @@ if start_line != end_line
       if change_index_end > end_station_index
 
         reverse_trip = reverse_line(destination_line, "US", end_station)
-        p reverse_trip
+        # p reverse_trip
+        puts "You then need to travel from US through #{reverse_trip.join(', ')} exiting at #{end_station}"
+        puts  "This will be a total of #{reverse_trip.length} stops"
 
       end
 
   second_leg = trip_array(destination_line, change_index_end, end_station_index)
-  p second_leg
+  # p second_leg
+  puts "You then need to travel from US through #{second_leg.join(', ')} exiting at #{end_station}"
+  puts  "This will be a total of #{reverse_trip.length} stops"
 #
 
 else
@@ -101,23 +107,23 @@ else
       if start_station_index > end_station_index
         # require 'pry' ; binding.pry
         reverse_trip = reverse_line(current_line, start_station, end_station)
-        p "You need to travel #{reverse_trip.join(', ')} exiting at #{end_station}"
+        puts "You need to travel from #{start_station} through #{reverse_trip.join(', ')} exiting at #{end_station}"
+        puts  "This will be a total of #{reverse_trip.length} stops"
 
       end
 
 
   trip = trip_array(current_line, start_station_index, end_station_index)
-  p "You need to travel #{trip.join(', ')} exiting at #{end_station}"
+  puts "You need to travel from #{start_station} through #{trip.join(', ')} exiting at #{end_station}"
+  puts  "This will be a total of #{trip.length} stops"
 #
 end
 
-# trip_test = ""
-# p trip_test
 
 end
 
 # trip_planner("N", "TS", "6", "AP")
-trip_planner("N", "TS", "N", "8th on N")
+# trip_planner("N", "TS", "N", "8th on N")
 # trip_planner("N", "US", "N", "TS")
 # trip_planner("N", "TS", "6", "GC")
 # trip_planner("N", "8th", "6", "AP")
