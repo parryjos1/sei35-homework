@@ -1,3 +1,6 @@
+/***** BUSINESS LOGIC *****/
+// Banking functions: deposit, withdrawal, checking for overdraft, etc.
+
 const accounts = {
 
     checkingBalance: 0,
