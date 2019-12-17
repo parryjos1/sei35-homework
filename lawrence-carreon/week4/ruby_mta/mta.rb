@@ -9,8 +9,9 @@ require 'Rainbow'
 
 def new_trip(station1, line1, station2, line2)
     # reset
-    @number_of_stops = 0;
     @stops = []
+    @line_stops = 0
+    @total_stops = 0
 
     # Display trip
     puts ""
@@ -23,19 +24,19 @@ def new_trip(station1, line1, station2, line2)
     if line1 == line2
         puts Rainbow("Start: #{station1}").mediumvioletred
         get_trip(station1, station2, line1)
-        puts Rainbow("Travel on the #{line1} line for #{@number_of_stops + 1} stops").blanchedalmond
+        puts Rainbow("Travel on the #{line1} line for #{@line_stops} stops").blanchedalmond
         puts @stops
         puts Rainbow("Arrive: #{station2}").mediumvioletred
     else
         puts Rainbow("Start: #{station1}").mediumvioletred
-        puts Rainbow("Travel on the #{line1} line for #{@number_of_stops + 1} stops:").thistle
         get_trip(station1, "Union Square", line1)
+        puts Rainbow("Travel on the #{line1} line for #{@line_stops} stops:").thistle
         puts "Change at Union Square"
         get_trip("Union Square", station2, line2)
-        puts Rainbow("Travel on the #{line2} line for #{@number_of_stops} stops").thistle
+        puts Rainbow("Travel on the #{line2} line for #{@line_stops} stops:").thistle
         puts @stops
         puts Rainbow("Arrive: #{station2}").mediumvioletred
-        puts "Number of stops: #{@number_of_stops + 1}"
+        puts "Number of stops: #{@total_stops}"
     end
 
 end # end of new_trip
@@ -45,13 +46,12 @@ def get_trip(start_point, end_point, line)
     station_2_index = @subway[line].index(end_point.to_s)
 
     if  station_1_index < station_2_index
-        @stops = @subway[line][ (station_1_index + 1 )...station_2_index ]
-    elsif  station_1_index > station_2_index
-        @stops = @subway[line][ ( station_2_index + 1 )...station_1_index ].reverse!
+        @stops = @subway[line][ (station_1_index + 1 )..station_2_index ]
     else
-        direction = Rainbow("You're already here!").orange
+        @stops = @subway[line][ ( station_2_index + 1 )..station_1_index ].reverse!
     end
-    @number_of_stops =+ @stops.length
+    @line_stops = @stops.length
+    @total_stops += @stops.length
 end
 
 # method gets the starting point and destination from user
