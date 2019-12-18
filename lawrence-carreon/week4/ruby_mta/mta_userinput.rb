@@ -8,11 +8,8 @@ require 'Rainbow'
 
 def new_trip(start_station, start_line, end_station, end_line)
     # Display trip
-    puts ""
     puts Rainbow("You are travelling from #{ start_line } on the #{ start_line } to #{ end_station} on the #{ end_line }").lavenderblush
-    puts "///" * 20
-    puts "YOUR TRIP DETAILS"
-    puts "///" * 20
+    puts "\nYOUR TRIP DETAILS"
 
     # check for a single line trip
     if start_line == end_line
