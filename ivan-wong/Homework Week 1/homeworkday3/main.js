@@ -1,9 +1,6 @@
-const word  = ["f", "o", "x"];
-const guessed = ["_", "_", "_"];
-const alreadyguess = [];
-let correctguesses = 0;
-let reward = 0
-let wrongguesses = 0
+const word  = ["f", "o", "x"]; const guessed = ["_", "_", "_"]; const alreadyguess = [];
+let correctguesses = 0; let reward = 0 let wrongguesses = 0
+
 const guess = function(letter) {
   if (wrongguesses === 8) {
     return "Sorry you ran out of guesses. You lose."
@@ -20,7 +17,7 @@ const guess = function(letter) {
   let previouslength = correctguesses;
   for (i = 0; i < word.length; i++) {
     if (letter === word[i] || letter === word[i].toUpperCase()){
-      guessed.splice(i, 1, letter);
+      guessed.splice(i, 1, letter.toUpperCase());
       console.log(`Congratulations you guessed the letter ${letter}`);
       correctguesses = correctguesses + 1;
       reward = reward + Math.random()*100;
@@ -30,15 +27,14 @@ const guess = function(letter) {
   if (correctguesses === previouslength){
     console.log("Sorry that letter is not right");
     reward = reward - Math.random()*50;
+    console.log(`Your current reward is $${reward.toFixed(2)}`)
   } else if (correctguesses === word.length) {
-    console.log(`Congratulations you guessed the word`)
+    console.log(`Your current reward is $${reward.toFixed(2)}`)
+    return (`Congratulations you guessed the word ${word.join("").toUpperCase()}`)
   }
   console.log(`Your current reward is $${reward.toFixed(2)}`)
   return guessed.join("");
 }
-console.log(guess("F"));
-console.log(guess("o"));
-console.log(guess("x"));
 // BONUS MATERIAL
 //TWO NUMS
 const maxOfTwoNumbers = function(num1,num2) {
@@ -50,7 +46,6 @@ const maxOfTwoNumbers = function(num1,num2) {
     return "They are equal"
   }
 }
-console.log(maxOfTwoNumbers(5,8));
 //THREE NUMS
 const maxOfThreeNumbers = function(num1,num2,num3) {
   if (num1 > num2 && num1 > num3) {
@@ -63,7 +58,6 @@ const maxOfThreeNumbers = function(num1,num2,num3) {
     return "They are all equal"
   }
 }
-console.log(maxOfThreeNumbers(5,8,11))
 //IS IT A VOWEL
 const isItAVowel = function(letter) {
   if (letter.length > 1) {
@@ -73,8 +67,7 @@ const isItAVowel = function(letter) {
     return `This is a vowel ${letter}`
   }
 }
-console.log(isItAVowel("a"));
-//SUM ARRAY AND MULTIPLES ARRAY
+//SUM ARRAY
 let total = 0
 const sumArray = function(nums) {
   for (i=0; i < nums.length; i++) {
@@ -82,14 +75,13 @@ const sumArray = function(nums) {
   }
   return `The sum of ${nums} is ${total}`;
 };
-console.log(sumArray([0,5,2,4,5]));
+//MULTIPLES THE ARRAY
 const multiplyArray = function(nums) {
   for (i=0; i < nums.length; i++) {
     total = total * nums[i]
   }
   return `The multiplication of ${nums} is ${total}`;
 };
-console.log(multiplyArray([2,5,2,4,5]));
 //REVERSEEEEE
 const reverseString = function(string) {
   let origin = string
@@ -98,7 +90,6 @@ const reverseString = function(string) {
   string = string.join("");
   return `The reverse of ${origin} is ${string}`;
 }
-console.log(reverseString("asdf"))
 //Long words
 const longestWord = function(string) {
   let longest = 0;
@@ -111,7 +102,6 @@ const longestWord = function(string) {
   }
   return `The largest word in this array is ${string[longestindex]}`;
 }
-console.log(longestWord(["asd","asdf","asdfgh"]));
 //FILTRATION DEVICE
 const wordsLonger = function(string,num) {
   let longerThan = [];
@@ -122,4 +112,3 @@ const wordsLonger = function(string,num) {
   }
   return `${longerThan.length} (${string}) words are larger than ${num} letters`;
 }
-console.log(wordsLonger(["asd","asdf", "asdafasd"], 2))
