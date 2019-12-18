@@ -1,0 +1,264 @@
+    @import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');
+
+    * {
+        border: 0;
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    body {
+        background: url('http://1.bp.blogspot.com/-ZucRfIjHyeM/WCGQyb3I7II/AAAAAAAAAIU/1_8PTv7_jOQJVa4WDafDBq87ITX97KgqwCK4B/s1600/Mario-World.gif') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: auto;
+        width: 100%;
+        font-family: 'Lilita One', cursive;
+        color: yellow;
+    }
+
+    .nav {
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        background-color: darkslateblue;
+        opacity: 0.9;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        color: yellow;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0;
+    }
+
+    .nav-half {
+        width: 100%;
+    }
+
+    .back {
+        background-color: red;
+        font-size: 17px;
+        color: white;
+        padding: 20px;
+        width: 200px;
+        margin: 0px auto;
+        position: relative;
+        left: 100px;
+        font-family: inherit;
+    }
+    .back:hover {
+        font-size: 18px;
+        background-color: green;
+        cursor: pointer;
+    }
+
+    .container {
+        width: 300px;
+        margin: 7px auto;
+    }
+
+    .container__index {
+        margin-top: 40px;
+    }
+
+    .container__tpm {
+        margin-top: 40px;
+    }
+
+    .container__tpm h2 {
+        margin-top: 40px;
+    }
+
+    .container__index h2 {
+        margin-top: 50px;
+    }
+
+    .container__tp {
+        margin-top: 50px;
+    }
+
+    .container__tp h1 {
+        margin-bottom: 20px;
+    }
+
+    .nav h1 {
+        font-size: 50px;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .nav h1, .container h2 {
+        text-align: center;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 130%;
+        margin: 10px;
+    }
+
+    .box {
+        border: 2px solid green;
+        width: 100px;
+        height: 100px;
+        padding: 40px 20px 20px 20px;
+        font-size: 20px;
+        background: rgb(61, 94, 201);
+        margin: 5px;
+    }
+
+    .cross-bg {
+        background: url('https://www.pngfind.com/pngs/m/36-368091_heart-simple-shape-silhouette-tic-tac-toe-cross.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .nought-bg {
+        background: url('https://i-love-png.com/images/155-1552504_tic-tac-toe-circle-clipart.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .box:hover {
+        background-color: #248044;
+        cursor: pointer;
+    }
+
+    .currentTurn {
+        margin: 20px auto;
+        width: auto;
+        text-align: center;
+    }
+
+    .currentTurn label {
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    #turn {
+        display: inline-block;
+        font-size: 20px;
+        margin-left: 30px;
+        position: relative;
+    }
+
+    #endgame {
+        font-size: 20px;
+        margin-top: 30px;
+        text-align: center;
+        border: 2px solid green;
+        padding: 30px;
+        display: none;
+        max-width: 500px;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .reset, .close {
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid red;
+        color: white;
+        background: red;
+        font-size: 18px;
+        display: none;
+    }
+
+    .reset:hover, .close:hover {
+        background: green;
+        cursor: pointer;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        border: 3px solid #008000;
+        padding: 50px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .option {
+        margin-bottom: 20px;
+        font-size: 17px;
+    }
+
+    .option:hover {
+        color: red;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .playerNameInput {
+        margin-bottom: 10px;
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    input {
+        font-family: inherit;
+    }
+
+    .next {
+        background-color: blue;
+        padding: 30px;
+        color: white;
+        font-size: 17px;
+        font-family: inherit;
+    }
+    .next:hover {
+        background-color: green;
+    }
+
+    .playerWins {
+        background-color: #248044;
+        width: 400px;
+        height: auto;
+        text-align: center;
+        padding: 30px;
+        margin: 0;
+        z-index: 100;
+        position: fixed;
+    }
+
+    .playerWins__tp {
+        margin-top: 30px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin: unset;
+    }
+
+    .youWin {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .overlay {
+        position: fixed;
+        height: 35%;
+        width: 70%;
+        z-index: 100;
+        background-color: #000000;
+        opacity: 1;
+        top: 55%;
+        bottom: 40%;
+        display: none;
+        left: 19%;
+        opacity: 0.9;
+        color: lime;
+    }
+
+    .creditBox {
+        margin-top: 100px;
+    }
