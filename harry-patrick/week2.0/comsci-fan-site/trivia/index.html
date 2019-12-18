@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
+    <title>Contact</title>
+  </head>
+  <body id="formbody">
+    <header>
+      <nav>
+        <div id="navLeft">
+          <a href="../homepage/index.html">Yukihiro Matsumoto</a>
+        </div><div id="navRight">
+          <ul>
+            <li><a href="../homepage/index.html">Home</a></li>
+            <li><a href="../hometown/index.html">Homepage</a></li>
+            <li><a href="index.html">Trivia</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="yukoForm">
+           <form class="gform" action="https://script.google.com/macros/s/AKfycbwniA2EakgSIzui9-LNJ8ZgR72WTGT0dmLWVegOi9OM-OWaX0w/exec" method="POST">
+               <ul>
+                   <li>
+                       <label for="name">full name</label>
+                       <input type="text" id="name" name="name" required/>
+                   </li>
+                   <li>
+                       <label for="email">email address</label>
+                       <input type="email" id="email" name="email" />
+                   </li>
+                   <li>
+                       <label for="number">phone number</label>
+                       <input type="tel" id="number" name="number" required/>
+                   </li>
+                   <li>
+                       <label for="message">message</label>
+                       <textarea name="message" id="message" required></textarea>
+                   </li>
+                   <div class="submit">
+                       <li>
+                          <a href="dmContact.html"><input type="submit" class="sumbitBut"></a>
+                       </li>
+                   </div>
+               </ul>
+               <div style="display:none" class="thankyou_message">
+
+                       <h2>Thanks for contacting us! We will get back to you soon!</h2>
+
+                      </div>
+
+           </form>
+       </div>
+       <footer>
+         <ul>
+           <li>About Matz</li>
+           <li><a href="https://www.ruby-lang.org/en/about/" target="_blank"> Ruby website</a><li>
+           <li><a href="https://github.com/matz" target="_blank">gitHub</a></li>
+           <li><a href="https://twitter.com/yukihiro_matz?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"></a>Twitter</li>
+         </ul>
+       </footer>
+
+  </body>
+</html>
