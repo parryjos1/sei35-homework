@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ATM</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/atm.css">
+  </head>
+  <body>
+    <div id="content">
+      <div id="nav">
+        <div id="logo"><img src="img/ga.png" alt="Bank of GA"/></div>
+        <div id="title">Bank of GA</div>
+      </div>
+      <div class="account" id="checkingAccount">
+        <h1>Checking</h1>
+        <div class="checking-balance" id="balance1">$0</div>
+        <input id="checking-amount" type="text" placeholder="enter an amount" />
+        <input id="checking-deposit" type="button" value="Deposit" />
+        <input id="checking-withdraw" type="button" value="Withdraw" />
+      </div>
+      <div class="account" id="savings-account">
+        <h1>Savings</h1>
+        <div class="savings-balance" id="balance2">$0</div>
+        <input id="savings-amount" type="text" placeholder="enter an amount" />
+        <input id="savings-deposit" type="button" value="Deposit" />
+        <input id="savings-withdraw" type="button" value="Withdraw" />
+      </div>
+      <div class="clear"></div>
+    </div>
+  </body>
+  <script src="js/jquery.js"></script>
+  <script src="js/atm.js"></script>
+</html>
