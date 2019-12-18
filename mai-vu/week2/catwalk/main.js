@@ -42,16 +42,6 @@ dancingCat.style.left= ((window.innerWidth-dancingCat.width)/2+'px').toString();
 catPlays.style.top= (Math.abs(cat.height - catPlays.height) + 'px').toString();
 catPlays.style.left= ((window.innerWidth-catPlays.width)/2+'px').toString();
 
-
-// for (let i = 0; i < 500; i++) {
-//     for (let j = 0; j < 500; j++) {
-
-//     }
-// }
-
-
-// dancingCat.style.visibility= 'hidden';
-
 const getMiddleCat = function() {
     const randomNum = Math.floor(Math.random());
     console.log(randomNum);
@@ -86,8 +76,9 @@ const walk = function() {
         danceCat();
     }
     else if ( newLeft >= window.innerWidth ) {
-        const randomNum = Math.round(Math.random())+2;
-        cat = allCats[randomNum];
+        const randomNum = Math.floor( Math.random() * 5 );
+        console.log(randomNum);
+        cat = allCats[randomNum];        
         cat.style.visibility= 'visible';
         cat.style.transform= 'scaleX(-1)';
         movement = -1;
