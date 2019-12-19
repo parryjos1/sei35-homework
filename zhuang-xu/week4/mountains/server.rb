@@ -27,4 +27,23 @@ get '/mountains/:id' do
   erb :show
 end
 
+get '/mountains/:id/edit' do
+  DB = Sequel.sqlite('database.db')
+  dataset = DB[:mountains][{id: params[:id]}]
+
+  @results = dataset
+
+  erb :edit
+end
+
+post '/mountains/:id' do
+  id = params[:id]
+  params.reject! { |key| key == "id"}
+
+  class Mountains < Sequel::Model(:mountains); end
+  Mountains.filter(id: id).first.update(params)
+
+  redirect "/mountains/#{id}"
+end
+
 
