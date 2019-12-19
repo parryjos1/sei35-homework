@@ -1,0 +1,23 @@
+<p>
+<table>
+  <% columns = @results[0].keys %>
+  <% columns.each do |column| %>
+    <th><%= column %></th>
+  <% end %>
+  <% @results.each do |row| %>
+    <tr>
+      <% columns.each do |column| %>
+        <td>
+          <% if column == :name %>
+            <a href="/mountains/<%= row[:id] %>">
+          <% end %>
+          <%= row[column] %>
+          <% if column == 'name' %>
+            </a>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+</p>
