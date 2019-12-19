@@ -17,6 +17,9 @@ get '/mountains' do
   erb :index
 end
 
+get '/mountains/new' do
+  erb :new
+end
 
 get '/mountains/:id' do
   DB = Sequel.sqlite('database.db')
@@ -36,6 +39,7 @@ get '/mountains/:id/edit' do
   erb :edit
 end
 
+
 post '/mountains/:id' do
   id = params[:id]
   params.reject! { |key| key == "id"}
@@ -46,4 +50,9 @@ post '/mountains/:id' do
   redirect "/mountains/#{id}"
 end
 
+post '/mountains' do
+  class Mountains < Sequel::Model(:mountains); end
+  Mountains.insert(params)
 
+  redirect "/mountains"
+end
