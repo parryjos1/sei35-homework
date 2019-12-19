@@ -39,6 +39,11 @@ get '/mountains/:id/edit' do
   erb :edit
 end
 
+get '/mountains/:id/delete' do
+  Mountains[params[:id]].delete
+
+  redirect '/mountains'
+end
 
 post '/mountains/:id' do
   id = params[:id]
