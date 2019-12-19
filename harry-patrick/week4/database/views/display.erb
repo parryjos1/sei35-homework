@@ -1,0 +1,27 @@
+<h1><%= @band['name'] %></h1>
+<%# display band infomation %>
+
+<div class="band_info">
+  <ul>
+    <li>
+      <strong>Genre</strong>
+      <%= @band['genre'] %>
+    </li>
+    <li>
+      <strong>Song</strong>
+      <%= @band['song'] %>
+    </li>
+    <li>
+      <strong>Year created</strong>
+      <%= @band['year'] %>
+    </li>
+    <li>
+      <strong>Is the band together</strong>
+      <%= @band['together'] %>
+    </li>
+    <li>
+      <strong>Album artwork</strong>
+      <%= @band['album'] %>
+    </li>
+  </ul>
+</div>
