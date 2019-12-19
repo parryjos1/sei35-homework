@@ -1,0 +1,30 @@
+<h2>
+  <%= @mountain['name'] %>
+</h2>
+
+<p>
+  <strong>Height(m):</strong>
+  <%= @mountain['height_m'] %>
+</p>
+
+<p>
+  <strong>Range:</strong>
+  <%= @mountain['range'] %>
+</p>
+
+<p>
+  <strong>Parent mountain:</strong>
+  <%= @mountain['parent_mountain'] %>
+</p>
+
+<p>
+  <strong>First ascended:</strong>
+  <%= @mountain['first_ascended'] %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @mountain['country'] %>
+</p>
+
+<img src="<%= @mountain['image_url'] %>" alt="<%= @mountain['name'] %>">
