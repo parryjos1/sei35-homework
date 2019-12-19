@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <button class="back"> &lt;-- Go Back</button>
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="playerWins">
+                <h2>Games Won</h2>
+                <div class="youWin">You: 0</div>
+                <div class="computerWins">Computer: 0</div>
+                <div class="currentTurn">
+                    <label for="turn">Current Turn: <span id="turn"></span></label>
+                </div>  
+            </div>
+        </div>
+
+        <div class="overlay">
+            <div class="modal">
+                <div id="endgame"><span></span></div>
+                <button class="reset">Reset</button>
+                <button class="close">close</button>
+            </div>
+        </div>
+        
+        <div class="nav">
+            <div><h1>Tic Tac Toe</h1></div>
+        </div>
+        
+        <script src="js/singleplayer.js"></script>
+    </body>
+</html>

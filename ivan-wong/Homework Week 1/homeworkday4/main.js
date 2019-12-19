@@ -1,4 +1,3 @@
-console.log("hello")
 const square = function(rectangle) {
   if (rectangle.length === rectangle.width) {
     console.log("This is a square")
@@ -6,10 +5,8 @@ const square = function(rectangle) {
     return "This is not a square"
   }
   console.log("The area of this square is " + (rectangle.length * rectangle.width))
-  return "The perimeter of this square is " + (rectangle.length*2 + rectangle.width*2)
+  return "The perimeter of this square is " + (rectangle.length * 2 + rectangle.width * 2)
 };
-console.log(square({length: 4, width: 4}))
-
 const triangle = function(sides) {
   if (sides.A === sides.B === sides.C) {
     console.log("This triangle is equilateral")
@@ -33,7 +30,6 @@ const cashRegister = function(goods) {
   }
   return total
 }
-console.log(cashRegister(cartForParty));
 let not = 0
 const bankaccounts = [
   {Owner: "Bob", Balance: 1223},
@@ -77,11 +73,8 @@ const DepoWithBal = function(Name, amount) {
 }
 
 const validateCreditCard = function(creditCard) {
-  let valid = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const splited = creditCard.split("").map(Number);
-  let digits = 0
-  let sum = 0
-  let used = []
+  let valid = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; let digits = 0 ;let sum = 0 ;let used = [];
+  const splited = creditCard.split("").map(Number); // Weow this map is super useful
   for (i = 0; i < splited.length; i++) {
     if (valid.includes(splited[i]) === true) {
       digits = digits + 1;

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ATM App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bank.js"></script>
+    <script src="js/gui.js"></script>
+</head>
+
+<body>
+
+    <div id="content">
+
+        <div id="nav">
+            <div id="logo"><img src="css/ga-logo-transparent.png" alt="logo"/></div>
+            <div id="title">GA Online Banking</div>
+        </div>
+    
+        <div class="account" id="checking">
+            <h1>Checking</h1>
+            <div class="balance" id="checkingBalance">$0</div>
+            <input id="checkingAmount" type="text" placeholder="Enter an amount" />
+            <input id="checkingDeposit" type="button" value="Deposit" />
+            <input id="checkingWithdraw" type="button" value="Withdraw" />
+        </div>
+    
+        <div class="account" id="savings">
+            <h1>Savings</h1>
+            <div class="balance" id="savingsBalance">$0</div>
+            <input id="savingsAmount" type="text" placeholder="Enter an amount" />
+            <input id="savingsDeposit" type="button" value="Deposit" />
+            <input id="savingsWithdraw" type="button" value="Withdraw" />
+        </div>
+    
+        <div class="clear"></div>
+
+        <div id="errorMessage"></div>
+    </div>
+
+</body>
+</html>

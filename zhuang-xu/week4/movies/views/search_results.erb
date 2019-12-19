@@ -1,0 +1,19 @@
+<a href="/">Go back</a>
+<% if @results.empty? %>
+  <p>
+    No results.
+  </p>
+<% end %>
+<div class="movies">
+  <% @results.each do |movie| %>
+    <div class="movie">
+      <p>
+        <%= movie['title'] %><br>
+        <%= movie['release_date'] %>
+      </p>
+      <div>
+        <img src=<%= "http://image.tmdb.org/t/p/w185#{movie['poster_path']}" %> alt="">
+      </div>
+    </div>
+  <% end %>
+</div>

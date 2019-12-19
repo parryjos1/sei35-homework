@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#chosenWord {
+    color: lime;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    left: 45vw;
+    top: 50vh;
+}
+
+#hiddenWords {
+    display: none;
+}
