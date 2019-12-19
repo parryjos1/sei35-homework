@@ -1,0 +1,12 @@
+body{
+  background-color: #490049;
+  font-family: Helvetica, sans-serif;
+  color: rgb(349, 249, 149);
+}
+a, a:visited{
+  color: white;
+}
+
+img {
+  max-width: 500px;
+}

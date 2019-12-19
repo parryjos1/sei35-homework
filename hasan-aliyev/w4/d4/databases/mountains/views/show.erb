@@ -1,0 +1,40 @@
+
+<h2>
+  <%= @mountain['name'] %>
+</h2>
+
+
+<a href="/mountains/<%= @mountain['id'] %>/edit">Edit This Mountain</a>
+|
+<a href="/mountains/<%= @mountain['id'] %>/delete">Delete This Mountain</a>
+<br><br>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mountain['description'] %>
+</p>
+
+
+<p>
+  <strong>Snow:</strong>
+
+ <%= @mountain['snow'] == 1  ? 'Yes' : 'No'  %>
+
+</p>
+
+
+
+<p>
+  <strong>Heigth:</strong>
+  <%= @mountain['heigth'] %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @mountain['age'] %>
+</p>
+
+
+
+
+<img src="<%= @mountain['image_url'] %>" alt="<%= @mountain['name'] %>">
