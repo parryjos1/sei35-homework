@@ -4,12 +4,14 @@ require 'sqlite3'
 require 'sequel'
 require 'pry'
 
+DB = Sequel.sqlite('database.db')
+class Mountains < Sequel::Model(:mountains); end
+
 get '/' do
   erb :home
 end
 
 get '/mountains' do
-  DB = Sequel.sqlite('database.db')
   dataset = DB.from(:mountains)
 
   @results = dataset.all
@@ -22,7 +24,6 @@ get '/mountains/new' do
 end
 
 get '/mountains/:id' do
-  DB = Sequel.sqlite('database.db')
   dataset = DB[:mountains][{id: params[:id]}]
 
   @results = dataset
@@ -31,7 +32,6 @@ get '/mountains/:id' do
 end
 
 get '/mountains/:id/edit' do
-  DB = Sequel.sqlite('database.db')
   dataset = DB[:mountains][{id: params[:id]}]
 
   @results = dataset
@@ -44,14 +44,12 @@ post '/mountains/:id' do
   id = params[:id]
   params.reject! { |key| key == "id"}
 
-  class Mountains < Sequel::Model(:mountains); end
   Mountains.filter(id: id).first.update(params)
 
   redirect "/mountains/#{id}"
 end
 
 post '/mountains' do
-  class Mountains < Sequel::Model(:mountains); end
   Mountains.insert(params)
 
   redirect "/mountains"
