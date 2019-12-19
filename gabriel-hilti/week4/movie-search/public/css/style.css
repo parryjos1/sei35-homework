@@ -12,7 +12,28 @@ h3 {
 
 form {
   width: 30%;
-  margin: 3rem auto;
+  margin: 5rem auto;
+  background: rgb(65, 68, 75);
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input[type="text"] {
+  margin-left: 1rem;
+  width: 10rem;
+  padding: 0.5rem;
+}
+
+form button {
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+
 }
 
 

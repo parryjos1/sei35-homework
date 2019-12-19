@@ -22,7 +22,7 @@ get '/movies' do
 
   # binding.pry
 
-  response = HTTParty.get get_url @keywords
+  response = HTTParty.get get_url_for_movies @keywords
 
   @titles = response['results']
 
