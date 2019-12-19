@@ -4,6 +4,7 @@ require 'sqlite3' # to talk to our SQL database
 require 'pry'
 
 def db_query( sql )
+
   # connection to the database
   db = SQLite3::Database.new 'database.db'
   db.results_as_hash = true
@@ -42,8 +43,59 @@ end
       '#{params[:image_url]}'
       );"
 
+      # execute the query and ignore the result
+      db_query sql
+
+      redirect '/mountains'
+
+    end
+
+  # Read routes
+  # 1. Index all mountains in the table
+  get '/mountains/' do
+    @results = db_query "SELECT * FROM mountains"
+    erb :index
+  end
+
+
+  # 2. details page for every single mountain
+  get '/mountains/:id' do
+
+    @mountain = db_query "SELECT * FROM mountains WHERE id = #{ params[:id] };"
+
+    @mountain = @mountain.first
+
+    erb :show
+  end
+
+  #Update routes
+    # 1.
+    get '/mountains/:id/edit' do
+    @mountain = db_query "SELECT * FROM mountains WHERE id =
+    #{ params[:id] };"
+    @mountain = @mountain.first
+
+    erb :edit
+  end
+
+  # 2.
+  post '/mountains/:id' do
+
+  sql = "UPDATE mountains SET
+    name = '#{params[:name]}',
+    location = '#{params[:location]}',
+    description = '#{params[:description]}',
+    favourite = #{params[:favourite]},
+    image_url = '#{params[:image_url]}'
+    WHERE id = #{params[:id]};"
+
     # execute the query and ignore the result
     db_query sql
 
-redirect '/mountains'
+    redirect "/mountains/#{params[:id]}"
+
   end
+
+
+
+  #Delete routes

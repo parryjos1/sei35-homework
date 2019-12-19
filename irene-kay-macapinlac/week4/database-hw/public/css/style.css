@@ -1,0 +1,13 @@
+body {
+  background-color: lavender;
+  color: brown;
+  font-family: Helvetica, sans-serif;
+}
+
+  a, a:visited{
+  color: red;
+}
+
+img {
+  max-width: 400px;
+}

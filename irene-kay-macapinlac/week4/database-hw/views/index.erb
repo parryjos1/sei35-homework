@@ -1,0 +1,15 @@
+<h2>The Mountains</h2>
+
+<ul>
+
+  <!-- this loops through each animal -->
+  <% @results.each do |mountain| %>
+  <!-- li prints all the species in a un-ordered list -->
+  <li>
+    <a href="/mountains/<%= mountain['id'] %>">
+      <%= mountain['name'] %>
+    </a>
+  </li>
+
+  <% end %>
+</ul>
