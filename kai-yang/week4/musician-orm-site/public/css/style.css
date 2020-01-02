@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
+body {
+  background-color: rgba(163, 144, 209, 0.89);
+  color: rgb(246, 214, 47);
+  font-family: 'Courier Prime', monospace;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a, a:visited {
+  color: white;
+}
+
+img {
+  max-width: 400px;
+}

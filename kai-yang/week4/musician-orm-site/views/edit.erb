@@ -1,0 +1,47 @@
+<h2>Edit <%= @musician['name'] %></h2>
+<form action="/musicians/<%= @musician['id'] %>" method="post">
+
+  <label>
+    Name:
+    <input type="text" name="name" value="<%= @musician['name'] %>">
+  </label>
+  <br>
+
+  <label>
+    Year Active:
+    <input type="text" name="year_active" value="<%= @musician['year_active'] %>">
+  </label>
+  <br>
+
+  <label>
+    Hometown:
+    <input type="text" name="hometown" value="<%= @musician['hometown'] %>">
+  </label>
+  <br>
+
+  <label>
+    Labels:
+    <input type="text" name="labels" value="<%= @musician['labels'] %>">
+  </label>
+  <br>
+
+  <label>
+    Occupations:
+    <input type="text" name="occupations" value="<%= @musician['occupations'] %>">
+  </label>
+  <br>
+
+  <label>
+    Still Active:
+    <input type="text" name="still_active" value="<%= @musician['still_active'] %>">
+  </label>
+  <br>
+
+  <label>
+    Image URL:
+    <input type="text" name="image_url" value="<%= @musician['image_url'] %>">
+  </label>
+  <br>
+
+  <input type="submit" value="Edit Musician">
+</form>

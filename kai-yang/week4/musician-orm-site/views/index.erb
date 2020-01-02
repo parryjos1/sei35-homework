@@ -1,0 +1,8 @@
+<h2>A list of famous musicians!</h2>
+<ul>
+  <% @results.each do |musician| %>
+    <li>
+    <a href="/musicians/<%= musician['id'] %>"><%= musician['name'] %></a><br>
+    </li>
+  <% end %>
+</ul>
