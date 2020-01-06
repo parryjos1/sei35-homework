@@ -1,0 +1,8 @@
+<h2>You guessed that the secret number was: <%= @user_guess %></h2>
+<h2>When it actually was... <%= @magic_number %></h2>
+
+<h3><%= @correct %></h3>
+
+<form action="/secret_number">
+    <input type="submit" value="Try Again?">
+</form>
