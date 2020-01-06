@@ -1,0 +1,15 @@
+tr td:first-child {
+    width: 2em;
+}
+
+table + input {
+    margin-top: 2em;
+}
+
+li {
+    margin-top: 0.5em;
+}
+
+a {
+    display: block;
+}
