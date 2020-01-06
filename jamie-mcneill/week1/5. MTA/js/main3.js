@@ -72,7 +72,7 @@ const tripPlan = function (line1, stop1, line2, stop2) {
     console.log (`You need to take the ${line1} line through the following stops ${journeyToUnion}.`)
     console.log(`Change at Union Square`);
 
-    let indexNumStop2 = mtn[line2].indexOf(stop2) + 0;
+    let indexNumStop2 = mtn[line2].indexOf(stop2);
     let indexNumUnion2 = mtn[line2].indexOf("Union Square") + 1;
     let line2journey = mtn[line2].slice(indexNumStop2, indexNumUnion2);
     let reverse2 = line2journey.reverse();
@@ -82,7 +82,7 @@ const tripPlan = function (line1, stop1, line2, stop2) {
   }  else if (line1 !== line2 && indexNumStop1 > indexNumUnion1 && indexNumUnion2 > indexNumStop2) {
 
     let indexNumStop1 = mtn[line1].indexOf(stop1) + 1;
-    let indexNumUnion1 = mtn[line1].indexOf("Union Square") + 0;
+    let indexNumUnion1 = mtn[line1].indexOf("Union Square");
     let line1journeyUnion = mtn[line1].slice(indexNumUnion1,indexNumStop1);
     let reverse1 = line1journeyUnion.reverse();
 
@@ -90,7 +90,7 @@ const tripPlan = function (line1, stop1, line2, stop2) {
 
     console.log(`Change at Union Square`);
 
-    let indexNumStop2 = mtn[line2].indexOf(stop2) + 0;
+    let indexNumStop2 = mtn[line2].indexOf(stop2);
     let indexNumUnion2 = mtn[line2].indexOf("Union Square") + 1;
     let line2journey = mtn[line2].slice(indexNumStop2,indexNumUnion2);
     let reverse2 = line2journey.reverse();
@@ -100,7 +100,7 @@ const tripPlan = function (line1, stop1, line2, stop2) {
   } else {
 
     let indexNumStop1 = mtn[line1].indexOf(stop1) + 1;
-    let indexNumUnion1 = mtn[line1].indexOf("Union Square") + 0;
+    let indexNumUnion1 = mtn[line1].indexOf("Union Square");
     let line1journeyUnion = mtn[line1].slice(indexNumUnion1,indexNumStop1);
     let reverse1 = line1journeyUnion.reverse();
 
@@ -108,7 +108,7 @@ const tripPlan = function (line1, stop1, line2, stop2) {
     console.log(`Change at Union Square`);
 
     let indexNumStop2 = mtn[line2].indexOf(stop2) + 1;
-    let indexNumUnion2 = mtn[line2].indexOf("Union Square") + 0
+    let indexNumUnion2 = mtn[line2].indexOf("Union Square");
     let journeyToStop2 = mtn[line2].slice(indexNumUnion2, indexNumStop2);
 
     console.log (`Then take the ${line2} line through the following stops ${journeyToStop2}`)

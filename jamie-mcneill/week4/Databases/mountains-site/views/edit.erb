@@ -1,0 +1,36 @@
+<h2>Edit <%= @mountain['name'] %> </h2>
+
+ <%= @mountain %>
+
+<form action="/mountain/<%= @mountain['id']%>" method="post">
+<%# here is what the post on the server page links to %>
+
+<label>
+Name:
+<input type="text" name="name" value="<%= @mountain['name'] %>">
+</label>
+<br>
+
+<label>
+Location:
+<input type="text" name="location" value="<%= @mountain['location'] %>">
+</label>
+<br>
+
+<label>
+Height:
+<input type="text" name="height" value="<%= @mountain['height'] %>">
+</label>
+<br>
+
+<label>
+Image URL:
+<input type="text" name="image_url" value="<%= @mountain['image_url'] %>">
+</label>
+<br>
+
+<button type="submit" name="button" value="update mountain">Submit Edit</button>
+
+<button type="submit" name="button" value="delete from mountain">Delete entry</button>
+
+</form>
