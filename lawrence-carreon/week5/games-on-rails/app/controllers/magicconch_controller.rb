@@ -13,6 +13,6 @@ class MagicconchController < ApplicationController
             "Yes.",
             "Try asking again."
         ]
-        @magic_response = responses[rand(0...7)] 
+        @magic_response = responses.sample
     end
 end

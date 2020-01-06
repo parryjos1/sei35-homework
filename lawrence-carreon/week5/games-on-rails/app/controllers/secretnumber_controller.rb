@@ -1,6 +1,6 @@
 class SecretnumberController < ApplicationController
     def home
-    end
+    en
     def played
         @user_guess = params[:guess].to_i
         @magic_number = rand(1...10)
