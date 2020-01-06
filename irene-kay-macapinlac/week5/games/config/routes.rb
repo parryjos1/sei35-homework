@@ -12,15 +12,13 @@ Rails.application.routes.draw do
   # 1. Blank form
   get '/secretnum' => 'secretnum#form'
 
-  # 2. Form submits here, prints results
+  # 2. Form submits here, checks to see a match - guessed number with random number
   get '/secretnum/results' => 'secretnum#results'
 
   # Rock Paper Scissors
 
   # 1. Blank form
-  get '/rps' => 'rps#form'
+  get '/rps/:hand' => 'rps#play_hand'
 
-  # 2. Form submits here, does stock lookup, prints results
-  get '/rps/lookup' => 'rps#do_lookup'
 
 end
