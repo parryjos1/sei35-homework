@@ -1,0 +1,15 @@
+
+
+<h1>Answer: <%= @user_answer %></h1>
+<h1>Computer Answer: <%= @rand_answer %></h1>
+
+
+<% if @user == @rand_ans %>
+<h1>It's a tie!</h1>
+<% elsif (@user == 'p' && @rand_ans == 'r') ||  %>
+<% (@user == 'r' && @rand_ans == 's') ||  %>
+<% (@user == 's' && @rand_ans == 'p') %>
+  <h1>Player wins</h1>
+<% else %>
+  <h1>Computer wins</h1>
+<% end %>

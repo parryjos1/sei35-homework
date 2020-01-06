@@ -47,12 +47,13 @@ end
 # 1. Show the blank form for the band to be filled
 get '/bands/new' do
     @new_band = db_query "SELECT * FROM bands"
-    erb :add_band
+    erb :new
 end
 
 # submit data to database through from with post request
 post '/bands' do
 # similar to tables creation but INSERT instead
+# make sure the names are link in the form
   sql = "INSERT INTO bands (name, genre, song, year, together, album)
     VALUES (
       '#{params[:name]}',
@@ -62,11 +63,12 @@ post '/bands' do
       #{params[:together]},
       '#{params[:album]}'
     );"
-
-#    binding.pry
+# binding.pry
 #run the query (pass infomation into db i think) ask
   db_query sql
 # redirect back to home page which lists the bands
+# needs to redirect to the user doesn't create mutliple items
+#  while reloading
   redirect '/bands'
 end
 # Create link to individual bands page and  using band id as routes
@@ -78,3 +80,5 @@ get '/bands/:id' do
   @band = @band.first
   erb :display
 end
+
+# UPDATE similar to add but use UPDATE
