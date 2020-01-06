@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   # 1. Blank form
   get '/secretnum' => 'secretnum#form'
 
-  # 2. Form submits here, does stock lookup, prints results
-  get '/secretnum/lookup' => 'secretnum#do_lookup'
+  # 2. Form submits here, prints results
+  get '/secretnum/results' => 'secretnum#results'
 
   # Rock Paper Scissors
 
