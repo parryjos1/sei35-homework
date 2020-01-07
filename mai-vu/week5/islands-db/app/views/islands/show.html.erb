@@ -1,0 +1,23 @@
+<a href="<%= island_edit_path( @island.id ) %>">Edit</a>
+<a href="<%= island_delete_path( @island.id ) %>">Delete</a>
+<br>
+
+<h2>
+    <%= @island.name %>
+</h2>
+
+<% if @island.image.present? %>
+    <%= image_tag @island.image, alt: @island.name, class: 'island' %>
+<% end %>
+
+<p>
+    <strong>Area: </strong>
+    <%= @island.area %> km2
+    <br>
+    <strong>Population: </strong>
+    <%= @island.population %>
+</p>
+
+<p>
+    <%= @island.description %>
+</p>

@@ -1,0 +1,23 @@
+* {
+    list-style-type: none;
+    text-align:center;
+    background-color: powderblue;
+}
+
+img {
+    margin:10px;
+    width:300px;
+    height:400px;
+}
+
+a {
+    color: #072F5F;
+}
+
+h1 {
+    color: #1261A0;
+}
+
+input {
+    background-color: aliceblue;
+}
