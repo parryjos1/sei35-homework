@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MountainsDb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1> Mountains Of The World </h1>
+    <a href="/index">Index</a>
+    <a href="/index/create">Create</a>
+    <%= yield %>
+  </body>
+</html>

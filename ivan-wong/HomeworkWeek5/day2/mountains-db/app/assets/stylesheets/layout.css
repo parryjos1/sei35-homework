@@ -1,0 +1,13 @@
+* {
+  list-style-type: none;
+  text-align:center;
+  background-color:powderblue ;
+}
+img {
+  margin:10px;
+  width:300px;
+  height:400px;
+}
+input {
+  background-color:white;
+}
