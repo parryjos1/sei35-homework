@@ -1,0 +1,6 @@
+<h2>results for <%= @search_title %></h2>
+<ul>
+<% @page_x['results'].each_index do |i| %>
+<li><%= @page_x['results'][ i ]['title'] %></li>
+<% end %>
+</ul>

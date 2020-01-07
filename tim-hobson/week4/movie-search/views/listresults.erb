@@ -1,0 +1,9 @@
+<h2>results for <%= @search_title %></h2>
+
+  <% @page_x['results'].each_index do |i| %>
+  <li><a href="/details?id=<%= @page_x['results'][i]['id'] %>">
+    <%= @page_x['results'][i]['title'] %> - <%= @page_x['results'][i]['release_date'][0..3] %>
+  </li></a>
+  <% end %>
+  
+<%= erb :page_counter %>
