@@ -1,3 +1,5 @@
+require 'colorize'
+
 def get_lines
   lines = {
     N: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
@@ -27,7 +29,7 @@ def drive(line, station_start, station_end, has_intersection=true)
 
   message1, message2, message3 = counter > 1 ? ["Your next stops are ", 'are', 's'] : ['Your next stop is ', 'is', '']
   message1.sub! 'next', 'additional' unless has_intersection
-  message1 += message_stops.split('.').join(", ") + ". There #{message2} #{counter} stop#{message3} on line #{line}."
+  message1 += message_stops.split('.').join(", ").colorize(:color => :black, :background => :white) + ". There #{message2} #{counter} stop#{message3} on line #{line}."
   return message1, counter
 end
 

@@ -1,0 +1,70 @@
+body {
+  background: rgb(41, 49, 66);
+  color: white;
+}
+h1, h3 {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+form {
+  width: 30%;
+  margin: 5rem auto;
+  background: rgb(65, 68, 75);
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input[type="text"] {
+  margin-left: 1rem;
+  width: 10rem;
+  padding: 0.5rem;
+}
+
+form button {
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+
+}
+
+
+.container {
+  width: 50vw;
+  margin: 2rem auto;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-item img {
+  display: block;
+  margin: 1rem auto 0.5rem auto;
+}
+
+
+.flex-item {
+  width: 35%;
+  background: rgb(58, 68, 87);
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 2px 1px black;
+}
+
+footer {
+  position: relative;
+  top: 95vh;
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+
+<h3>Results</h3>
+<div class="container">
+  <% @titles.each do |movie| %>
+  <div class="flex-item">
+    Name: <%= movie['title'] %><br>
+    <% unless movie['poster_path'].nil? %>
+      <img src="https://image.tmdb.org/t/p/w92<%= movie['poster_path'] %>">
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+
+
+ <% unless @movie_url.nil? %>
+  <% redirect @movie_url %>
+ <% end %>
