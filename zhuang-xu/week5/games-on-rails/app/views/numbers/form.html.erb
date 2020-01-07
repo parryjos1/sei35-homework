@@ -1,0 +1,13 @@
+<h2>Pick a number please:</h2>
+<form action="/numbers/result">
+  <table>
+    <% (1..10).each do |number| %>
+      <tr>
+        <td><input type="radio" name="number" value="<%= number %>" <%= 'checked' if number == 1 %> ></td>
+        <td><%= number %></td>
+      </tr>
+    <% end %>
+  </table>
+  <input type="submit" value="Submit">
+</form>
+<%= link_to 'Home', controller: 'main', action: 'welcome' %>
