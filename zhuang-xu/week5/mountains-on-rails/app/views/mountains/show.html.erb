@@ -1,0 +1,10 @@
+<% @columns.each do |column| %>
+  <div class="mountain-details">
+    <div><%= column %></div>
+    <div><%= @mountain[column] %></div>
+  </div>
+<% end %>
+<div class="buttons">
+  <a href="<%= mountain_edit_path @mountain[:id] %>" class="edit-button">Edit</a>
+  <a href="<%= mountain_destroy_path @mountain[:id] %>" class="delete-button">Delete</a>
+</div>
