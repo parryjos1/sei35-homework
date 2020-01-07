@@ -1,0 +1,11 @@
+--2020-01-06 23:16:51--  https://www.vermontcountrystore.com/ccstore/v1/images/?source=/file/v436715391556442924/products/51327.main.png
+Resolving www.vermontcountrystore.com (www.vermontcountrystore.com)... 23.212.223.207
+Connecting to www.vermontcountrystore.com (www.vermontcountrystore.com)|23.212.223.207|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 890662 (870K) [image/png]
+Saving to: ‘magic8ball.png’
+
+magic8ball.png              0%[                                   ]       0  --.-KB/s               magic8ball.png             80%[===========================>       ] 696.82K  3.35MB/s               magic8ball.png            100%[==================================>] 869.79K  3.60MB/s    in 0.2s    
+
+2020-01-06 23:16:51 (3.60 MB/s) - ‘magic8ball.png’ saved [890662/890662]
+

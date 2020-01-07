@@ -1,0 +1,13 @@
+body {
+background-color: blue;
+font-family: arial sans-serif;
+color: white;
+}
+
+a, a:visited {
+  color: yellow;
+}
+
+img {
+  max-width: 500px;
+}

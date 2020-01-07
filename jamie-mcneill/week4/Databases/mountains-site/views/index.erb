@@ -1,0 +1,22 @@
+<h2>All Listed Mountains</h2>
+
+<p>
+
+  <%#Takes the results variable storing all of the data from the database in hash format and loops though each hash of mountains %>
+
+  <% @results.each do |mountain| %>
+
+
+  <%#Put the specific route template here!%>
+
+    <li>
+        <%#creates a href link that when the user clicks, navigates the user to the id page of the animal. The mountain name is displayed in the anchor. %>
+      <a href="/mountain/<%= mountain['id'] %>">
+        <%= mountain['name'] %>
+      </a>
+    </li>
+
+
+  <% end %>
+
+</p>

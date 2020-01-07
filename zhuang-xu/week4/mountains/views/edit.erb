@@ -1,0 +1,36 @@
+<form action="/mountains/<%= @results[:id] %>" method="post">
+  <div class="mountain-details">
+    <div>ID:</div>
+    <input type="text" name="id" value="<%= @results[:id] %>" disabled>
+  </div>
+  <div class="mountain-details">
+    <div>Name:</div>
+    <input type="text" name="name" value="<%= @results[:name] %>">
+  </div>
+  <div class="mountain-details">
+    <div>Height:</div>
+    <input type="text" name="height" value="<%= @results[:height] %>">
+  </div>
+  <div class="mountain-details">
+    <div>Country:</div>
+    <input type="text" name="country" value="<%= @results[:country] %>">
+  </div>
+  <div class="mountain-details">
+    <div>Longitude:</div>
+    <input type="text" name="longitude" value="<%= @results[:longitude] %>">
+  </div>
+  <div class="mountain-details">
+    <div>Latitude:</div>
+    <input type="text" name="latitude" value="<%= @results[:latitude] %>">
+  </div>
+  <div class="mountain-details">
+    <div>First ascent year:</div>
+    <input type="text" name="first_ascent_year" value="<%= @results[:first_ascent_year] %>">
+  </div>
+  <div class="mountain-details">
+    <div>Range:</div>
+    <input type="text" name="range" value="<%= @results[:range] %>">
+  </div>
+  <br>
+  <input type="submit" value="Update Mountain">
+</form>

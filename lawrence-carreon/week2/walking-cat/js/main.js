@@ -1,10 +1,12 @@
+//to add: innerHeight values
+//to modify: directional handle
 const cat = document.getElementsByClassName("catwalk")[0];
 let newLeftPos = 0; // a new variable help keep track of the left absolute
 let leftWalkInterval; // a variable to store an interval in
 let rightWalkInterval; //Same as above
 //makes the cat walk right and turns it at a certain point
 const catwalkRight = function () {
-    if ( newLeftPos >= 1000){
+    if ( newLeftPos >= (window.innerWidth - cat.width)){
         cat.style.transform = "scaleX(-1)";
         //stops the current interval running and then starts the other direction
         window.clearInterval(rightWalkInterval);
@@ -13,7 +15,7 @@ const catwalkRight = function () {
     newLeftPos += 10; 
     cat.style.left = newLeftPos + 'px';
 };  
-//same as the above expect the other direction
+//same as the above exceptt the other direction
 const catwalkLeft = function()
 {
     if (newLeftPos <= 0){

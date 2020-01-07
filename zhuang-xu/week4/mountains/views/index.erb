@@ -1,0 +1,25 @@
+<p>
+<table>
+  <% columns = @results[0].keys %>
+  <% columns.each do |column| %>
+    <th><%= column %></th>
+  <% end %>
+  <th></th>
+  <% @results.each do |row| %>
+    <tr>
+      <% columns.each do |column| %>
+        <td>
+          <% if column == :name %>
+            <a href="/mountains/<%= row[:id] %>">
+          <% end %>
+          <%= row[column] %>
+          <% if column == 'name' %>
+            </a>
+          <% end %>
+        </td>
+      <% end %>
+      <td><a href="/mountains/<%= row[:id] %>/delete">Delete</a></td>
+    </tr>
+  <% end %>
+</table>
+</p>

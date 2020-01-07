@@ -1,0 +1,7 @@
+<p>
+  The secret number is: <%= @secret_num %> <br>
+  Your number is: <%= @guessed_num %> <br>
+  You <span style="font-weight: bold; font-size: 1.5em;"><%= @win? 'won' : 'lost' %></span>!
+</p>
+
+<%= link_to 'Guess again', '/number' %>
