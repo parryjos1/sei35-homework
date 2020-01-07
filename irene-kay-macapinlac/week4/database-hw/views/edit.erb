@@ -1,0 +1,36 @@
+<h2>Edit <%= @mountain['name'] %></h2>
+
+<form action="/mountains/<%= @mountain['id'] %>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" value="<%= @mountain['name'] %>">
+  </label>
+  <br>
+
+  <label>
+    Location:
+    <input type="text" name="species" value="<%= @mountain['location'] %>">
+  </label>
+  <br>
+
+  <label>
+    Description:
+    <input type="text" name="description" value="<%= @mountain['description'] %>">
+  </label>
+  <br>
+
+  <label>
+    Favourite:
+    <input type="text" name="roundness" value="<%= @mountain['favourite'] %>">
+  </label>
+  <br>
+
+  <label>
+    Image URL:
+    <input type="text" name="image_url" value="<%= @mountain['image_url'] %>">
+  </label>
+  <br>
+
+  <input type="submit" value="Create Animal">
+
+</form>
