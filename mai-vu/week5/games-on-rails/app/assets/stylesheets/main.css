@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height:100vh;
+    padding: 0;
+    background-color: black;
+    color: whitesmoke;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+}
+
+header, footer {
+    font-size: 5vmin;
+}
+
+a {
+    margin: 5px;
+    color: hotpink;
+}
+
+p {
+    padding: 0;
+    margin: 0
+}
+
+hr {
+    color: palevioletred;
+    margin-left: 0;
+    margin-right: 0;
+}

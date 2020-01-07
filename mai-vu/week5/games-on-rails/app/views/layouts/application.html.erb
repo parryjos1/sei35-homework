@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Games On Rails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <header>
+      Welcome to Games on Rails!
+    </header>
+    <hr>
+
+    <%= yield %>
+
+    <hr>
+    <footer>
+      &copy; Bored Gamer in Rails Town, 2020
+    </footer>
+
+  </body>
+</html>
