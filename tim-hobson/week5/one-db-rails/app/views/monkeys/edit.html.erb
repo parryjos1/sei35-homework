@@ -1,0 +1,32 @@
+<h1>edit monkey</h1>
+
+
+<form action="<%= monkey_path(@monkey.id) %>" method="post">
+
+  <label>
+    Name:<input type="text" name="name" value="<%= @monkey.name %>">
+  </label><br>
+
+  <label>
+    Native Country:<input type="text" name="native_country" value="<%= @monkey.native_country %>">
+  </label><br>
+
+  <label>
+    Weight:<input type="text" name="weight" value="<%= @monkey.weight %>">
+  </label><br>
+
+  <label>
+    Height:<input type="text" name="height" value="<%= @monkey.height %>">
+  </label><br>
+
+  <label>
+    Lifespan:<input type="text" name="lifespan" value="<%= @monkey.lifespan %>">
+  </label><br>
+
+  <label>
+    Image:<input type="text" name="image" value="<%= @monkey.image %>">
+  </label><br>
+
+  <input type="submit" value="edit">
+
+</form>

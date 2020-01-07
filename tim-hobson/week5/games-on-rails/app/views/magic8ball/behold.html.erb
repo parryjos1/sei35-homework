@@ -1,0 +1,9 @@
+<h2> you asked: <%= params[:ball_question] %></h2>
+<h2>THE ALL-KNOWING 8BALL SAYS:</h2>
+
+<div id='div8BallContainer'>
+  <h1 id='magic8BallAnswer'><%= @answers.sample.upcase %></h1>
+  <div id='div8ball'></div>
+</div>
+<p><a href="/magic8ball">back</a></p>
+<p><a href="/">home</a></p>

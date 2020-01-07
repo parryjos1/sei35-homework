@@ -1,0 +1,11 @@
+<h1>monkeys</h1>
+<p><a href="<%= monkeys_new_path %>">new</a></p>
+<ul>
+  <% @monkeys.each do |monkey| %>
+  <li>
+    <a href="/monkeys/<%=(monkey.id) %>">
+    <%= monkey.name %>
+    </a>
+  </li>
+  <% end %>
+</ul>
