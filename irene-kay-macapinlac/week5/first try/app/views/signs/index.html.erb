@@ -1,0 +1,11 @@
+<h1>Index of Signs</h1>
+
+<ul>
+  <% @signs.each do |sign| %>
+  <li>
+    <a href="<%= sign_path(sign.id) %>">
+      <%= sign.name %>
+    </a>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,28 @@
+<h2>
+  Sign <%= @sign.name %>
+</h2>
+
+<a href="<%= sign_edit_path(@sign.id) %>">Edit</a>
+|
+<a href="<%= sign_destroy_path(@sign.id) %>">Destroy</a>
+
+<p>
+  <strong>Date:</strong>
+  <%= @sign.date %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @sign.House %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @sign.info %>
+</p>
+
+<!--
+<% if @sign.image.present? %>
+<%= image_tag @sign.image, alt: @sign.name, class: 'planet' %>
+<% end %>
+-->
