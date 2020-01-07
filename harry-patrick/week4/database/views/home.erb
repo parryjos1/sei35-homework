@@ -1,0 +1,15 @@
+<h1>Welcome to Harry's band database</h1>
+
+<%# loop into @results (all bands in database) to display each bands name and link to the routes that their infomation %>
+<%# becarefull when to include '=' this will add to the html %>
+<ul>
+  <% @results.each do |band| %>
+  <li>
+<%# create reference to band specific page using a tag %>
+<%# use band id to refence specific band %>
+      <a href="/bands/<%= band['id'] %>">
+        <%= band['name'] %>
+      </a>
+  </li>
+  <%end%>
+</ul>

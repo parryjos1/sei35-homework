@@ -1,3 +1,6 @@
+p '-----------------'
+p "New Trip"
+
  mta = {
     :n_line => ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
     :l_line => ["8th", "6th", "Union Square", "3rd", "1st"],
@@ -8,6 +11,7 @@ def station_index obj, line, station
    index = obj[line].index(station)
 end
 # forward or backward add each item to list first half
+# reverse result
 def create_stop_list obj, start, change, line, station, exchange_station
   trip = []
   full_line = obj[line]
@@ -55,16 +59,21 @@ def half_trip obj, line, station, line_two, station_two, exchange_station
   puts "Your trip is #{trip_length} stops"
 end
 # call the all the functions
+half_trip mta, :n_line, "Times Square", :n_line, "8th", "Union Square"
+
 # print "What transit system are you traveling on? "
 # mta = gets.chomp
+# mta = mta.to_sym
 # print "What train line are you starting on? "
-# line_one = gets.chomp
+# exp_one = gets.chomp
+# exp_one = exp_one.to_sym
 # print "What train station are you starting on? "
-# station_one = gets.chomp.to_s
+# exp_station_one = gets.chomp
 # print "What train line are you ending on? "
-# line_two = gets.chomp
+# exp_two = gets.chomp
+# exp_two = exp_two.to_sym
 # print "What train station are you starting on? "
-# station_two = gets.chomp.to_s
+# exp_station_two = gets.chomp
 # print "What train station are you swaping at? "
-# change = gets.chomp.to_s
-half_trip mta, :n_line, "Times Square", :l_line, "1st", "Union Square"
+# exp_change = gets.chomp
+# half_trip mta, exp_one, exp_station_one, exp_two, exp_station_two, exp_change
