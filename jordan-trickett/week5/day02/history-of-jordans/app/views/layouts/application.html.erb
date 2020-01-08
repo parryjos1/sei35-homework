@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HistoryOfJordans</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>History of Air Jordan</h1>
+      <nav>
+        <a href="<%= jordans_path %>">Index</a>
+        <a href="<%= jordans_new_path %>">Add</a>
+      </nav>
+    </header>
+
+
+
+    <%= yield %>
+  </body>
+</html>
