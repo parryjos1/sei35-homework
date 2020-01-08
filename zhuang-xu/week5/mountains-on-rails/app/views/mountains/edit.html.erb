@@ -1,0 +1,9 @@
+<form action="<%= mountain_path @mountain[:id] %>" method="post">
+<% @columns.each do |column| %>
+  <div class="mountain-details">
+    <div><%= column %></div>
+    <div><input type="text" value="<%= @mountain[column] %>" name="<%= column %>" <%= "disabled" if column == 'id' %>></div>
+  </div>
+<% end %>
+  <input type="submit" value="Update">
+</form>
