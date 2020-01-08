@@ -1,0 +1,34 @@
+<div class="mountain-details">
+  <div>ID:</div>
+  <div><%= @results[:id] %></div>
+</div>
+<div class="mountain-details">
+  <div>Name:</div>
+  <div><%= @results[:name] %></div>
+</div>
+<div class="mountain-details">
+  <div>Height:</div>
+  <div><%= @results[:height] %></div>
+</div>
+<div class="mountain-details">
+  <div>Country:</div>
+  <div><%= @results[:country] %></div>
+</div>
+<div class="mountain-details">
+  <div>Longitude:</div>
+  <div><%= @results[:longitude] %></div>
+</div>
+<div class="mountain-details">
+  <div>Latitude:</div>
+  <div><%= @results[:latitude] %></div>
+</div>
+<div class="mountain-details">
+  <div>First ascent year:</div>
+  <div><%= @results[:first_ascent_year] %></div>
+</div>
+<div class="mountain-details">
+  <div>Range:</div>
+  <div><%= @results[:range] %></div>
+</div>
+
+<a class="edit-button" href="/mountains/<%= @results[:id] %>/edit">Edit</a>

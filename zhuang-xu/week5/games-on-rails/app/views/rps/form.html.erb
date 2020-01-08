@@ -1,0 +1,19 @@
+<% if @result != nil %>
+  <h2>Player chose <%= @player_choice %></h2>
+  <h2>Computer chose <%= @computer_choice %></h2>
+  <h2><strong><%= @result %></strong></h2>
+  <hr>
+<% end %>
+<h2>Please make your choice:</h2>
+<form action="/rps">
+  <table>
+    <% @choices.keys.each_with_index do |choice, i| %>
+      <tr>
+        <td><input type="radio" name="player" value="<%= choice %>" <%= 'checked' if i == 0 %> ></td>
+        <td><%= choice %></td>
+      </tr>
+    <% end %>
+  </table>
+  <input type="submit" value="Submit">
+</form>
+<%= link_to 'Home', controller: 'main', action: 'welcome' %>

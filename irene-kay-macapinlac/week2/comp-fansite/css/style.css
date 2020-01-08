@@ -2,18 +2,9 @@
 
 * {
   box-sizing: border-box;
-  margin: .5% 2% 0 2%;
+  margin: .5% 5% 0 5%;
 }
 
-#headerWrapBar {
-background-color: rgba(255, 255, 255, 0.5);
-padding: 0;
-}
-
-.navBar {
-  /* background-color: white; */
-  text-shadow: 1px 1px 1px rgba(0,0,0,.004);
-}
 
 body {
   font-family: 'Playfair Display', serif;
@@ -23,11 +14,13 @@ body {
   color: #222226;
 }
 
-h1 {
-  position: relative;
+.heading1 {
   display: block;
+  position: relative;
   text-align: right;
-  margin-right: 5%;
+  top: -37px;
+  left: 1%;
+  /* margin-right: 5%; */
   /* padding-right: 5%; */
 }
 
@@ -54,7 +47,8 @@ img {
     height: auto;
     background: no-repeat 50% 50%;
     background-size: cover;
-    top: 60px;
+    top: 4vw;
+    right: 1vw;
 
 }
 
@@ -64,7 +58,13 @@ img {
   height: auto;
   text-align: center;
   padding: 0 6.17499675vw;
-  top: 301px;
+  top: 25vw;
+  right: -6vw;
+}
+
+.textWrap p {
+  text-align: right;
+  margin-right: 10%;
 }
 
 h2 {
@@ -80,13 +80,12 @@ h2 {
 }
 
 #headerWrapBar {
-  position: fixed;
-      width: 100%;
-      height: auto;
-      top: 0;
-      left: 0;
-      padding: 11px 0;
-      z-index: 9999;
+  position: relative;
+  width: 90%;
+  height: auto;
+  top: 11px;
+  left: -88px;
+  padding: 9px 0;
 }
 
 li {
@@ -106,40 +105,69 @@ li {
     box-sizing: border-box;
     position: absolute;
     display: inline-block;
-    width: 90%;
-    height: auto;
+    top: 11vw;
+    width: 80vw;
+    height: 40vw;
+    right: 10vw;
     background-color: #efcb56;
-    margin-bottom: .15vw;
-    text-align: left;
-    padding-bottom: 20px;
-    top: 100%;
-    margin: .5% 10% 0 2%;
+    /* margin: 8.5% -1% 0px 1%; */
 }
 
 .legacyInfo {
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   display: inline-block;
-  width: 90%;
-  height: auto;
   background-color: #efcb56;
-  margin-bottom: .15vw;
-  text-align: left;
-  padding-bottom: 20px;
-  top: 100%;
-  margin: .5% 10% 0 2%;
+  text-align: center;
+  top: 5vw;
+  right: -6vw;
+  height: 32vw;
+  width: 40vw;
 }
 
-.extra {
+.admire {
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   display: inline-block;
-  width: 90%;
-  height: auto;
   background-color: #efcb56;
-  margin-bottom: .15vw;
-  text-align: left;
-  padding-bottom: 20px;
-  top: 100%;
-  margin: .5% 10% 0 2%;
+  text-align: center;
+  top: 2vw;
+  left: 9vw;
+  height: 32vw;
+  width: 40vw;
+}
+
+a {
+  text-decoration: none;
+  color: #222226;
+}
+
+p {
+  padding: 10px;
+}
+
+.navBar {
+
+}
+
+.apollo {
+  position: relative;
+    height: 38vw;
+    width: 54vw;
+    top: 5vw;
+    left: 20vw;
+}
+
+img.apollo {
+  transform: rotate(0deg) scale(1.0);
+  filter: hue-rotate(0deg);
+  transition: 1s;
+  /* Animations */
+}
+
+img.apollo:hover {
+  transform: rotate(4060deg) scale(3.0);
+  filter: hue-rotate(360deg);
+  /* rounds the corners of the img...hover - it only takes effect if you hover the mouse over the img*/
+}
 }

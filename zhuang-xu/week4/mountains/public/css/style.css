@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    width: 40vw;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav a {
+    display: inline-block;
+    width: 6em;
+}
+
+hr {
+    width: 40vw;
+}
+
+h1 + h2 {
+    opacity: 0.7;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 4px;
+}
+
+.mountain-details {
+    display: flex;
+    width: 20vw;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.mountain-details div {
+    padding-bottom: 0.2em;;
+}
+
+.mountain-details div:first-child {
+    width: 40%;
+    text-align: left;
+}
+
+.mountain-details div:last-child {
+    width: 60%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.edit-button {
+    display: block;
+    width: 10vw;
+    margin: 2em auto 0;
+    padding: 0.2em;
+    border: 1px solid gray;
+}

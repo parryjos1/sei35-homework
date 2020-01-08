@@ -5,9 +5,12 @@ class SimpleSums
         @number = number
     end
 
+    # getter method
     def number
         @number
     end
+
+    attr_reader :number
 
     def s1
         @number % 2

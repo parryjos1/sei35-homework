@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="<%=editing_path(@findMountain.id)%>" method="update">
+    <label>
+      Name: <input type="text" name="name" value=<%=@findMountain.name%>>
+    </label>
+    <br><label>
+      Height: <input type="integer" name="height" value=<%=@findMountain.height%>>
+    </label>
+    <br><label>
+      Image: <input type="text" name="image" value=<%=@findMountain.image%>>
+    </label>
+    <br><label>
+      First: <input type="text" name="first" value=<%=@findMountain.first%>>
+    </label>
+    <br><label>
+      Date: <input type="text" name="date" value=<%=@findMountain.date%>>
+    </label>
+    <br><label>
+      <input type="submit" value="submit">
+    </label>
+  </form>
+</body>
+</html>

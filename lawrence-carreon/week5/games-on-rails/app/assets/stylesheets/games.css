@@ -1,0 +1,16 @@
+ul.gameslist li {
+    list-style-type: none;
+    padding:5px;
+    margin: 15px;
+    width: 15vw;
+    background-color: lavenderblush;
+}
+
+.gameslist li a{
+    text-decoration: none;
+    color: blue;
+}
+
+.gameslist li a:hover{
+    color: black;
+}

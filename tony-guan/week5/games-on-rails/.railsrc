@@ -1,0 +1,5 @@
+--skip-git
+--skip-turbolinks
+--skip-action-cable
+--skip-active-storage
+--skip-spring

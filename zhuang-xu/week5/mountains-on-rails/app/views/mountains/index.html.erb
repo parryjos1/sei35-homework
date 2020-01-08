@@ -1,0 +1,18 @@
+<table class="mountain">
+  <% @columns.each do |column| %>
+    <th><%= column %></th>
+  <% end %>
+  <% @mountains.each do |mountain| %>
+    <tr>
+      <% @columns.each do |column| %>
+        <td>
+          <% if column == 'name' %>
+            <a href="<%= mountain_path mountain[:id] %>"><%= mountain[column] %></a>
+          <% else %>
+            <%= mountain[column] %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

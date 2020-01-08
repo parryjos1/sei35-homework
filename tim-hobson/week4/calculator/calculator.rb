@@ -30,14 +30,14 @@ def advanced
   puts "square root: s"
   print "enter your desired operation (e,s): ".yellow
   operation = gets.chomp
-  if operation == 'e'
+  if operation == 'e' # make below it's own function
     print "what's the base number in your calculation: "
     base = gets.to_f
     print "what's the second number in your calculation: "
     power = gets.to_f
     exponent = base ** power
     puts "the exponent of #{base} to the power of #{power} is #{exponent}".green
-  elsif operation == 's'
+  elsif operation == 's' # make below it's own function
     print "what number do you want to find the squre root of: "
     root = gets.to_i
     square_root = Math.sqrt( root )
@@ -53,7 +53,7 @@ def custom
   puts "Trip calculator: t"
   print "enter your desired operation (m, b, t): ".yellow
   operation = gets.chomp
-  if operation == 'm'
+  if operation == 'm'# make below it's own function
     print "what amount do you want to borrow: "
     amount = gets.to_i
     print "how many years: "
@@ -65,14 +65,14 @@ def custom
     end
     monthly_repayment = mortgage_calc(amount, ((interest_rate/100) / 12), (term_length * 12))
     puts "with a loan amount of $#{amount} over #{term_length} years with a interest rate of #{interest_rate}% your montly repayments will be #{monthly_repayment}".green
-  elsif operation == 'b'
+  elsif operation == 'b'# make below it's own function
     print 'what is your weight in kgs: '
     weight = gets.to_f
     print 'what is your height in meters: '
     height = gets.to_f
     bmi = weight / ( height ** 2 )
     puts "with a height of #{height}m tall and a weight of #{weight}kgs you have a BMI of #{bmi}"
-  elsif operation == 't'
+  elsif operation == 't'# make below it's own function
     print "what is the distance in kms: "
     distance = gets.to_f
     print "what is the kilometers per litre: "
