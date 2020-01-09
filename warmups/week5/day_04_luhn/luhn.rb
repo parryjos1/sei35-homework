@@ -1,9 +1,3 @@
-# Counting from rightmost digit (which is the check digit) and moving left, double the value of every second digit. For any digits that thus become 10 or more, subtract 9 from the result.
-#
-# E.g., 1111 becomes 2121, while 8763 becomes 7733 (from 2×6=12 → 12-9=3 and 2×8=16 → 16-9=7).
-#
-# Add all these digits together. For example, if 1111 becomes 2121, then 2+1+2+1 is 6; and 8763 becomes 7733, so 7+7+3+3 is 20.
-
 
 class Luhn
 
@@ -34,17 +28,24 @@ class Luhn
   def valid?
     numbers = prepare_digits
 
+    # add all digits
     total = numbers.inject(0, :+)
 
+    #if valid
     if total % 10 == 0
       puts "#{@number} is a valid Luhn number."
     else
+      #if invalid
       puts "#{@number} is NOT a valid Luhn number."
-      puts "sum: #{total}"
+      # puts "sum: #{total}"
 
+      #bonus: find a number that would be valid
+      #how much to add for sum % 10 == 0
       digit_check = 10 - total % 10
+      #find highest value to add to number so we only change the last digit and not the second to last digit
       overflow = 10 - @number % 10
 
+      #condition to either add or substract digit_check to number 
       @number += digit_check if digit_check < overflow
       @number -= 10 - digit_check if digit_check > overflow
 
