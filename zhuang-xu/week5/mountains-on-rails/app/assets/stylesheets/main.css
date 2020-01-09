@@ -1,0 +1,63 @@
+header, footer {
+    width: 60vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table.mountain {
+    border-collapse: collapse;
+    width: 50vw;
+    margin: 0 auto;
+    line-height: 1.8em;
+}
+
+table.mountain th {
+    background-color: lightcyan;
+}
+
+table.mountain td {
+    padding: 0 0.4em 0;
+}
+
+table.mountain, table.mountain th, table.mountain td {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+div.mountain-details {
+    display: flex;
+    width: 30vw;
+    margin: 0 auto;
+    line-height: 2em;
+}
+
+div.mountain-details div:first-child {
+    width: 20%;
+    text-align: left;
+    font-weight: bold;
+}
+
+div.mountain-details div:last-child {
+    width: 80%;
+    text-align: left;
+    border-bottom: 1px dotted black;
+}
+
+div.mountain-details div:last-child input{
+    width: 100%;
+}
+
+div.buttons {
+    text-align: center;
+    margin: 1em auto 0;
+}
+
+a.edit-button, a.delete-button {
+    text-align: center;
+    padding: 0 2em 0;
+}
+
+form input[type="submit"] {
+    display: block;
+    width: 8em;
+    margin: 1em auto 0;
+}

@@ -1,0 +1,10 @@
+<form action="<%= mountains_path %>" method="post">
+  <% @columns.each do |column| %>
+    <div class="mountain-details">
+      <div><%= column %></div>
+      <div><input type="text" name="<%= column %>">
+      </div>
+    </div>
+  <% end %>
+  <input type="submit" value="Create">
+</form>
