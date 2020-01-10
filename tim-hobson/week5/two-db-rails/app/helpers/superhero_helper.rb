@@ -1,0 +1,2 @@
+module SuperheroHelper
+end

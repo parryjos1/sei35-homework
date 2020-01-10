@@ -1,0 +1,9 @@
+<h1>Den of Villains</h1>
+
+<ul>
+  <% @villains.each do |villain| %>
+  <li>
+    <%= link_to villain.name, villain_path( villain.id ) %>
+  </li>
+  <% end %>
+</ul>

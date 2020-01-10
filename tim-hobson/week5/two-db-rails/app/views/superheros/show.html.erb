@@ -1,0 +1,17 @@
+<h2>Meet <%= @superhero.name %></h2>
+
+<%= image_tag @superhero.image %>
+
+<h2><%= @superhero.name %></h2>
+<h3>alias: <%= @superhero.alterego %></h3>
+
+<h4><%= @superhero.name %>'s Rogue Gallery</h4>
+<ul>
+  <% @superhero.villains.each do |villain| %>
+  <li>
+    <%= link_to villain.name, villain_path(villain.id) %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit", edit_superhero_path(@superhero.id) %>

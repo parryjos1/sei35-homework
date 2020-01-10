@@ -1,0 +1,32 @@
+<div id="formDiv">
+<%= form_for @villain do |villain| %>
+
+<%= villain.label :name %>
+<%= villain.text_field :name %>
+
+<%= villain.label :alterego %>
+<%= villain.text_field :alterego %>
+
+<%= villain.label :home %>
+<%= villain.text_field :home %>
+
+<%= villain.label :publisher %>
+<%= villain.text_field :publisher %>
+
+<%= villain.label :bio %>
+<%= villain.text_field :bio %>
+
+<%= villain.label :image %>
+<%= villain.text_field :image %>
+
+<%= villain.label :power %>
+<%= villain.text_field :power %>
+
+<br>
+<%= villain.select :superhero_id, @superheros.collect { |x| [x.name, x.id]}, :prompt => 'select Superhero' %>
+
+<br>
+<%= villain.submit %>
+
+<% end %>
+</div>
