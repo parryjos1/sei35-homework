@@ -33,9 +33,9 @@ const Allergies = {
 
       if (score >= key) {
         allergies.push(this.scorecard[key])
-        console.log(allergies);
+        // console.log(allergies);
         score -= key;
-        console.log(score);
+        // console.log(score);
       }
     }
 
@@ -54,6 +54,6 @@ const Allergies = {
   }
 }
 
-Allergies.diagnosis(34);
-Allergies.diagnosis(12);
-Allergies.diagnosis(0);
+Allergies.diagnosis(34);  //chocolate and peanuts
+Allergies.diagnosis(12); //strawberries and shellfish
+Allergies.diagnosis(0); //No allergies
