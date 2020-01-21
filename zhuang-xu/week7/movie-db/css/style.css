@@ -1,0 +1,38 @@
+.search-form {
+    margin-top: 3em;
+    width: 20vw;
+}
+
+.movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.movies .movie {
+    text-align: center;
+    background-color: burlywood;
+    width: 24%;
+    height: 378px;
+    margin: 0.1em;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.movies .movie p {
+    text-align: center;
+    padding-top: 0.5em;
+}
+
+.movie-details {
+    width: 40vw;
+    margin: 0 auto;
+    display: none;
+}
+
+.movie-details .title {
+    font-size: 2em;
+}
