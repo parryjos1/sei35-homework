@@ -49,21 +49,22 @@ $(document).ready(function(){
         $(`#${details[key]}`).on('click', function(){
           $('.showDetail').empty();
           const detailData = JSON.parse(movieDetail.response);
-          console.log(detailData);
           $('.showResult').hide();
           $('.showDetail').show();
           $('.close').show();
 
+          // add content into .showDetail div
           $('.showDetail').html(`
             <strong>Title:</strong>
             ${detailData.title}
             <strong>Overview:</strong>
             ${detailData.overview}`);
+
+          // close details show page
           $('.close').on('click', function(){
             $('.showResult').show();
             $('.showDetail').hide();
             $('.close').hide();
-            
           }); //click close end
         });//show detail click
       }// for in loop end
