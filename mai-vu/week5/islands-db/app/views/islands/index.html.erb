@@ -1,0 +1,11 @@
+<h2>Index of Islands</h2>
+
+<ul>
+<% @islands.each do |i| %>
+    <li>
+        <a href="<%= island_path( i.id ) %>">
+            <%= i.name %>
+        </a>
+    </li>
+<% end %>
+</ul>

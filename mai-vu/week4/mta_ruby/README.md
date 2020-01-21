@@ -19,7 +19,7 @@ We should be able to say:
 
 ```
 plan_trip( :n, "Times Square", :l, "1st" )
-# Or something along those lines
+# or something along those lines
 ```
 
 <br>
@@ -31,5 +31,5 @@ plan_trip( :n, "Times Square", :l, "1st" )
 * A symbol can't just be a number!
 * Consider diagraming the lines by sketching out the subway lines and their stops and intersection.
 * Make subway lines keys in a hash, while the values are an array of all the stops on each line.
-* The key to the lab is to find the intersection of the lines at Union Square.
+* The key to problem-solving is to find the intersection of 3 lines at Union Square.
 * Make sure the stops that are the same for different lines have different names (i.e. 23rd on the N and on the 6 need to be differentiated).

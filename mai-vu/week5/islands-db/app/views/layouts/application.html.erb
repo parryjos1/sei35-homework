@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Islands of the World</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+        <a href="<%= islands_path %>">Index</a>
+        <a href="<%= islands_new_path %>">Add</a>
+      </nav>
+    </header>
+    <hr>
+
+    <h1>
+        Most beautiful islands in the world
+    </h1>
+
+    <%= yield %>
+
+    <hr>
+    <footer>
+      &copy; Surfer Babes Co., 2020
+    </footer>
+
+  </body>
+</html>

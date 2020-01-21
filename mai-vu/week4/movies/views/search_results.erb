@@ -1,0 +1,12 @@
+<a href="/">Go to Home</a>
+<br>
+
+<ul>
+    <% @results.each do |movie| %>
+        <li>
+        <a href="/movies/lookup/<%= movie['id'] %>">
+            <img src="http://image.tmdb.org/t/p/w185<%= movie['poster_path'] %>" alt="<%= movie['title'] %>">
+        </a>
+        </li>
+    <% end %>
+</ul>
