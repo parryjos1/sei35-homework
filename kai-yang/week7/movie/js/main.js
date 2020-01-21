@@ -1,11 +1,20 @@
 $(document).ready(function(){
   //click function
+  $('.showDetail').hide();
+  $('.close').hide();
+
   $('#submit').on('click', function(){
+    // empty div
+    $('.showResult').empty();
+    $('.showDetail').empty();
+
+
+
 
     // get value from input box
     const inputValue = $('#input').val();
 
-    // receive resulf from API
+    // receive movie results from API
     const movieSearch = new XMLHttpRequest();
     movieSearch.open('GET', `https://api.themoviedb.org/3/search/movie?api_key=24d863d54c86392e6e1df55b9a328755&query=${inputValue}`);
     movieSearch.send();
@@ -16,22 +25,52 @@ $(document).ready(function(){
       input = inputValue.charAt(0).toUpperCase()
       // api result
       const data = (JSON.parse(movieSearch.response)).results;
-      console.log(data)
-      // console.log(inputValue)
 
+      var details = {};
       // loop through data.results array
       for (var i = 0; i < data.length; i++) {
-        // console.log(data[i].title)
-        // console.log(data[i].title.includes(inputValue));
         if (data[i].title.includes(input)) {
-          // console.log(`title:${data[i].title},
-          //   poster_path: ${data[i].poster_path}`)
-          // $('.showResult').append(`The title is ${data[i].title}`);
           $('.showResult').append(`
-            <img src="https://image.tmdb.org/t/p/original/${data[i].poster_path}" alt="${data[i].title}" class="movieImages">`)
+            <img src="https://image.tmdb.org/t/p/original/${data[i].poster_path}" alt="${data[i].title}" class="movieImages" id="${data[i].id}"> `)
+
+            details[data[i].title] = data[i].id;
+
         }//if end
-      };//loop end
+      };//for loop end
+
+      // loop through details object
+      for (let key in details) {
+
+        // receive movie details from api
+        const movieDetail = new XMLHttpRequest();
+        movieDetail.open('GET', `https://api.themoviedb.org/3/movie/${details[key]}?api_key=8f56203d1e18cdbbd64752b7aaaf756e`);
+        movieDetail.send();
+
+        $(`#${details[key]}`).on('click', function(){
+          $('.showDetail').empty();
+          const detailData = JSON.parse(movieDetail.response);
+          console.log(detailData);
+          $('.showResult').hide();
+          $('.showDetail').show();
+          $('.close').show();
+
+          $('.showDetail').html(`
+            <strong>Title:</strong>
+            ${detailData.title}
+            <strong>Overview:</strong>
+            ${detailData.overview}`);
+          $('.close').on('click', function(){
+            $('.showResult').show();
+            $('.showDetail').hide();
+            $('.close').hide();
+            
+          }); //click close end
+        });//show detail click
+      }// for in loop end
     };//onload
+
+
+
   });//click
 
 });//ready
