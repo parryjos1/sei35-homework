@@ -1,0 +1,9 @@
+<h1><%= @band.name %></h1>
+<a href="<%= band_edit_path @band.id %>">Edit</a>
+<a href="<%= band_destroy_path @band.id %>">Delete</a>
+<p>
+  <strong>Genre:</strong> <%= @band.genre %>
+</p>
+<% if @band.image.present? %>
+  <%= image_tag @band.image, alt: @band.name, class: 'band' %>
+<% end %>

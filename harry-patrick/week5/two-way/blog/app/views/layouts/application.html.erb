@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1>Welcome to this</h1>
+    <%=link_to "Waves Index", waves_path %>
+    <%=link_to "Create Wave", new_wafe_path %>
+    <hr>
+    <%= yield %>
+    <hr>
+  </body>
+</html>
