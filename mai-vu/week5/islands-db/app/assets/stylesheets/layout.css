@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height:100vh;
+    padding: 0px;
+    background-color: powderblue;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+}
+
+nav a {
+    padding: 5px;
+}
+
+body p {
+    padding: 0;
+    margin: 0
+}
+
+a {
+    color: #072F5F;
+}
+
+img.island {
+    /* max-width: 1000px; */
+    margin: 10px;
+}
+
+h1 {
+    color: #1261A0;
+}
+
+input {
+    background-color: aliceblue;
+}

@@ -1,0 +1,24 @@
+body {
+    font-family: "Helvetica", sans-serif;
+    color: #0F5897;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 20px;
+    margin: 10px 20px;
+}
+
+button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+}
