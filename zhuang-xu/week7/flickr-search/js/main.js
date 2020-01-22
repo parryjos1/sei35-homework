@@ -20,7 +20,7 @@ const generatePhotoURL = (photo, size = 'q') => {
   return `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_${size}.jpg`;
 };
 
-const searchFlickr = searchText => {
+const searchFlickr = _.throttle(searchText => {
   $.getJSON(BASE_URL, {
     method: 'flickr.photos.search',
     text: searchText,
@@ -29,7 +29,22 @@ const searchFlickr = searchText => {
     nojsoncallback: 1,
     page,
   }).done(displaySearchResults).fail(console.warn);
-};
+}, 5000);
+
+const getPhotoInfo = _.throttle((id, secret) => {
+  $.getJSON(BASE_URL, {
+    method: 'flickr.photos.getInfo',
+    api_key: API_KEY,
+    photo_id: id,
+    secret,
+    format: 'json',
+    nojsoncallback: 1,
+  }).done(({photo}) => {
+    $('#photo-title').html(photo.title._content);
+    const url = generatePhotoURL(photo, 'z');
+    $('#large-photo').html(`<img src="${url}">`);
+  }).fail(console.warn);
+}, 5000);
 
 $(document).ready(() => {
   $('#searchText').focus();
@@ -51,18 +66,7 @@ $(document).ready(() => {
     }
     const $img = $(event.target);
 
-    $.getJSON(BASE_URL, {
-      method: 'flickr.photos.getInfo',
-      api_key: API_KEY,
-      photo_id: $img.attr('data-id'),
-      secret: $img.attr('data-secret'),
-      format: 'json',
-      nojsoncallback: 1,
-    }).done(({photo}) => {
-      $('#photo-title').html(photo.title._content);
-      const url = generatePhotoURL(photo, 'z');
-      $('#large-photo').html(`<img src="${url}">`);
-    }).fail(console.warn);
+    getPhotoInfo($img.attr('data-id'), $img.attr('data-secret'));
 
     $('#photo-title').html('Loading...');
     $('#large-photo').html('Loading...');
