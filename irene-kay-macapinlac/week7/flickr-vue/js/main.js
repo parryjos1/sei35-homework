@@ -15,12 +15,14 @@ const flickrSearch = new Vue({
   el: '#searchImages',
 
   data: {
+    // currentPage++;
     // method: 'flickr.photos.search',
     text: searchText,
     api_key: API_KEY,
     format: 'json',
+    image: [],
+    imageURL: [],
     nojsoncallback: 1
-    // page: currentPage
   },
 
   created: function(){
@@ -31,14 +33,9 @@ const flickrSearch = new Vue({
 
   methods: {
 
-    results: function() {
-    console.log('HELLOOOOOO!!!');
-  }, //
-
-  reverseMessage: function() {
-    this.message = this.message.split('').reverse().join('');
-
-  }, // reverseMessage
+  //   searchText: function() {
+  //   console.log('HELLOOOOOO!!!');
+  // }, // results
 
   } // methods
 

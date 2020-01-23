@@ -44,13 +44,17 @@
 
     <form id="searchForm">
 
-      <input type="text" id="searchText"
+      <input type="text" v-model="searchText"
       value="coral ocean">
       <input type="submit" value="Search">
 
     </form>
 
-    <div v-for="results"></div>
+    <div id="displayResults">
+
+      {{results}}
+      
+    </div>
 
     <div id="fullscreen"></div>
 
