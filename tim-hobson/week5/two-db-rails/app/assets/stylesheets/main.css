@@ -1,0 +1,34 @@
+html {
+  background-color: rgb(73, 73, 73);
+  color: white;
+  text-align: center;
+}
+
+a {
+  color: red;
+}
+
+li {
+  list-style-type:none;
+}
+
+form {
+  /* width: 100%; */
+  display: grid;
+  /* grid-template-columns: auto auto; */
+  width: 30%;
+  grid-row-gap: 6px;
+  margin-bottom: 30px;
+}
+
+form > label, {
+  /* width: 50%; */
+  text-align: right;
+  margin-right: 8px;
+}
+
+#formDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,46 @@
+.rpsSigns {
+  font-size: 5em;
+  display: inline;
+  filter: hue-rotate(50deg);
+}
+
+#winAnimation>h1 {
+  position: absolute;
+}
+
+#winAnimation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:50px;
+}
+
+#playerHand {
+  animation: flyInRight 1s;
+  animation-timing-function: linear;
+}
+
+#compHand {
+  animation: flyInLeft 1s;
+  animation-timing-function: linear;
+}
+
+#explosion {
+  animation: appearsDisappear 3s;
+}
+
+@@keyframes appearsDisappear {
+  from { opacity: 0; }
+  50% { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes flyInLeft {
+  from {right:100%}
+  to {right:50%}
+}
+
+@keyframes flyInRight {
+  from {left:100%}
+  to {left:50%}
+}

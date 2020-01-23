@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>nasa</title>
+  </head>
+  <body>
+  <h3>mars rover random photo</h3>
+  <select id='selectRover' placeholder='select rover'>
+    <option value="" disabled selected hidden>choose rover...</option>
+    <option value="opportunity">opportunity</option>
+    <option value="spirit">spirit</option>
+    <option value="curiosity">curiosity</option>
+  </select>
+  <div id="container">
+    <rover id="info">
+    </rover>
+  </div>
+  <div id="randomButton">
+    <button id="go">random photo</button>
+  </div>
+  <div id="randomPhoto"></div>
+  </body>
+</html>

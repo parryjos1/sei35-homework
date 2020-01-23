@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TwoDbRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>AGE OF HEROES</h1>
+      <hr>
+      <nav>
+        <%= link_to 'Hero Index', superheros_path %>
+        <%= link_to 'Add Hero', new_superhero_path %>
+        <%= link_to 'Villain Index', villains_path %>
+        <%= link_to 'Add Villain', new_villain_path %>
+      </nav>
+      <hr>
+    </header>
+
+    <%= yield %>
+
+    <hr>
+    <footer>
+      &copy; Watcher Productions, 2020
+    </footer>
+
+  </body>
+</html>

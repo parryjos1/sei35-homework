@@ -1,0 +1,9 @@
+<h1>Hall of Heroes</h1>
+
+<ul>
+  <% @superheroes.each do |hero| %>
+  <li>
+    <%= link_to hero.name, superhero_path( hero.id ) %>
+  </li>
+  <% end %>
+</ul>

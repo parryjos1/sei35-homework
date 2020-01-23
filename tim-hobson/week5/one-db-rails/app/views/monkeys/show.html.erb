@@ -1,0 +1,11 @@
+<h1>the <%= @monkey.name %></h1>
+<p><a href="<%= monkey_edit_path(@monkey.id) %>">edit</a></p>
+<p><a href="<%= monkey_destroy_path(@monkey.id) %>">destroy</a></p>
+<p><a href="<%= monkeys_path %>">index</a></p>
+
+<p><%= @monkey.height %> cm tall</p>
+<p><%= @monkey.weight %> kgs</p>
+<p>From <%= @monkey.native_country %></p>
+<p>Lives to <%= @monkey.lifespan %> years old</p>
+
+<img id="showImage" src="<%= @monkey.image %>" alt="">
