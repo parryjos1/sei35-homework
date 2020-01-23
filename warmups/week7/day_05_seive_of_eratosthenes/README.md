@@ -11,4 +11,4 @@ Repeat until you don't have any possible primes left in your range.
 
 When the algorithm terminates, all the numbers in the list that have not been removed are prime.
 
-Do this in Javascript!
+Do this in Javascript! 
