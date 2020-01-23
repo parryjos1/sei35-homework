@@ -1,0 +1,32 @@
+<h2>
+  planet <%= @mountain.name %>
+</h2>
+
+<p>
+  <strong>mountain:</strong>
+  <%= @mountain.mountain %>
+</p>
+
+<p>
+  <strong>range:</strong>
+  <%= @mountain.range %>
+</p>
+
+<% if @mountain.image.present? %>
+<%= image_tag @mountain.image, alt: @mountain.name, class: 'mountain' %>
+<% end %>
+
+<p>
+  <strong>height:</strong>
+  <%= @mountain.height %>
+</p>
+
+<p>
+  <strong>type:</strong>
+  <%= @mountain.type %>
+</p>
+
+<p>
+  <strong>location:</strong>
+  <%= @mountain.location %>
+</p>
