@@ -1,0 +1,30 @@
+html {
+  background-color: #E27B58;
+  color: #663926;
+  font-family: monospace;
+  text-align: center;
+}
+
+img {
+  max-width: 80vw;
+  max-height: 50vh;
+  box-shadow: 0px 0px 0px 4px #00000042;
+}
+
+button{
+  background-color: #E27B58;
+  border: 1px solid #663926;
+  font-family: monospace;
+  color: #663926;
+  margin-top: 10px;
+  border-right: 10%;
+  text-align: center;
+}
+
+select {
+  background-color: #E27B58;
+  border: 1px solid #663926;
+  height: 2rem;
+  color: #663926;
+  text-align-last: center;
+}

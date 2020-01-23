@@ -1,0 +1,30 @@
+html {
+  background-color: black;
+  color: fuchsia;
+  font-family: monospace;
+}
+.thumbnails {
+  display: inline;
+  /* opacity: 5%; */
+  border: 1px solid white;
+  margin: 5px;
+}
+#largePhoto {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  height:80vh;
+  background-color: black;
+  z-index: 2;
+  padding: 20px;
+  border: 1px solid white;
+  overflow: scroll;
+  text-align: center;
+  box-shadow: 0 0 15px 25px #000000b3;
+  transform: translate(-50%, -50%);
+}
+
+.thumbnails {
+  box-shadow: 0 0 3px 3px #ffffff47;
+}

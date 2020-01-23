@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>flickr jquery</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div id="app">
+    <h2>{{ message }}</h2>
+    <br>
+    <input type="text" v-model="searchText">
+    <button @click="searchCall">search flickr</button>
+    <button @click='previousPage'>previous page</button>
+    <button @click='searchFlickr'>next page</button>
+    <br>
+    <hr>
+
+    <div id="largePhoto" v-if="canSee" @click='hideLargePhoto'>
+      {{ photoInfo.title._content }} <br>
+      <hr>
+      <img class='mainImage' :src="'https://farm' + photoInfo.farm + '.staticflickr.com/' + photoInfo.server + '/' + photoInfo.id + '_' + photoInfo.secret + '.jpg'">
+      <hr>
+      {{ photoInfo.owner.realname }} <br>
+      <hr>
+      {{ photoInfo.description._content }}
+    </div>
+
+    <div class='thumbnailContainer'>
+    <img class='thumbnails' v-for='photo in results' :src= "'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_q.jpg'" @click="openImage" :id="photo.id" >
+
+    </div>
+    <button @click='previousPage'>previous page</button>
+
+    <button @click='searchFlickr'>next page</button>
+
+
+  </div> <!-- end of app -->
+
+    <script src="js/vue.js" charset="utf-8"></script>
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>
