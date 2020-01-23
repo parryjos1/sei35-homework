@@ -38,7 +38,7 @@
     <h1>{{title}}</h1>
 
     <form id="searchForm" @submit="queryPhotos" action="#">
-      <input type="text" id="searchText" v-model="queryInput">
+      <input type="text" id="searchText" v-model.lazy="queryInput">
       <input type="submit" value="Search Photos">
     </form>
 
