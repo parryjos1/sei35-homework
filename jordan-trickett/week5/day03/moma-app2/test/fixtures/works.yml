@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  year: 2020-01-08
+  medium: MyText
+  style: MyText
+  image: MyText
+  artist_id: 1
+
+two:
+  title: MyText
+  year: 2020-01-08
+  medium: MyText
+  style: MyText
+  image: MyText
+  artist_id: 1

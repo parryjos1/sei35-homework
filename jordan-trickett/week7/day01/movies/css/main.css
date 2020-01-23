@@ -1,0 +1,13 @@
+ul#search-results li {
+  display: inline;
+  list-style-type: none;
+}
+
+
+#search-results img {
+  max-width: 120px
+}
+
+li {
+  list-style-type: none;
+}
