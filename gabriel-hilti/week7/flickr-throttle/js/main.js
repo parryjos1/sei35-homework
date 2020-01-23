@@ -5,6 +5,7 @@ const API_KEY = 'a1ee70442b952efda4abbaeedb52ede2';
 let page = null;
 let query = null;
 let appendingQuery = false;
+let firstSearchResult = null;
 
 const searchFlickr = (searchText, page) => {
   $.getJSON(BASE_URL, {
@@ -37,6 +38,7 @@ const displaySearchResults = response => {
   }
   console.log('...............................');
   console.log('Response:', response);
+  firstSearchResult = response;
   response.photos.photo.forEach(photo => {
     const url = generatePhotoURL(photo);
     console.log(url);
@@ -70,6 +72,38 @@ const displayPhotoDetails = response => {
 
   $('#singlePhoto').append(div);
 
+  const carousel = `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 400px;">
+  <div class="carousel-inner">
+
+  </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>`;
+
+  $('#singlePhoto').append(carousel);
+
+  firstSearchResult.photos.photo.forEach((photo, i) => {
+      const url = generatePhotoURL(photo);
+      if (i === 0) {
+        $('.carousel-inner').append(`<div class="carousel-item active">
+        <img src="${url}" class="d-block w-100" style="width: 200px;">
+    </div>`);
+      } else {
+        $('.carousel-inner').append(`<div class="carousel-item">
+        <img src="${url}" class="d-block w-100" style="width: 200px;">
+      </div>`);
+      }
+
+  });
+
+
+
   if (navigator.geolocation) {
     console.log('geolocation', true);
     $('#location').on('click', () => {
@@ -87,7 +121,6 @@ const throttle = (fn, wait) => {
   let time = Date.now();
   return function() {
     if ((time + wait - Date.now()) < 0) {
-      console.log('wait');
       fn();
       time = Date.now();
     }
@@ -95,8 +128,9 @@ const throttle = (fn, wait) => {
 };
 
 const scrollEnd = () => {
-  console.log($(window).scrollTop(), $(window).height(), $(document).height());
-  if($(window).scrollTop() + $(window).height() + 150 > $(document).height()) {
+  // console.log($(window).scrollTop(), $(window).height(), $(document).height());
+  const scrolledToBottom = $(window).scrollTop() + $(window).height() + 150 > $(document).height();
+  if(scrolledToBottom) {
     page++;
     console.log('end');
     appendingQuery = true;
