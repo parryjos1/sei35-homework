@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Flickr Search Vue</title>
+
+    <style>
+    img {
+      margin-right: 8px;
+      margin-bottom: 8px;
+      vertical-align: top;
+    }
+
+    #results {
+      margin-top: 20px;
+    }
+
+    #fullscreen {
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>Flickr Search</h1>
+
+    <div id="searchImages">
+
+
+    <form id="searchForm">
+
+      <input type="text" v-model="searchText"
+      value="coral ocean">
+      <input type="submit" value="Search">
+
+    </form>
+
+    <div id="displayResults">
+
+      {{results}}
+      
+    </div>
+
+    <div id="fullscreen"></div>
+
+  </div>
+
+  <script src="js/vue.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+
+</html>

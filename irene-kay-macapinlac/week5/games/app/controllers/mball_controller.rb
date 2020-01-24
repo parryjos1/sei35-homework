@@ -32,7 +32,7 @@ class MballController < ApplicationController
       ]
 
       puts greetings.sample
-      sleep 1
+
       puts answers.sample
 
       @greet = greetings.sample

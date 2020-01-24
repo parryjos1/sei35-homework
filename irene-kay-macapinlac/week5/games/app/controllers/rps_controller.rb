@@ -26,16 +26,9 @@ class RpsController < ApplicationController
       @result = 'Draw'
     else
       @result = 'AI wins'
+    end
 
-    
-
-
-
-
-
-
-    binding.pry
-
+    # binding.pry
 
   end
 
