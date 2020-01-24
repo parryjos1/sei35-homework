@@ -1,0 +1,38 @@
+<h2><%= @mountain.name %></h2>
+<p>
+  <a href="<%= mountain_edit_path(@mountain.id) %>">Edit</a>
+  |
+  <a href="<%= mountain_destroy_path(@mountain.id) %>">Delete</a><br>
+
+  <label>
+    <strong>Height:</strong>
+    <%= @mountain.height %>(m)
+  </label><br>
+
+  <label>
+    <strong>Range:</strong>
+    <%= @mountain.range %>
+  </label><br>
+
+  <label>
+    <strong>Parent Mountain:</strong>
+    <%= @mountain.parent_mountain %>
+  </label><br>
+
+  <label>
+    <strong>First Ascended Year:</strong>
+    <%= @mountain.first_ascended %>
+  </label><br>
+
+  <label>
+    <strong>Country:</strong>
+    <%= @mountain.country %>
+  </label><br>
+
+  <% if @mountain.image_url.present? %>
+  <label>
+    <strong>Image:</strong><br>
+    <%= image_tag @mountain.image_url, alt: @mountain.name, class: 'mountain' %>
+  </label>
+  <% end %>
+</p>

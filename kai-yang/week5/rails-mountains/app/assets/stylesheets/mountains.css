@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+body {
+  background-color: rgba(40, 245, 171, 0.83);
+  font-family: 'Anton', sans-serif;
+}
+h1, footer{
+  color: rgba(186, 79, 39, 0.69);
+}
+a, a:visited {
+  color: rgba(76, 151, 209, 0.81)
+}
+img.mountain {
+  max-width: 500px;
+}

@@ -1,0 +1,48 @@
+<h2><%= @musician['name'] %></h2>
+
+<a href="/musicians/<%= @musician['id'] %>/edit">Edit This Musician</a>
+<a href="/musicians/<%= @musician['id'] %>/delete">Delete This Musician</a>
+<br>
+
+<p>
+  <strong>Name:</strong>
+  <%= @musician['name'] %>
+</p>
+
+<p>
+  <strong>Year Active:</strong>
+  <%= @musician['year_active'] %>
+</p>
+
+<p>
+  <strong>Hometown:</strong>
+  <%= @musician['hometown'] %>
+</p>
+
+<p>
+  <strong>Labels:</strong>
+  <%= @musician['labels'] %>
+</p>
+
+<p>
+  <strong>Occupations:</strong>
+  <%= @musician['occupations'] %>
+</p>
+
+<p>
+  <strong>Still Active:</strong>
+  <%= @musician['still_active'] == true ? 'Yes' : 'No' %>
+</p>
+
+<p>
+  <strong>Songs:</strong>
+  <ul>
+    <% @musician.songs.each do |song| %>
+    <li>
+      <%= song.name %>(<%= song.year %>)
+    </li>
+    <% end %>
+  </ul>
+</p>
+
+<img src="<%= @musician['image_url'] %>" alt="<%= @musician['name'] %>">

@@ -47,7 +47,15 @@ const catWalk = function(){ //catwalk function
   }
 };
 
-window.setInterval(catWalk, 50); //run the function
+const catDance =document.querySelector('#catDance');
+catDance.style.left = (window.innerWidth/2 - catDance.width/2) + 'px';
+const catVisibility = function(){
+
+}
+
+// clearInterval( walkID );
+const walkID = window.setInterval(catWalk, 50); //run the function
+
 //for fly cat
 const flyCat = document.querySelector('#flyCat');
 flyCat.style.left = '0px';
