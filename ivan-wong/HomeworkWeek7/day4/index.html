@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Document</title>
+</head>
+<body>
+  <h1> Flickr search </h1>
+  <div id="vue">
+      <form id="search" @submit.prevent="searchFlickr">
+        <input type="text" v-model="text"></input>
+        <input type="submit" value="Search" ></input>
+      </form>
+    <span v-for="photo in results">
+      <img :src= `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_q.jpg`></img>
+    </span>
+  </div>
+  <script src="jquery.js"></script>
+  <script src="underscore.js"></script>
+  <script src="vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
