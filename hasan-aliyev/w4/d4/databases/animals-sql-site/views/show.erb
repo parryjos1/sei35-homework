@@ -1,0 +1,44 @@
+<%# (show page)
+
+<%= params.inspect %>
+<!-- <pre>
+<%= @animal %>
+</pre> %> -->
+
+
+<h2><%= @animal['name'] %></h2>
+<p>
+<strong>Species:</strong>
+<%= @animal['species'] %>
+</p>
+
+<p>
+<strong>Roundness:</strong>
+<%= @animal['roundness'] %>
+</p>
+
+<p>
+<strong>Description:</strong>
+<%= @animal['description'] %>
+</p>
+
+<p>
+<strong>Age:</strong>
+<%= @animal['age'] %>
+</p>
+
+<p>
+<strong>Alive:</strong>
+
+<!-- <% if @animal['alive'] == 1 %>
+Yes
+<% else %>
+No
+<% end %> -->
+
+<%= @animal['alive'] == 1 ? 'Yes': 'No' %>
+
+
+</p>
+
+<img src="<%= @animal['image_url'] %>" alt="<%= @animal['name'] %>">
