@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gnar: 1
+  stance: MyString
+  wave: one
+
+two:
+  name: MyString
+  gnar: 1
+  stance: MyString
+  wave: two

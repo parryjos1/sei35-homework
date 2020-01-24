@@ -1,0 +1,17 @@
+<h1>Form</h1>
+
+<%= form_for @surfer do |f| -%>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :gnar %>
+<%= f.text_field :gnar%>
+<%= f.label :stance %>
+<%= f.text_field :stance %>
+<%= f.label :wave_id %>
+<select  name="surfer[wave_id]" id="">
+  <% Wave.all.each do |wave| %>
+  <option value="<%= wave.id %>"><%= wave.name %></option>
+  <% end %>
+</select>
+<%=  f.submit%>
+<% end %>

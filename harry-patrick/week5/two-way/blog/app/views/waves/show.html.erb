@@ -1,0 +1,11 @@
+<%= link_to "Edit wave", edit_wafe_path(@wave.id) %>
+<%= link_to "Delete Wave", wafe_path(@wave.id), method: 'delete' %>
+<p>
+  <strong>Country</strong>: <%= @wave.country %>
+</p>
+
+<p>
+  <strong>Size</strong>: <%= @wave.size %>
+</p>
+
+<%= image_tag @wave.image %>
