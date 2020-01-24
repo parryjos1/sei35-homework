@@ -1,0 +1,20 @@
+<div id="cover">
+  <form method="get" action="">
+    <div class="tb">
+      <div class="td"><input type="text" id="searchCocktail" placeholder="search"></div>
+      <div class="td" id="s-cover">
+        <button type="submit" id="search">
+          <div id="s-circle"></div>
+          <span></span>
+        </button>
+
+
+      </div>
+    </div>
+  </form>
+</div>
+
+
+        <div id="results"></div>
+
+        <div id="details"></div>
