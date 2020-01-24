@@ -1,0 +1,37 @@
+<h1>Edit Jordan</h1>
+
+<form action="<%= jordan_path(@jordan.id) %>" method="post">
+
+  <label>
+      Name:
+    <input type="text" value="<%= @jordan.name %>" name="name">
+  </label>
+    <br>
+
+  <label>
+      Release Year:
+    <input type="text" value="<%= @jordan.year %>" name="year">
+  </label>
+    <br>
+
+  <label>
+      Designer:
+    <input type="text" value="<%= @jordan.designer %>" name="designer">
+  </label>
+    <br>
+
+  <label>
+      Original Price:
+    <input type="text" value="<%= @jordan.price %>" name="price">
+  </label>
+    <br>
+
+  <label>
+      Image:
+    <input type="text" value="<%= @jordan.image %>" name="image">
+  </label>
+    <br>
+
+  <input type="submit" name="" value="Update J">
+
+</form>

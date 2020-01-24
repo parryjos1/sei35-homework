@@ -1,0 +1,24 @@
+<h1>The <%= @jordan.name %></h1>
+
+<a href="<%= jordan_edit_path(@jordan.id) %>">Update</a>
+<a href="<%= jordan_destroy_path(@jordan.id) %>">Delete</a>
+<br>
+<%= image_tag @jordan.image, alt: @jordan.name, class: 'jordan' %>
+
+<p>Released: <%= @jordan.year %></p>
+<p>Designed by: <%= @jordan.designer %></p>
+<p>Original Price: $<%= @jordan.price %></p>
+
+
+<h3>Other Models:</h3><br>
+
+  <% @jordans.each do | j |%>
+
+    <% if j.id != @jordan.id %>
+      <a href="<%= jordan_path(j.id) %>">
+        <p><%= j.name %></p>
+        <%= image_tag j.image, alt: j.name, class: 'related-j' %>
+      </a>
+    <% end %>
+
+  <% end %>

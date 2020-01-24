@@ -1,0 +1,14 @@
+<h2>Index Page</h2>
+
+
+<ul>
+
+  <% @jordans.each do | j |%>
+
+    <a href="<%= jordan_path(j.id) %>">
+      <li><%= j.name %></li>
+    </a>
+
+  <% end %>
+
+</ul>

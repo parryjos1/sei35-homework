@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MomaApp2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+  <div id="view">
+    <header>
+      <%= link_to artists_path, class: 'logo' do %>
+        <h1>MoMA App 2</h1>
+      <% end %>
+      <nav>
+        <%= link_to 'Artist Index', artists_path %>
+        <%= link_to 'Work Index', works_path %>
+        <%= link_to 'Add New Artist', new_artist_path %>
+        <%= link_to 'Add New Work', new_work_path%>
+      </nav>
+    </header>
+
+
+    <%= yield %>
+
+
+  </div>
+  <footer>
+    &copy; MoMA 2020
+  </footer>
+  </body>
+</html>
