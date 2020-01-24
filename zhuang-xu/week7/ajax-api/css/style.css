@@ -1,0 +1,7 @@
+main .container {
+    margin-top: 2em;
+}
+
+#most-active td {
+    cursor: pointer;
+}
