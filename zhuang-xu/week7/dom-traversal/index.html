@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/main.js"></script>
+</head>
+<body data-label="body">
+<button data-label="button" onclick="traverse(document.body)">Imperative Traversal</button>
+<button data-label="button" onclick="traverseRecursive(document.body)">Recursive Traversal</button>
+<div data-label="1">
+    <div data-label="1.1">
+        <div data-label="1.1.1"></div>
+        <div data-label="1.1.2"></div>
+    </div>
+    <div data-label="1.2">
+        <div data-label="1.2.1"></div>
+        <div data-label="1.2.2"></div>
+    </div>
+</div>
+<div data-label="2">
+    <div data-label="2.1">
+        <div data-label="2.1.1"></div>
+        <div data-label="2.1.2"></div>
+    </div>
+    <div data-label="2.2">
+        <div data-label="2.2.1"></div>
+        <div data-label="2.2.2"></div>
+    </div>
+</div>
+<div id="result">
+    <p>
+        <textarea name="result" cols="40" rows="20"></textarea>
+    </p>
+</div>
+</body>
+</html>
