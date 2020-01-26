@@ -35,7 +35,6 @@ const searchInFile = async (filename, searchText) => {
   });
 
   for await (const line of rl) {
-    // Each line in input.txt will be successively available here as `line`.
     if (line.match(searchText) !== null) {
       console.log(line);
     }
