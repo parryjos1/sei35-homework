@@ -1,28 +1,32 @@
-
 $(document).ready(function() {
   $('#go').on('click', function() {
      $('#results').show().empty();
-//     $('#details').hide();
+
         const searchText = $('#query').val();
         console.log(searchText);
         $.getJSON( `http://api.giphy.com/v1/gifs/search?q=${searchText}&api_key=Yg6Qiy8gr83S2wkgODDyj2LaEP7jRNUF&limit=5`).
         done(function(response){
 
-        console.log(response.data); //this is an array
+        //console.log(response.data); //this is an array
 
-        // for (let i = 0; i < images.downsized.length; i++) {
+        const results = response.data
+        console.log(results);
 
-        const $result = $('<img>').attr('src', response.data[0].images.downsized_large.url);
+        //this loops through the  images in the object in the data  array above
+         for (let i = 0; i < results.length; i++) {
+            // let gifs = results[i].images.downsized_large.url
 
-        $('#results').append($result);
+        //this new const stores the  returned data from the loop, which is the key value from the object of the urls stored in the data array.
+
+        const $result = $('<img>').attr('src',results[i].images.downsized_large.url);
+            $('#results').append($result);
+
+
+          }
 
 
 
-
-
-// `http://api.giphy.com/v1/gifs/search?q=${ searchText }&api_key=Yg6Qiy8gr83S2wkgODDyj2LaEP7jRNUF'
-
-
+        
 
 
 
@@ -33,8 +37,3 @@ $(document).ready(function() {
     });
   });
 // });
-
-
-// var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=Yg6Qiy8gr83S2wkgODDyj2LaEP7jRNUF&limit=5");
-// xhr.done(function(data)
-// { console.log("success got data", data); });
