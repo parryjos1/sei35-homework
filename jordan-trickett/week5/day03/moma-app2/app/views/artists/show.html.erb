@@ -1,0 +1,16 @@
+<h2><%= @artist.name %></h2>
+
+<%= link_to 'Edit Details', edit_artist_path(@artist.id) %>
+<%= link_to 'Delete', artist_path(@artist.id), method: 'delete' %>
+<%= link_to 'Add Work', new_work_path(@artist.id) %>
+<br>
+
+<% if @artist.image.present? %>
+  <%= image_tag @artist.image, alt: @artist.name, class: 'artist' %>
+<% end %>
+
+<p><strong>Nationality:</strong> <%= @artist.nationality %></p>
+<p><strong>Date of Birth:</strong> <%= @artist.dob %></p>
+<p><strong>Period:</strong> <%= @artist.period %></p>
+<p><strong>Roundess:</strong> <%= @artist.roundness %></p>
+<p><strong>Biography:</strong> <%= @artist.bio %></p>

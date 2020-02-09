@@ -1,0 +1,17 @@
+<h1>Edit</h1>
+<form action="<%= band_path(@band.id)%>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" value="<%= @band.name %>">
+  </label>
+  <label>
+    Genre:
+    <input type="text" name="genre" value="<%= @band.genre %>">
+  </label>
+  <label>
+    Image:
+    <input type="text" name="image" value="<%= @band.image %>">
+  </label>
+
+  <input type="submit" name="Edit">
+</form>

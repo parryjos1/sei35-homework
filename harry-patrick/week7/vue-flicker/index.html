@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue-Flickr</title>
+  <style media="screen">
+    li {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vue--Flickr</h1>
+
+  <div id="app"  v-on:scroll="findBottom">
+
+    <h4>Search for photo</h4>
+    <input type="text" v-model.lazy="searchText">
+    <button @click="searchPhoto">
+      Search!
+    </button>
+
+    <p>You searched: {{searchText}}</p>
+
+    <ul>
+      <li v-for="photo in imageURLs">
+        <img :src="photo" :alt="photo">
+      </li>
+    </ul>
+
+
+  </div>
+
+  <script src="js/vue.js" charset="utf-8"></script>
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/underscore.js" charset="utf-8"></script>
+  <script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>

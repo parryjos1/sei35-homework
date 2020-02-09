@@ -1,0 +1,19 @@
+/*
+div.map-image {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
+
+#map {
+  height: 70%;
+  width: 50%;
+  margin: 20px;
+}
+
+html, body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+}

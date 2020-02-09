@@ -1,0 +1,4 @@
+
+  class Mountain < ApplicationRecord
+
+  end

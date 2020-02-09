@@ -1,0 +1,9 @@
+<h2>Meet <%= @villain.name %></h2>
+
+<%= image_tag @villain.image %>
+
+<h2><%= @villain.name %></h2>
+<h3>alias: <%= @villain.alterego %></h3>
+<h3>Nemesis: <%= @villain.superhero.name %></h3>
+
+<%= link_to "Edit", edit_villain_path(@villain.id) %>

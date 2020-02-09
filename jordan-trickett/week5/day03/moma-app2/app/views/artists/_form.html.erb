@@ -1,0 +1,27 @@
+
+<%= form_for @artist do | f | %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :nationality %>
+  <%= f.text_field :nationality %>
+
+  <%= f.label :dob, 'Date of Birth' %>
+  <%= f.text_field :dob %>
+
+  <%= f.label :period %>
+  <%= f.text_field :period %>
+
+  <%= f.label :image, 'Image URL' %>
+  <%= f.text_field :image %>
+
+  <%= f.label :roundness %>
+  <%= f.text_field :roundness %>
+
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+  <br>
+  <%= f.submit %>
+
+<% end %>

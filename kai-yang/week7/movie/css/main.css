@@ -1,0 +1,7 @@
+.movieImages {
+  display: flex;
+  float: left;
+  width: 15vw;
+  height: 40vh;
+  margin: 5px;
+}

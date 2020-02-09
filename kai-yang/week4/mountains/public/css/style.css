@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');
+body {
+  background-color: rgba(33, 107, 217, 0.71);
+  font-family: 'Lilita One', cursive;
+  color: rgba(14, 13, 14, 0.86);
+}
+
+img {
+  max-width: 400px;
+}
+
+input {
+  font-family: 'Lilita One',
+}

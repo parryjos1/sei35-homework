@@ -1,0 +1,41 @@
+<h2>Edit mountain!</h2>
+
+<form action="<%= mountain_path(@mountain.id) %>" method="post">
+
+  <label>
+    <strong>Name:</strong>
+    <input type="text" name="name" value="<%= @mountain.name %>">
+  </label><br>
+
+  <label>
+    <strong>Height:</strong>
+    <input type="text" name="height" value="<%= @mountain.height %>">
+  </label><br>
+
+  <label>
+    <strong>Range:</strong>
+    <input type="text" name="range" value="<%= @mountain.range %>">
+  </label><br>
+
+  <label>
+    <strong>Parent Mountain:</strong>
+    <input type="text" name="parent_mountain" value="<%= @mountain.parent_mountain %>">
+  </label><br>
+
+  <label>
+    <strong>First Ascended Year:</strong>
+    <input type="text" name="first_ascended" value="<%= @mountain.first_ascended %>">
+  </label><br>
+
+  <label>
+    <strong>Country:</strong>
+    <input type="text" name="country" value="<%= @mountain.country %>">
+  </label><br>
+
+  <label>
+    <strong>Image:</strong>
+    <input type="text" name="image_url" value="<%= @mountain.image_url %>">
+  </label><br>
+
+  <input type="submit" name="" value="Update!">
+</form>

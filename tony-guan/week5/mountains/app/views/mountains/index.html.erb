@@ -1,0 +1,11 @@
+<h1>Index of Mountains</h1>
+
+<ul>
+  <% @mountains.each do |mountain| %>
+  <li>
+    <a href="<%= mountain_path(mountain.id)%>">
+    <%= mountain.name %>  <%# access object%>
+    </a>
+  </li>
+  <% end %>
+</ul>

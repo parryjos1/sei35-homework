@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Flickr on Vue</title>
+   <style >
+     #main{
+       display: inline-grid;
+       padding: 10px;
+     }
+   </style>
+  </head>
+  <body>
+     <h3 class="text-center">Flickr on VUE</h3>
+    <div class="container" id="app">
+
+      <form>
+        <label>
+          Search:
+          <input v-model="searchText" type="text">
+        </label>
+        <button type="submit" class="go-button" @click.prevent="search">Search</button>
+      </form>
+
+
+        <div v-for="photo in photos" id="main">
+
+            <!-- {{ photo }} -->
+            <a href="">
+            <img v-bind:src="generatePhotoURL(photo)">
+            </a>
+
+        </div>
+      </div>
+
+
+  </body>
+  <script src="js/vue.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/axios.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

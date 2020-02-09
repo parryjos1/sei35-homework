@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flickr</title>
+
+      <script src="js/underscore.js"></script>
+      <script src="js/jquery.js"></script>
+      <script src="js/main.js"></script>
+      <style>
+        img{
+          padding-right: 8px;
+          padding-bottom: 8px;
+          vertical-align: top;
+          height: 200px;
+          width: 200px;
+        }
+        #results{
+          margin-top: 20px;
+        }
+        #fullscreen{
+          display:none;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          margin: 0;
+          padding: 0;
+          background-color: rgba(0,0,0, 0.9);
+
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      </style>
+
+  </head>
+  <body>
+<h1>Flickr</h1>
+
+ <form id="searchForm">
+   <input type="text" id="searchText" value="lamborghini">
+   <input type="submit" value="Search">
+   <input type="button" onclick="resetForm();" value="Reset" />
+ </form>
+ <div id="results">
+ </div>
+ <div id="fullscreen">
+ </div>
+
+
+
+  </body>
+</html>

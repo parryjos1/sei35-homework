@@ -1,0 +1,18 @@
+{
+  "name": "node_grep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "my-grep.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d js",
+    "watch": "babel --watch src -d js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-env": "^2.4.1"
+  }
+}

@@ -1,0 +1,7 @@
+<h2>Add New Work</h2>
+
+<% if params[:id].blank? %>
+<%= render partial: 'form' %>
+<% else %>
+<%= render partial: '_artist_form' %>
+<% end %>

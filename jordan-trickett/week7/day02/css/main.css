@@ -1,0 +1,11 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 10px;
+}
+
+.measurement-info {
+  display: none;
+}

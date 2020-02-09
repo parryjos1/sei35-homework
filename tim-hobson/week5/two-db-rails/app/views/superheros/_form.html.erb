@@ -1,0 +1,29 @@
+<div id="formDiv">
+<%= form_for @superhero do |hero|%>
+
+<%= hero.label :name %>
+<%= hero.text_field :name %>
+
+<%= hero.label :alterego %>
+<%= hero.text_field :alterego %>
+
+<%= hero.label :home %>
+<%= hero.text_field :home %>
+
+<%= hero.label :publisher %>
+<%= hero.text_field :publisher %>
+
+<%= hero.label :bio %>
+<%= hero.text_field :bio %>
+
+<%= hero.label :image %>
+<%= hero.text_field :image %>
+
+<%= hero.label :power %>
+<%= hero.text_field :power %>
+
+<br>
+<%= hero.submit %>
+
+<% end %>
+</div>

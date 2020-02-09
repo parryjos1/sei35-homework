@@ -1,0 +1,16 @@
+img.artist {
+  max-height: 300px;
+}
+
+form.new_artist, form.edit_artist {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 6px;
+  width: 30%;
+  margin-bottom: 30px;
+}
+
+form.new_artist, form.edit_artist label {
+  text-align: left;
+  margin-right: 20px;
+}

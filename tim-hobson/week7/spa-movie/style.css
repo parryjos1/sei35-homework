@@ -1,0 +1,55 @@
+html {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+}
+img {
+  border: 1px solid white;
+}
+#output {
+  display: grid;
+  grid-template: auto / 230px 230px 230px 230px;
+}
+#outputWrapper {
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+#moviePopup {
+  height: 80vh;
+  width: 80vw;
+  positioN: fixed;
+  background-color: black;
+  padding: 20px;
+  top: 50vh;
+  transform: translate(0, -50%);
+  border: 2px solid white;
+  box-shadow: 0 0 20px 15px black;
+  text-align: center;
+}
+#moviePopup > img {
+  height: 70%;
+  /* float:right; */
+}
+#nav{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#nav > input, #nav > button {
+  width: 30vw;
+}
+
+input {
+  text-align: center;
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

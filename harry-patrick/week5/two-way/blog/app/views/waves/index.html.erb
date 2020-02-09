@@ -1,0 +1,6 @@
+<h1>Pick a wave</h1>
+<ul>
+  <% @waves.each do |wave| %>
+  <li><%=link_to wave.name, wafe_path(wave.id) %></li>  
+  <% end %>
+</ul>

@@ -1,0 +1,39 @@
+html, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: monospace;
+  background-color: black;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  height: 100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+#rubyInsert, li {
+  text-align:center;
+}
+
+a {
+  color:white;
+  text-decoration: none;
+}
+
+#choose {
+  font-size: 2em;
+}
