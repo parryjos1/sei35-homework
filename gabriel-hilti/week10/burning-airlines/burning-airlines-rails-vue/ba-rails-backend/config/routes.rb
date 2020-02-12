@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get '/flights/:id' => 'flights#show'
 
   get '/flights/search/:origin/:destination' => 'flights#search'
-  post '/reservation/:name/:col/:row' => 'reservations#book'
+  post '/reservations' => 'reservations#create'
 
 end

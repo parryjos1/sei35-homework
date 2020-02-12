@@ -1,18 +1,20 @@
 class ReservationsController < ApplicationController
-  def book
-    user = User.new user_parm
-    if user.save
-      Reservation.update user_id: user.id, row: params[:row], col: params[:col] # book_parms, user
+  skip_before_action :verify_authenticity_token  # post request without form
+
+  def create
+    res = Reservation.create(
+      row: params[:row],
+      col: params[:col],
+      user_id: params[:user_id],  # DON'T DO THIS! Use current_user
+      flight_id: params[:flight_id]
+    )
+
+    if res.persisted?
+      # Send back the reservation object that was successfully created
+      render json: res
+    else
+      # Send back an error hash, including the ActiveRecord validation error messages
+      render json: { error: true, messages: res.errors.full_messages }
     end
-  end
-
-  private
-
-  def book_params
-    params.require(:reservations).permit(:row, :col)
-  end
-
-  def user_param
-    params.require(:users).permit(:name)
-  end
+  end  # create
 end
