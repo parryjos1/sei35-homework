@@ -1,0 +1,25 @@
+img {
+  max-width: 200px;
+}
+
+.profile {
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
+.userInfo, .reposInfo {
+  width: 49%;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+}
+
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+a {
+  color: rgb(250, 226, 244);
+}
